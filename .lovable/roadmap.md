@@ -6,4 +6,4 @@
 - [x] Build featured experiences
 - [x] Build Meet the Herd teaser
 - [x] Build large CTA and footer
-- [ ] Verify desktop and mobile presentation
+- [x] Verify desktop and mobile presentation
