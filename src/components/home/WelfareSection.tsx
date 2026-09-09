@@ -1,4 +1,6 @@
 import { Hand } from "lucide-react";
+import { useState } from "react";
+
 
 import faceAlpaca from "@/assets/face-alpaca.jpg";
 import faceChicken from "@/assets/face-chicken.jpg";
@@ -35,22 +37,33 @@ export function WelfareSection() {
         </div>
 
         <ul className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
-          {points.map((point) => (
-            <li key={point.name}>
-              <details className="welfare-card group relative block border-2 border-headline bg-background shadow-[6px_6px_0_var(--headline)] md:pointer-events-none">
-                <summary className="relative block cursor-pointer list-none [&::-webkit-details-marker]:hidden md:pointer-events-auto">
+          {points.map((point, i) => {
+            const open = active === i;
+            return (
+              <li key={point.name}>
+                <button
+                  type="button"
+                  aria-expanded={open}
+                  onClick={() => setActive(open ? null : i)}
+                  className="group relative block w-full overflow-hidden border-2 border-headline bg-background text-left shadow-[6px_6px_0_var(--headline)] transition-transform duration-200 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring"
+                >
                   <img src={point.image} alt={point.alt} width={900} height={900} loading="lazy" className="aspect-square w-full object-cover" />
                   <span className="block border-t-2 border-headline px-3 py-2 font-display text-lg font-black uppercase leading-tight text-headline">
                     {point.name}
                   </span>
-                </summary>
-                <p className="welfare-reveal border-t-2 border-headline bg-primary-accent px-3 py-3 text-sm leading-relaxed text-primary-foreground md:absolute md:inset-0 md:flex md:items-center md:border-0 md:p-5 md:text-base md:opacity-0 md:transition-opacity md:duration-200 md:group-hover:opacity-100">
-                  {point.copy}
-                </p>
-              </details>
-            </li>
-          ))}
+                  <span
+                    className={`absolute inset-0 flex items-center bg-primary-accent p-4 text-sm leading-relaxed text-primary-foreground transition-opacity duration-200 group-hover:opacity-100 md:text-base ${
+                      open ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    {point.copy}
+                  </span>
+                </button>
+              </li>
+            );
+          })}
         </ul>
+
 
         <div className="mt-14">
           <Button asChild size="large">
