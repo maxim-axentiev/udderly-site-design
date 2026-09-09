@@ -7,3 +7,7 @@
 - [x] Build Meet the Herd teaser
 - [x] Build large CTA and footer
 - [x] Verify desktop and mobile presentation
+- [x] Attach owners caption to the first photograph
+- [x] Simplify media logos and preserve responsive indicator rows
+- [x] Correct Gift A Goat copy hierarchy
+- [x] Add subtle rustic texture across homepage sections

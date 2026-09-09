@@ -8,7 +8,6 @@ import giftAGoat from "@/assets/gift-a-goat.png";
 import goatCuddles from "@/assets/goat-cuddles.jpg";
 import highlandHero from "@/assets/highland-hero.jpg";
 import iceCream from "@/assets/ice-cream.jpg";
-import mediaLogos from "@/assets/media-logos.jpg";
 import ownersFamily from "@/assets/owners-family.jpg";
 import ownersFun from "@/assets/owners-fun.jpg";
 import { GiftGoatCounter } from "@/components/home/GiftGoatCounter";
@@ -286,8 +285,8 @@ function Index() {
             <div className="relative lg:sticky lg:top-8">
               <div className="photo-frame relative">
                 <img src={ownersFamily} alt="Cheryl and Greg with their farm greeter dog Aspen in the pasture" width={1280} height={960} loading="lazy" className="w-full border-2 border-headline object-cover" />
+                <span className="absolute -bottom-5 -left-3 z-10 -rotate-2 border-2 border-headline bg-primary-accent px-4 py-2 font-display text-lg font-black uppercase text-primary-foreground">Cheryl, Greg &amp; Aspen</span>
               </div>
-              <span className="absolute -bottom-5 -left-3 -rotate-2 border-2 border-headline bg-primary-accent px-4 py-2 font-display text-lg font-black uppercase text-primary-foreground">Cheryl, Greg &amp; Aspen</span>
               <div className="relative mt-16 rotate-2 border-2 border-headline bg-background p-3 shadow-[9px_9px_0_var(--secondary-accent)]">
                 <img src={ownersFun} alt="Cheryl and Greg laughing together on the farm" width={1024} height={1280} loading="lazy" className="w-full object-cover" />
                 <p className="mt-3 px-1 pb-1 text-center font-accent text-lg italic text-headline">Yes, they are always like this.</p>
@@ -332,10 +331,6 @@ function Index() {
               <h2 className="mt-3 font-display text-[clamp(3.4rem,7.5vw,7rem)] font-black uppercase leading-[0.8] text-headline">
                 Ridiculousness is contagious
               </h2>
-            </div>
-
-            <div className="mt-12 border-2 border-headline bg-background p-6 shadow-[8px_8px_0_var(--headline)]">
-              <img src={mediaLogos} alt="Placeholder logos of news and media outlets that featured the farm" width={1600} height={600} loading="lazy" className="mx-auto w-full max-w-4xl object-contain" />
             </div>
 
             <MediaCarousel />
@@ -387,8 +382,8 @@ function Index() {
             <div className="grid items-center gap-10 border-2 border-headline bg-farm-beige p-7 shadow-[10px_10px_0_var(--headline)] md:grid-cols-[auto_1fr_auto] md:p-12">
               <img src={giftAGoat} alt="Gift A Goat program logo" width={700} height={700} loading="lazy" className="mx-auto size-36 object-contain md:size-44" />
               <div>
-                <span className="font-accent text-xl italic text-primary-accent">Eating ice-cream gives back</span>
-                <h3 className="mt-2 font-display text-[clamp(1.9rem,4.5vw,3.6rem)] font-black uppercase leading-[0.86] text-headline">When you enjoy Udderly Ridiculous goat milk ice-cream, a family in need gets a goat.</h3>
+                <span className="font-accent text-xl italic text-primary-accent">Gift A Goat</span>
+                <h3 className="mt-2 font-display text-[clamp(1.9rem,4.5vw,3.6rem)] font-black uppercase leading-[0.86] text-headline">Eating ice-cream gives back</h3>
                 <p className="mt-4 max-w-xl leading-relaxed">For every tub of Udderly Ridiculous goat milk ice cream you enjoy, we donate a portion of the profit to provide goats to rural communities in need through our Gift a Goat™ program, in partnership with World Vision Canada.</p>
               </div>
               <div className="text-center md:text-right">
