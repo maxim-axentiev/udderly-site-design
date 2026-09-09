@@ -102,19 +102,20 @@ export function MediaCarousel() {
         </button>
       </div>
 
-      <ul className="mx-auto mt-9 flex max-w-4xl flex-wrap items-center justify-center gap-3">
+      <ul className="mx-auto mt-9 grid max-w-4xl grid-cols-4 place-items-center gap-3 sm:flex sm:flex-wrap sm:justify-center">
         {videos.map((video, i) => (
-          <li key={video.outlet + i}>
+          <li key={video.outlet + i} className="flex w-full justify-center">
             <button
               type="button"
               onClick={() => go(i)}
               aria-label={`Show ${video.outlet} video`}
               aria-current={i === index}
-              className={`flex items-center justify-center border-2 border-headline bg-background font-display font-black uppercase leading-none text-headline transition-all duration-200 ${
+              className={`flex w-full items-center justify-center border-2 border-headline bg-background font-display font-black uppercase leading-none text-headline transition-all duration-200 ${
                 i === index
-                  ? "h-16 w-24 scale-105 bg-secondary-accent text-base shadow-[4px_4px_0_var(--headline)]"
-                  : "h-12 w-20 text-sm opacity-70 hover:opacity-100"
+                  ? "h-14 max-w-24 scale-105 bg-secondary-accent text-base shadow-[4px_4px_0_var(--headline)] sm:h-16"
+                  : "h-12 max-w-20 text-sm opacity-70 hover:opacity-100"
               }`}
+
             >
               {video.short}
             </button>
