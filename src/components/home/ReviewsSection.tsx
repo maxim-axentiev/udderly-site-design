@@ -37,11 +37,11 @@ export function ReviewsSection() {
       <div className="mx-auto max-w-[1500px] px-5 md:px-8">
         <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-4xl">
-            <h2 className="font-display text-[clamp(3.4rem,7.5vw,7rem)] font-black uppercase leading-[0.8] text-headline">
+            <h2 className="font-display text-[clamp(2.6rem,7.5vw,7rem)] font-black uppercase leading-[0.8] text-headline">
               What happens on the farm never stays on the farm
             </h2>
-            <p className="mt-6 max-w-xl text-lg font-medium">Placeholder sentence about what guests keep telling everyone they know.</p>
           </div>
+
           <div className="flex items-center gap-4 border-2 border-headline bg-background px-5 py-4 shadow-[6px_6px_0_var(--headline)]">
             <span className="font-display text-5xl font-black leading-none text-headline">4.9</span>
             <div>
@@ -80,11 +80,12 @@ export function ReviewsSection() {
           ))}
         </div>
 
-        <div className="mt-14">
+        <div className="mt-14 flex justify-center">
           <Button asChild size="large">
             <a href="#experiences">Experience the ridiculousness for yourself</a>
           </Button>
         </div>
+
       </div>
 
       {lightbox && (
