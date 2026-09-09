@@ -283,12 +283,17 @@ function Index() {
         <section id="meet-the-herd" className="relative overflow-hidden bg-farm-beige py-20 md:py-28">
           <div className="absolute right-0 top-0 h-28 w-28 bg-secondary-accent [clip-path:polygon(100%_0,100%_100%,0_0)]" aria-hidden="true" />
           <div className="mx-auto grid max-w-[1360px] items-start gap-14 px-5 md:px-8 lg:grid-cols-[1fr_1.05fr]">
-            <div className="relative">
+            <div className="relative lg:sticky lg:top-8">
               <div className="photo-frame relative">
                 <img src={ownersFamily} alt="Cheryl and Greg with their farm greeter dog Aspen in the pasture" width={1280} height={960} loading="lazy" className="w-full border-2 border-headline object-cover" />
               </div>
-              <span className="absolute -bottom-5 -left-3 -rotate-2 border-2 border-headline bg-primary-accent px-4 py-2 font-display text-lg font-black uppercase text-primary-foreground">Cheryl, Greg & Aspen</span>
+              <span className="absolute -bottom-5 -left-3 -rotate-2 border-2 border-headline bg-primary-accent px-4 py-2 font-display text-lg font-black uppercase text-primary-foreground">Cheryl, Greg &amp; Aspen</span>
+              <div className="relative mt-16 rotate-2 border-2 border-headline bg-background p-3 shadow-[9px_9px_0_var(--secondary-accent)]">
+                <img src={ownersFun} alt="Cheryl and Greg laughing together on the farm" width={1024} height={1280} loading="lazy" className="w-full object-cover" />
+                <p className="mt-3 px-1 pb-1 text-center font-accent text-lg italic text-headline">Yes, they are always like this.</p>
+              </div>
             </div>
+
 
             <div>
               <p className="font-accent text-xl italic text-primary-accent">Meet the owners</p>
@@ -335,9 +340,10 @@ function Index() {
 
             <MediaCarousel />
 
-            <div className="mt-14">
+            <div className="mt-14 flex justify-center">
               <Button asChild size="large"><a href="#experiences">Book your ridiculous adventure <ArrowRight aria-hidden="true" /></a></Button>
             </div>
+
           </div>
         </section>
 
@@ -354,9 +360,9 @@ function Index() {
               </div>
               <div>
                 <span className="inline-block -rotate-2 bg-secondary-accent px-4 py-2 font-display text-base font-black uppercase text-headline">Farm Market Store</span>
-                <h2 className="mt-6 font-display text-[clamp(2.8rem,6vw,5.2rem)] font-black uppercase leading-[0.84] text-headline">Placeholder title for the Farm Market Store</h2>
-                <p className="mt-6 max-w-xl text-lg leading-relaxed">Placeholder paragraph describing the Farm Market Store, what you can find on the shelves, and why it is worth a stop after your experience.</p>
-                <Button asChild size="large" className="mt-8"><a href="#big-cta">See what’s inside <ArrowRight aria-hidden="true" /></a></Button>
+                <h2 className="mt-6 font-display text-[clamp(2.4rem,6vw,5.2rem)] font-black uppercase leading-[0.84] text-headline">Bring a piece of the farm home with you</h2>
+                <p className="mt-6 max-w-xl text-lg leading-relaxed">After your experience, take home a souvenir. Whether it’s a conversation starter or a treat for your belly. We’ve stocked items from over 100 local producers, and you know it’s good because we’re ridiculously picky about what we offer! It’s a win-win-win: you support local businesses, support us, and take something special home with you. We love a triple win!</p>
+                <Button asChild size="large" className="mt-8"><a href="#experiences">See what’s inside <ArrowRight aria-hidden="true" /></a></Button>
               </div>
             </div>
 
@@ -367,9 +373,13 @@ function Index() {
               </div>
               <div className="lg:order-1">
                 <span className="inline-block rotate-1 bg-primary-accent px-4 py-2 font-display text-base font-black uppercase text-primary-foreground">Goat Milk Ice-Cream</span>
-                <h2 className="mt-6 font-display text-[clamp(2.8rem,6vw,5.2rem)] font-black uppercase leading-[0.84] text-headline">Placeholder title for Udderly Ridiculous ice-cream</h2>
-                <p className="mt-6 max-w-xl text-lg leading-relaxed">Placeholder paragraph about our own goat milk ice-cream brand, how it started the whole ridiculous adventure, and the flavours people drive out for.</p>
-                <Button asChild size="large" className="mt-8"><a href="#big-cta">See the ridiculous flavours <ArrowRight aria-hidden="true" /></a></Button>
+                <h2 className="mt-6 font-display text-[clamp(2.4rem,6vw,5.2rem)] font-black uppercase leading-[0.84] text-headline">Enjoy our goat milk ice-cream</h2>
+                <div className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed">
+                  <p>Are you like 65% of lactose intolerant folks? No problem. Our award-winning goat milk ice cream is the perfect treat for a smooth car ride home…no awkward pit stops or windows-down moments.</p>
+                  <p>Packed with more nutrients than regular ice cream and featuring rich, unique flavours like Vanilla Lavender and Wine &amp; Dark Chocolate, it’s all made with real, locally sourced ingredients.</p>
+                  <p>You’re on a farm with goats… you need to try goat milk ice cream!</p>
+                </div>
+                <Button asChild size="large" className="mt-8"><a href="#experiences">See the ridiculous flavours <ArrowRight aria-hidden="true" /></a></Button>
               </div>
             </div>
 
@@ -377,15 +387,16 @@ function Index() {
             <div className="grid items-center gap-10 border-2 border-headline bg-farm-beige p-7 shadow-[10px_10px_0_var(--headline)] md:grid-cols-[auto_1fr_auto] md:p-12">
               <img src={giftAGoat} alt="Gift A Goat program logo" width={700} height={700} loading="lazy" className="mx-auto size-36 object-contain md:size-44" />
               <div>
-                <span className="font-accent text-xl italic text-primary-accent">Gift A Goat program</span>
-                <h3 className="mt-2 font-display text-[clamp(2.2rem,4.5vw,3.6rem)] font-black uppercase leading-[0.86] text-headline">Placeholder title for Gift A Goat</h3>
-                <p className="mt-4 max-w-xl leading-relaxed">Placeholder paragraph explaining how the Gift A Goat program works, who it supports, and how guests can take part.</p>
+                <span className="font-accent text-xl italic text-primary-accent">Eating ice-cream gives back</span>
+                <h3 className="mt-2 font-display text-[clamp(1.9rem,4.5vw,3.6rem)] font-black uppercase leading-[0.86] text-headline">When you enjoy Udderly Ridiculous goat milk ice-cream, a family in need gets a goat.</h3>
+                <p className="mt-4 max-w-xl leading-relaxed">For every tub of Udderly Ridiculous goat milk ice cream you enjoy, we donate a portion of the profit to provide goats to rural communities in need through our Gift a Goat™ program, in partnership with World Vision Canada.</p>
               </div>
               <div className="text-center md:text-right">
                 <GiftGoatCounter target={118} />
                 <p className="mt-2 font-display text-lg font-black uppercase text-headline">Goats gifted</p>
               </div>
             </div>
+
           </div>
         </section>
 
@@ -395,10 +406,13 @@ function Index() {
         {/* 8. Newsletter */}
         <NewsletterSection />
 
-        {/* 9. FAQ */}
+        {/* 9. URBORT */}
+        <UrbortSection />
+
+        {/* 10. FAQ */}
         <section id="faq" className="bg-background py-20 md:py-28">
           <div className="mx-auto max-w-3xl px-5 md:px-8">
-            <h2 className="font-display text-[clamp(3rem,7vw,6rem)] font-black uppercase leading-[0.82] text-headline">Placeholder FAQ title</h2>
+            <h2 className="font-display text-[clamp(2.6rem,7vw,6rem)] font-black uppercase leading-[0.82] text-headline">You have questions. We might have answers.</h2>
             <div className="mt-10 border-t-2 border-headline">
               {faqs.map((faq) => (
                 <details key={faq.q} className="group border-b-2 border-headline py-5">
@@ -407,23 +421,36 @@ function Index() {
                     <span className="mt-1 shrink-0 text-primary-accent transition-transform group-open:rotate-45" aria-hidden="true">+</span>
                   </summary>
                   <p className="mt-4 leading-relaxed">{faq.a}</p>
+                  {faq.list && (
+                    <ul className="mt-3 list-disc space-y-2 pl-6 leading-relaxed">
+                      {faq.list.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  )}
+                  {faq.a2 && <p className="mt-5 leading-relaxed">{faq.a2}</p>}
+                  {faq.list2 && (
+                    <ul className="mt-3 list-disc space-y-2 pl-6 leading-relaxed">
+                      {faq.list2.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  )}
                 </details>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 10. Easter egg */}
+
+        {/* 11. Easter egg */}
         <section id="easter-egg" className="relative overflow-hidden bg-headline py-20 text-background md:py-28">
           <div className="farm-dots absolute inset-0 opacity-10" aria-hidden="true" />
           <div className="relative mx-auto max-w-3xl px-5 text-center md:px-8">
             <span className="inline-flex items-center gap-2 rounded-full border-2 border-background px-4 py-2 font-display text-sm font-extrabold uppercase">
               <Gamepad2 aria-hidden="true" size={18} /> Easter egg
             </span>
-            <h2 className="mt-6 font-display text-[clamp(3rem,7vw,6rem)] font-black uppercase leading-[0.82]">Placeholder game title</h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-background/80">
-              Placeholder sentence describing the silly little farm game that lives right here on the page. Second placeholder sentence daring you to beat the goat’s high score.
-            </p>
+            <h2 className="mt-6 font-display text-[clamp(2rem,4.5vw,3.6rem)] font-black uppercase leading-[0.95]">
+              Wow... you made it all the way down here.<br />
+              We usually don&apos;t see people around here.<br />
+              Erm, since you have all this free time, want to play a quick game?
+            </h2>
             <div className="mx-auto mt-10 flex h-64 max-w-2xl items-center justify-center border-2 border-dashed border-background/50 font-display text-xl font-black uppercase text-background/60">
               Game area placeholder
             </div>
@@ -431,21 +458,7 @@ function Index() {
           </div>
         </section>
 
-        {/* Big CTA */}
-        <section id="big-cta" className="relative overflow-hidden bg-farm-blue py-20 md:py-28">
-          <div className="mx-auto grid max-w-[1500px] items-center gap-14 px-5 md:px-8 lg:grid-cols-[1fr_0.85fr]">
-            <div className="relative z-10">
-              <span className="inline-block -rotate-2 bg-primary-accent px-4 py-2 font-display text-lg font-black uppercase text-primary-foreground">A sensible suggestion</span>
-              <h2 className="mt-7 font-display text-[clamp(4.5rem,9vw,9rem)] font-black uppercase leading-[0.76] text-headline">You could have a normal weekend.<br /><span className="text-primary-accent">But why?</span></h2>
-              <Button asChild size="large" className="mt-10"><a href="#experiences">Find an Experience <ArrowRight aria-hidden="true" /></a></Button>
-            </div>
-            <div className="relative mx-auto w-full max-w-xl">
-              <div className="absolute -inset-5 rotate-3 rounded-[50%_44%_46%_54%] bg-background" aria-hidden="true" />
-              <img src={highlandCta} alt="Black Highland cow sticking out its tongue" width={1536} height={1024} loading="lazy" className="relative aspect-square w-full -rotate-2 rounded-[48%_52%_44%_56%] border-4 border-headline object-cover shadow-[13px_13px_0_var(--primary-accent)]" />
-              <span className="absolute -bottom-4 right-1 rotate-3 bg-secondary-accent px-5 py-3 font-accent text-xl font-bold italic text-headline shadow-[4px_4px_0_var(--headline)]">Exactly.</span>
-            </div>
-          </div>
-        </section>
+
       </main>
 
       <footer className="border-t-2 border-headline bg-farm-beige">
