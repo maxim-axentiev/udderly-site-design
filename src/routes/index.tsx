@@ -269,7 +269,7 @@ function Index() {
                   <div className="flex flex-1 flex-col p-3 pb-4">
                     <h3 className="font-display text-3xl font-black uppercase leading-none text-headline">{experience.title}</h3>
                     <p className="mt-3 flex-1 text-sm leading-relaxed">{experience.copy}</p>
-                    <a href="#big-cta" className="mt-5 inline-flex items-start gap-2 font-display text-base font-extrabold uppercase leading-tight text-primary-accent hover:underline">
+                    <a href="#experiences" className="mt-5 inline-flex items-start gap-2 font-display text-base font-extrabold uppercase leading-tight text-primary-accent hover:underline">
                       {experience.cta} <ArrowRight size={17} aria-hidden="true" className="mt-1 shrink-0" />
                     </a>
                   </div>
@@ -319,7 +319,7 @@ function Index() {
                 ))}
               </ul>
 
-              <Button asChild size="large" className="mt-9"><a href="#big-cta">Learn more about our ridiculous story <ArrowRight aria-hidden="true" /></a></Button>
+              <Button asChild size="large" className="mt-9"><a href="#experiences">Learn more about our ridiculous story <ArrowRight aria-hidden="true" /></a></Button>
             </div>
           </div>
         </section>
