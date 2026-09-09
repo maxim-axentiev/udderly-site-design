@@ -104,7 +104,7 @@ export function MediaCarousel() {
 
       <ul className="mx-auto mt-9 grid max-w-4xl grid-cols-4 place-items-center gap-3 sm:flex sm:flex-wrap sm:justify-center">
         {videos.map((video, i) => (
-          <li key={video.outlet + i}>
+          <li key={video.outlet + i} className="flex w-full justify-center">
             <button
               type="button"
               onClick={() => go(i)}
