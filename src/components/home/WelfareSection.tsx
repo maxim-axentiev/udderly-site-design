@@ -21,6 +21,8 @@ const points = [
 ];
 
 export function WelfareSection() {
+  const [active, setActive] = useState<number | null>(null);
+
   return (
     <section id="welfare" className="relative overflow-hidden bg-farm-beige py-20 md:py-28">
       <div className="mx-auto max-w-[1500px] px-5 md:px-8">
