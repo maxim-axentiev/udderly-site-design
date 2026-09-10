@@ -6,24 +6,32 @@ import donkeyPicnic from "@/assets/donkey-picnic.jpg";
 import goatCuddles from "@/assets/goat-cuddles.jpg";
 import highlandCta from "@/assets/highland-cta.jpg";
 import highlandHero from "@/assets/highland-hero.jpg";
+import btLogoAsset from "@/assets/bt-logo.png.asset.json";
+import chchLogoAsset from "@/assets/chch-logo.png.asset.json";
+import cityNewsLogoAsset from "@/assets/city-news-logo.png.asset.json";
+import ctvLogoAsset from "@/assets/ctv-logo.png.asset.json";
+import fibeLogoAsset from "@/assets/fibe-logo.png.asset.json";
+import globalNewsLogoAsset from "@/assets/global-news-logo.png.asset.json";
+import rogersLogoAsset from "@/assets/rogers-logo.png.asset.json";
+import yesTvLogoAsset from "@/assets/yestv-logo.png.asset.json";
 
 type MediaVideo = {
   outlet: string;
-  short: string;
+  logo: string;
   title: string;
   thumbnail: string;
   alt: string;
 };
 
 const videos: MediaVideo[] = [
-  { outlet: "CTV News", short: "CTV", title: "Goat yoga takes over Ontario", thumbnail: highlandHero, alt: "Mini Highland cow being brushed" },
-  { outlet: "Rogers TV", short: "RTV", title: "A farm with a ridiculous idea", thumbnail: goatCuddles, alt: "Goats cuddling with a visitor" },
-  { outlet: "Breakfast Television", short: "BT", title: "Live from the alpaca pasture", thumbnail: alpacaWalk, alt: "Alpaca walk on the farm" },
-  { outlet: "CBC", short: "CBC", title: "Third-generation farm, brand new plan", thumbnail: donkeyPicnic, alt: "Mini donkey at a picnic" },
-  { outlet: "Global News", short: "GN", title: "Why 40,000 people came to a cow", thumbnail: highlandCta, alt: "Highland cow sticking out its tongue" },
-  { outlet: "CityNews", short: "CITY", title: "Goat milk ice cream, explained", thumbnail: goatCuddles, alt: "Goats on the farm" },
-  { outlet: "The Record", short: "REC", title: "Farm glamping under the stars", thumbnail: alpacaWalk, alt: "Alpaca in the pasture" },
-  { outlet: "CHCH", short: "CHCH", title: "Team building with tiny donkeys", thumbnail: donkeyPicnic, alt: "Mini donkey standing on a blanket" },
+  { outlet: "CTV News", logo: ctvLogoAsset.url, title: "Goat yoga takes over Ontario", thumbnail: highlandHero, alt: "Mini Highland cow being brushed" },
+  { outlet: "Rogers TV", logo: rogersLogoAsset.url, title: "A farm with a ridiculous idea", thumbnail: goatCuddles, alt: "Goats cuddling with a visitor" },
+  { outlet: "Breakfast Television", logo: btLogoAsset.url, title: "Live from the alpaca pasture", thumbnail: alpacaWalk, alt: "Alpaca walk on the farm" },
+  { outlet: "CHCH", logo: chchLogoAsset.url, title: "Team building with tiny donkeys", thumbnail: donkeyPicnic, alt: "Mini donkey standing on a blanket" },
+  { outlet: "Global News", logo: globalNewsLogoAsset.url, title: "Why 40,000 people came to a cow", thumbnail: highlandCta, alt: "Highland cow sticking out its tongue" },
+  { outlet: "CityNews", logo: cityNewsLogoAsset.url, title: "Goat milk ice cream, explained", thumbnail: goatCuddles, alt: "Goats on the farm" },
+  { outlet: "Fibe TV1", logo: fibeLogoAsset.url, title: "Farm glamping under the stars", thumbnail: alpacaWalk, alt: "Alpaca in the pasture" },
+  { outlet: "Yes TV", logo: yesTvLogoAsset.url, title: "Third-generation farm, brand new plan", thumbnail: donkeyPicnic, alt: "Mini donkey at a picnic" },
 ];
 
 export function MediaCarousel() {
