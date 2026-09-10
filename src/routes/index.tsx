@@ -307,7 +307,7 @@ function Index() {
                 <span className="absolute -bottom-5 -left-3 z-10 -rotate-2 border-2 border-headline bg-primary-accent px-4 py-2 font-display text-lg font-black uppercase text-primary-foreground">Cheryl, Greg &amp; Aspen</span>
               </div>
               <div className="relative mt-16 rotate-2 border-2 border-headline bg-background p-3 shadow-[9px_9px_0_var(--secondary-accent)]">
-                <img src={ownersFun} alt="Cheryl and Greg laughing together on the farm" width={1024} height={1280} loading="lazy" className="w-full object-cover" />
+                <img src={ownersFun} alt="Greg crawling out of a calf hutch wearing the chain as a necklace" width={1024} height={1280} loading="lazy" className="w-full object-cover" />
                 <p className="mt-3 px-1 pb-1 text-center font-accent text-lg italic text-headline">Yes, they are always like this.</p>
               </div>
             </div>
