@@ -1,11 +1,5 @@
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef, useState } from "react";
-
-import alpacaWalk from "@/assets/alpaca-walk.jpg";
-import donkeyPicnic from "@/assets/donkey-picnic.jpg";
-import goatCuddles from "@/assets/goat-cuddles.jpg";
-import highlandCta from "@/assets/highland-cta.jpg";
-import highlandHero from "@/assets/highland-hero.jpg";
 import btLogoAsset from "@/assets/bt-logo.png.asset.json";
 import chchLogoAsset from "@/assets/chch-logo.png.asset.json";
 import cityNewsLogoAsset from "@/assets/city-news-logo.png.asset.json";
@@ -18,10 +12,6 @@ import yesTvLogoAsset from "@/assets/yestv-logo.png.asset.json";
 type MediaVideo = {
   outlet: string;
   logo: string;
-  title: string;
-  thumbnail: string;
-  alt: string;
-  url: string;
   embedUrl: string;
 };
 
@@ -44,32 +34,32 @@ function getYoutubeEmbedUrl(videoUrl: string): string {
     }
 
     if (!id) return "";
-    return start > 0 ? `https://www.youtube.com/embed/${id}?start=${start}` : `https://www.youtube.com/embed/${id}`;
+    const query = new URLSearchParams({ rel: "0" });
+    if (start > 0) query.set("start", String(start));
+    return `https://www.youtube-nocookie.com/embed/${id}?${query.toString()}`;
   } catch {
     return "";
   }
 }
 
 const rawVideos = [
-  { outlet: "CTV News", logo: ctvLogoAsset.url, title: "Goat yoga takes over Ontario", thumbnail: highlandHero, alt: "Mini Highland cow being brushed", url: "https://www.youtube.com/watch?v=BhDlGWU_5IM" },
-  { outlet: "Global News", logo: globalNewsLogoAsset.url, title: "Why 40,000 people came to a cow", thumbnail: highlandCta, alt: "Highland cow sticking out its tongue", url: "https://www.youtube.com/watch?v=UPM1RK03uSA" },
-  { outlet: "Breakfast Television", logo: btLogoAsset.url, title: "Live from the alpaca pasture", thumbnail: alpacaWalk, alt: "Alpaca walk on the farm", url: "https://www.youtube.com/watch?v=nk_fYKVjHMg" },
-  { outlet: "CityNews", logo: cityNewsLogoAsset.url, title: "Goat milk ice cream, explained", thumbnail: goatCuddles, alt: "Goats on the farm", url: "https://www.youtube.com/watch?v=IvosBu-gVKg" },
-  { outlet: "CHCH", logo: chchLogoAsset.url, title: "Team building with tiny donkeys", thumbnail: donkeyPicnic, alt: "Mini donkey standing on a blanket", url: "https://www.youtube.com/watch?v=broq29VZD_0" },
-  { outlet: "Fibe TV1", logo: fibeLogoAsset.url, title: "Farm glamping under the stars", thumbnail: alpacaWalk, alt: "Alpaca in the pasture", url: "https://www.youtube.com/watch?v=E2OS1hQK2RE" },
-  { outlet: "Rogers TV", logo: rogersLogoAsset.url, title: "A farm with a ridiculous idea", thumbnail: goatCuddles, alt: "Goats cuddling with a visitor", url: "https://www.youtube.com/watch?v=WxCLaslbzp0" },
-  { outlet: "Yes TV", logo: yesTvLogoAsset.url, title: "Third-generation farm, brand new plan", thumbnail: donkeyPicnic, alt: "Mini donkey at a picnic", url: "https://www.youtube.com/watch?v=tY7SLm8JoTI&t=277s" },
+  { outlet: "CTV News", logo: ctvLogoAsset.url, url: "https://www.youtube.com/watch?v=BhDlGWU_5IM" },
+  { outlet: "Global News", logo: globalNewsLogoAsset.url, url: "https://www.youtube.com/watch?v=UPM1RK03uSA" },
+  { outlet: "Breakfast Television", logo: btLogoAsset.url, url: "https://www.youtube.com/watch?v=nk_fYKVjHMg" },
+  { outlet: "CityNews", logo: cityNewsLogoAsset.url, url: "https://www.youtube.com/watch?v=IvosBu-gVKg" },
+  { outlet: "CHCH", logo: chchLogoAsset.url, url: "https://www.youtube.com/watch?v=broq29VZD_0" },
+  { outlet: "Fibe TV1", logo: fibeLogoAsset.url, url: "https://www.youtube.com/watch?v=E2OS1hQK2RE" },
+  { outlet: "Rogers TV", logo: rogersLogoAsset.url, url: "https://www.youtube.com/watch?v=WxCLaslbzp0" },
+  { outlet: "Yes TV", logo: yesTvLogoAsset.url, url: "https://www.youtube.com/watch?v=tY7SLm8JoTI&t=277s" },
 ];
 
 const videos: MediaVideo[] = rawVideos.map((video) => ({ ...video, embedUrl: getYoutubeEmbedUrl(video.url) }));
 
 export function MediaCarousel() {
   const [index, setIndex] = useState(0);
-  const [playing, setPlaying] = useState(false);
   const touchStart = useRef<number | null>(null);
 
   const go = (next: number) => {
-    setPlaying(false);
     setIndex((next + videos.length) % videos.length);
   };
 
@@ -92,40 +82,18 @@ export function MediaCarousel() {
       <div className="relative mx-auto max-w-4xl">
         <div className="relative border-2 border-headline bg-background p-3 shadow-[10px_10px_0_var(--headline)]">
           <div className="relative aspect-video w-full overflow-hidden bg-headline">
-            {playing && current.embedUrl ? (
-              <iframe
-                src={current.embedUrl}
-                title={`${current.outlet} video: ${current.title}`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="h-full w-full border-0"
-              />
-            ) : playing ? (
-              <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-headline px-6 text-center font-display text-2xl font-black uppercase text-background">
-                Video player placeholder
-                <span className="font-body text-sm font-medium normal-case tracking-normal text-background/70">
-                  {current.outlet} — real video embeds go here
-                </span>
-              </div>
-            ) : (
-              <>
-                <img src={current.thumbnail} alt={current.alt} loading="lazy" className="h-full w-full object-cover" />
-                <button
-                  type="button"
-                  onClick={() => setPlaying(true)}
-                  className="absolute inset-0 flex items-center justify-center bg-headline/20 transition-colors hover:bg-headline/35 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring"
-                  aria-label={`Play ${current.outlet} video: ${current.title}`}
-                >
-                  <span className="flex size-20 items-center justify-center rounded-full border-2 border-headline bg-secondary-accent text-headline shadow-[5px_5px_0_var(--headline)] transition-transform hover:scale-105">
-                    <Play aria-hidden="true" size={34} className="ml-1 fill-headline" />
-                  </span>
-                </button>
-              </>
-            )}
+            <iframe
+              key={current.embedUrl}
+              src={current.embedUrl}
+              title={`${current.outlet} video`}
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="h-full w-full border-0"
+            />
           </div>
-          <div className="flex flex-wrap items-baseline justify-between gap-2 px-1 pb-1 pt-4">
-            <h3 className="font-display text-2xl font-black uppercase leading-none text-headline">{current.title}</h3>
-            <span className="text-xs font-bold uppercase text-primary-accent">{current.outlet}</span>
+          <div className="px-1 pb-1 pt-4 text-center">
+            <h3 className="font-display text-2xl font-black uppercase leading-none text-headline">{current.outlet}</h3>
           </div>
         </div>
 

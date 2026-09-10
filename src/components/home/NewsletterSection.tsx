@@ -1,16 +1,30 @@
 import { useState } from "react";
 
-import headAlpaca from "@/assets/head-alpaca.png";
-import headDonkey from "@/assets/head-donkey.png";
-import headGoat from "@/assets/head-goat.png";
-import headHighland from "@/assets/head-highland.png";
+import mobileFirstAsset from "@/assets/newsletter-first-mobile.png.asset.json";
+import mobileFourthAsset from "@/assets/newsletter-fourth-mobile.png.asset.json";
+import leftLowerAsset from "@/assets/newsletter-left-lower-desktop.png.asset.json";
+import leftUpperAsset from "@/assets/newsletter-left-upper-desktop.png.asset.json";
+import rightLowerAsset from "@/assets/newsletter-right-lower-desktop.png.asset.json";
+import rightUpperAsset from "@/assets/newsletter-right-upper-desktop.png.asset.json";
+import mobileSecondAsset from "@/assets/newsletter-second-mobile.png.asset.json";
+import mobileThirdAsset from "@/assets/newsletter-third-mobile.png.asset.json";
 import { Button } from "@/components/ui/button";
 
-const heads = [
-  { image: headGoat, alt: "Goat peeking in", rotate: "-rotate-6" },
-  { image: headAlpaca, alt: "Alpaca peeking in", rotate: "rotate-3" },
-  { image: headDonkey, alt: "Mini donkey peeking in", rotate: "-rotate-3" },
-  { image: headHighland, alt: "Mini Highland cow peeking in", rotate: "rotate-6" },
+const mobileAnimals = [
+  { image: mobileFirstAsset.url, alt: "Alpaca peeking over the newsletter form", rotate: "-rotate-3" },
+  { image: mobileSecondAsset.url, alt: "Mini donkey peeking over the newsletter form", rotate: "rotate-2" },
+  { image: mobileThirdAsset.url, alt: "Goat peeking over the newsletter form", rotate: "-rotate-2" },
+  { image: mobileFourthAsset.url, alt: "Mini Highland cow peeking over the newsletter form", rotate: "rotate-3" },
+];
+
+const leftAnimals = [
+  { image: leftUpperAsset.url, alt: "Alpaca peeking from behind the newsletter form", position: "top-[8%]" },
+  { image: leftLowerAsset.url, alt: "Mini donkey peeking from behind the newsletter form", position: "bottom-[5%]" },
+];
+
+const rightAnimals = [
+  { image: rightUpperAsset.url, alt: "Goat peeking from behind the newsletter form", position: "top-[8%]" },
+  { image: rightLowerAsset.url, alt: "Mini Highland cow peeking from behind the newsletter form", position: "bottom-[5%]" },
 ];
 
 const fieldClass =
@@ -22,22 +36,21 @@ export function NewsletterSection() {
   return (
     <section id="newsletter" className="relative overflow-hidden bg-farm-beige py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-5 md:px-8">
-        <div className="relative pt-24 md:pt-0">
-          {/* Heads peeking out from behind the form */}
-          <div className="pointer-events-none absolute inset-x-0 top-0 z-0 flex justify-center gap-2 md:hidden" aria-hidden="true">
-            {heads.map((head) => (
-              <img key={head.alt} src={head.image} alt="" width={1024} height={1024} loading="lazy" className={`h-32 w-24 object-contain object-top ${head.rotate}`} />
+        <div className="relative pt-20 md:pt-0">
+          <div className="pointer-events-none absolute inset-x-[-0.5rem] top-0 z-0 grid h-32 grid-cols-4 items-end md:hidden" aria-hidden="true">
+            {mobileAnimals.map((animal) => (
+              <img key={animal.alt} src={animal.image} alt="" width={768} height={768} loading="lazy" className={`h-32 w-full object-contain object-bottom ${animal.rotate}`} />
             ))}
           </div>
 
-          <div className="pointer-events-none absolute -left-24 top-1/2 z-0 hidden -translate-y-1/2 flex-col gap-8 md:flex" aria-hidden="true">
-            {heads.slice(0, 2).map((head) => (
-              <img key={head.alt} src={head.image} alt="" width={1024} height={1024} loading="lazy" className={`h-40 w-40 object-contain ${head.rotate}`} />
+          <div className="pointer-events-none absolute inset-y-0 -left-36 z-0 hidden w-72 md:block" aria-hidden="true">
+            {leftAnimals.map((animal) => (
+              <img key={animal.alt} src={animal.image} alt="" width={768} height={768} loading="lazy" className={`absolute right-0 h-64 w-64 object-contain object-right ${animal.position}`} />
             ))}
           </div>
-          <div className="pointer-events-none absolute -right-24 top-1/2 z-0 hidden -translate-y-1/2 flex-col gap-8 md:flex" aria-hidden="true">
-            {heads.slice(2).map((head) => (
-              <img key={head.alt} src={head.image} alt="" width={1024} height={1024} loading="lazy" className={`h-40 w-40 object-contain ${head.rotate}`} />
+          <div className="pointer-events-none absolute inset-y-0 -right-36 z-0 hidden w-72 md:block" aria-hidden="true">
+            {rightAnimals.map((animal) => (
+              <img key={animal.alt} src={animal.image} alt="" width={768} height={768} loading="lazy" className={`absolute left-0 h-64 w-64 object-contain object-left ${animal.position}`} />
             ))}
           </div>
 
