@@ -1,14 +1,14 @@
 import { ArrowRight } from "lucide-react";
 
-import urbort1 from "@/assets/urbort-1.jpg";
-import urbort2 from "@/assets/urbort-2.jpg";
-import urbort3 from "@/assets/urbort-3.jpg";
+import urbort1Asset from "@/assets/urbort-1.jpg.asset.json";
+import urbort2Asset from "@/assets/urbort-2.png.asset.json";
+import urbort3Asset from "@/assets/urbort-3.png.asset.json";
 import { Button } from "@/components/ui/button";
 
 const articles = [
-  { title: "The great goat picnic table takeover", image: urbort1, alt: "Goats standing all over a picnic table", rotate: "-rotate-2" },
-  { title: "We gave an alpaca sunglasses. It worked.", image: urbort2, alt: "Alpaca wearing sunglasses beside a farm sign", rotate: "rotate-1" },
-  { title: "Birthday party for a mini donkey", image: urbort3, alt: "Mini donkey in a party hat at a barn party", rotate: "rotate-2" },
+  { title: "World's First Cow Wedding", image: urbort1Asset.url, alt: "Highland cow wearing a white wedding veil and flower crown beside a fence", rotate: "-rotate-2" },
+  { title: "Biggest, Littlest Collab", image: urbort2Asset.url, alt: "Greg with farm animals in a split-frame collage", rotate: "rotate-1" },
+  { title: "Viral Alpaca Sex", image: urbort3Asset.url, alt: "Two alpacas in a pasture with colourful leashes", rotate: "rotate-2" },
 ];
 
 export function UrbortSection() {

@@ -21,18 +21,47 @@ type MediaVideo = {
   title: string;
   thumbnail: string;
   alt: string;
+  url: string;
+  embedUrl: string;
 };
 
-const videos: MediaVideo[] = [
-  { outlet: "CTV News", logo: ctvLogoAsset.url, title: "Goat yoga takes over Ontario", thumbnail: highlandHero, alt: "Mini Highland cow being brushed" },
-  { outlet: "Rogers TV", logo: rogersLogoAsset.url, title: "A farm with a ridiculous idea", thumbnail: goatCuddles, alt: "Goats cuddling with a visitor" },
-  { outlet: "Breakfast Television", logo: btLogoAsset.url, title: "Live from the alpaca pasture", thumbnail: alpacaWalk, alt: "Alpaca walk on the farm" },
-  { outlet: "CHCH", logo: chchLogoAsset.url, title: "Team building with tiny donkeys", thumbnail: donkeyPicnic, alt: "Mini donkey standing on a blanket" },
-  { outlet: "Global News", logo: globalNewsLogoAsset.url, title: "Why 40,000 people came to a cow", thumbnail: highlandCta, alt: "Highland cow sticking out its tongue" },
-  { outlet: "CityNews", logo: cityNewsLogoAsset.url, title: "Goat milk ice cream, explained", thumbnail: goatCuddles, alt: "Goats on the farm" },
-  { outlet: "Fibe TV1", logo: fibeLogoAsset.url, title: "Farm glamping under the stars", thumbnail: alpacaWalk, alt: "Alpaca in the pasture" },
-  { outlet: "Yes TV", logo: yesTvLogoAsset.url, title: "Third-generation farm, brand new plan", thumbnail: donkeyPicnic, alt: "Mini donkey at a picnic" },
+function getYoutubeEmbedUrl(videoUrl: string): string {
+  try {
+    const parsed = new URL(videoUrl);
+    let id = "";
+    let start = 0;
+
+    if (parsed.hostname === "youtu.be") {
+      id = parsed.pathname.slice(1);
+    } else {
+      id = parsed.searchParams.get("v") || "";
+    }
+
+    const timeParam = parsed.searchParams.get("t");
+    if (timeParam) {
+      const numeric = parseInt(timeParam.replace("s", ""), 10);
+      if (!Number.isNaN(numeric)) start = numeric;
+    }
+
+    if (!id) return "";
+    return start > 0 ? `https://www.youtube.com/embed/${id}?start=${start}` : `https://www.youtube.com/embed/${id}`;
+  } catch {
+    return "";
+  }
+}
+
+const rawVideos = [
+  { outlet: "CTV News", logo: ctvLogoAsset.url, title: "Goat yoga takes over Ontario", thumbnail: highlandHero, alt: "Mini Highland cow being brushed", url: "https://www.youtube.com/watch?v=BhDlGWU_5IM" },
+  { outlet: "Global News", logo: globalNewsLogoAsset.url, title: "Why 40,000 people came to a cow", thumbnail: highlandCta, alt: "Highland cow sticking out its tongue", url: "https://www.youtube.com/watch?v=UPM1RK03uSA" },
+  { outlet: "Breakfast Television", logo: btLogoAsset.url, title: "Live from the alpaca pasture", thumbnail: alpacaWalk, alt: "Alpaca walk on the farm", url: "https://www.youtube.com/watch?v=nk_fYKVjHMg" },
+  { outlet: "CityNews", logo: cityNewsLogoAsset.url, title: "Goat milk ice cream, explained", thumbnail: goatCuddles, alt: "Goats on the farm", url: "https://www.youtube.com/watch?v=IvosBu-gVKg" },
+  { outlet: "CHCH", logo: chchLogoAsset.url, title: "Team building with tiny donkeys", thumbnail: donkeyPicnic, alt: "Mini donkey standing on a blanket", url: "https://www.youtube.com/watch?v=broq29VZD_0" },
+  { outlet: "Fibe TV1", logo: fibeLogoAsset.url, title: "Farm glamping under the stars", thumbnail: alpacaWalk, alt: "Alpaca in the pasture", url: "https://www.youtube.com/watch?v=E2OS1hQK2RE" },
+  { outlet: "Rogers TV", logo: rogersLogoAsset.url, title: "A farm with a ridiculous idea", thumbnail: goatCuddles, alt: "Goats cuddling with a visitor", url: "https://www.youtube.com/watch?v=WxCLaslbzp0" },
+  { outlet: "Yes TV", logo: yesTvLogoAsset.url, title: "Third-generation farm, brand new plan", thumbnail: donkeyPicnic, alt: "Mini donkey at a picnic", url: "https://www.youtube.com/watch?v=tY7SLm8JoTI&t=277s" },
 ];
+
+const videos: MediaVideo[] = rawVideos.map((video) => ({ ...video, embedUrl: getYoutubeEmbedUrl(video.url) }));
 
 export function MediaCarousel() {
   const [index, setIndex] = useState(0);
@@ -63,7 +92,15 @@ export function MediaCarousel() {
       <div className="relative mx-auto max-w-4xl">
         <div className="relative border-2 border-headline bg-background p-3 shadow-[10px_10px_0_var(--headline)]">
           <div className="relative aspect-video w-full overflow-hidden bg-headline">
-            {playing ? (
+            {playing && current.embedUrl ? (
+              <iframe
+                src={current.embedUrl}
+                title={`${current.outlet} video: ${current.title}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="h-full w-full border-0"
+              />
+            ) : playing ? (
               <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-headline px-6 text-center font-display text-2xl font-black uppercase text-background">
                 Video player placeholder
                 <span className="font-body text-sm font-medium normal-case tracking-normal text-background/70">
