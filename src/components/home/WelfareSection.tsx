@@ -1,61 +1,64 @@
 import { Hand } from "lucide-react";
 import { useState } from "react";
 
-import faceAlpaca from "@/assets/face-alpaca.jpg";
-import faceChicken from "@/assets/face-chicken.jpg";
-import faceDonkey from "@/assets/face-donkey.jpg";
-import faceGoat from "@/assets/face-goat.jpg";
-import faceHighland from "@/assets/face-highland.jpg";
+import welfare1 from "@/assets/welfare-1.png.asset.json";
+import welfare2 from "@/assets/welfare-2.png.asset.json";
+import welfare3 from "@/assets/welfare-3.png.asset.json";
+import welfare4 from "@/assets/welfare-4.png.asset.json";
+import welfare5 from "@/assets/welfare-5.png.asset.json";
+import welfare6 from "@/assets/welfare-6.png.asset.json";
+import welfare7 from "@/assets/welfare-7.png.asset.json";
+import welfare8 from "@/assets/welfare-8.png.asset.json";
 import { Button } from "@/components/ui/button";
 
 const points = [
   {
     name: "Rest like a corporate girlie",
     copy: "We limit the number of experiences and number of people per experience. Our animals rest more than the average corporate girlie working a 9-5. Because of this, it's smart to book an experience early in advance before spots fill up.",
-    image: faceHighland,
-    alt: "Mini Highland cow face",
+    image: welfare1.url,
+    alt: "Alpaca face close-up",
   },
   {
     name: "Clean ya shoes",
     copy: "We ask guests to sanitize their shoes with our sanitary foot mat before entering the farm. We don't want two years of spit and chewing gum bacteria staying on the farm (yuck). It's a biohazard thing!",
-    image: faceAlpaca,
-    alt: "Alpaca face",
+    image: welfare2.url,
+    alt: "Goat resting its head, eyes closed",
   },
   {
     name: "No jumping jacks near alpacas",
     copy: "We provide a detailed safety and handling briefing to make sure you and the animals are safe at all times. If you start doing jumping jacks next to the alpacas, they will run from you like their lives depend on it.",
-    image: faceGoat,
-    alt: "Goat face",
+    image: welfare3.url,
+    alt: "Mini Highland calf face",
   },
   {
     name: "You do our job",
     copy: "Our experiences are designed to be safe and enriching for the animals. For example, in our mini Highland cow experience, one part of it is brushing our cows. So, you not only take care of them for us, but the cows tilt their heads up and absolutely get lost in the brushing!",
-    image: faceDonkey,
-    alt: "Mini donkey face",
+    image: welfare4.url,
+    alt: "Goat with its tongue out",
   },
   {
     name: "Not a petting zoo",
     copy: "We are not a petting farm/zoo. We do not sell feed and do not provide unrestricted access to the pastures. That means you can only interact with them during an experience. That's right... the animals are HOT commodities.",
-    image: faceChicken,
-    alt: "Hen face",
+    image: welfare5.url,
+    alt: "White hen",
   },
   {
     name: "Everyone has a bestie",
     copy: "We keep the animals together in their own pastures to promote their social wellbeing. Some of them ask the others for lunch money, but our guard llama, Snickers, watches over and does his job well.",
-    image: faceGoat,
-    alt: "Goat face close-up",
+    image: welfare6.url,
+    alt: "White alpaca smiling",
   },
   {
     name: "An apple a day",
     copy: "We provide excellent veterinary care and regular checkups. Our animals are treated better than most of us treat ourselves. Do you have a nutritionist and a personal doctor on call? If you do, we're sorry for calling you out like that.",
-    image: faceHighland,
-    alt: "Highland cow face close-up",
+    image: welfare7.url,
+    alt: "Cream Highland cow grinning",
   },
   {
     name: "Resort with room service",
     copy: "We prioritize natural behaviours and enrichment for our animals. From climbing structures for goats to grazing pastures for alpacas, we ensure they have opportunities to play, explore, and thrive. Basically, it’s a luxury resort with room service, but for animals.",
-    image: faceAlpaca,
-    alt: "Alpaca face close-up",
+    image: welfare8.url,
+    alt: "Mini donkey showing its teeth",
   },
 ];
 
