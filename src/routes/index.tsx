@@ -53,7 +53,12 @@ export const Route = createFileRoute("/")({
 
 const navItems = ["Experiences", "Meet the Herd", "Stay", "Adopt", "Corporate", "Our Farm"];
 
-const awards = ["2023", "2024", "2025", "2026"];
+const awards = [
+  { year: "2023", badge: tripadvisor2023.url },
+  { year: "2024", badge: tripadvisor2024.url },
+  { year: "2025", badge: tripadvisor2025.url },
+  { year: "2026", badge: tripadvisor2026.url },
+];
 
 const experiences = [
   {
@@ -61,8 +66,8 @@ const experiences = [
     fact: "MOST POPULAR",
     copy: "Get licked by a mini Highland cow, downward dog pose with a mini goat, enjoy a romantic lunch picnic with alpacas, and SOOO much more!",
     cta: "See all experiences",
-    image: highlandHero,
-    alt: "Fluffy mini Highland cow in a pasture",
+    image: experiencesPhoto,
+    alt: "Guest surrounded by playful goats during a farm experience",
     className: "lg:-rotate-2 lg:translate-y-6",
   },
   {
@@ -70,8 +75,8 @@ const experiences = [
     fact: "STAY OVER",
     copy: "Unwind in a luxury RV right on the farm, with front-row seats to stunning sunsets and animals who’ll audition for your next Instagram post.",
     cta: "Sleepover with the animals",
-    image: alpacaWalk,
-    alt: "Alpaca standing in an evening pasture",
+    image: glampingPhoto,
+    alt: "Luxury RV glowing at night beside a campfire on the farm",
     className: "lg:rotate-1",
   },
   {
@@ -88,8 +93,8 @@ const experiences = [
     fact: "FOR SALE",
     copy: "Add lovingly and Udderly ridiculously raised farm animals to your pastures.",
     cta: "View all animals for sale",
-    image: goatCuddles,
-    alt: "Young goats beside a farm fence",
+    image: animalsForSalePhoto,
+    alt: "Two fluffy mini Highland calves standing in a sunny pasture",
     className: "lg:rotate-2 lg:translate-y-2",
   },
 ];
