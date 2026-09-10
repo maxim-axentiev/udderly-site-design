@@ -1,13 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Award, Gamepad2, Instagram, Menu } from "lucide-react";
 
-import alpacaWalk from "@/assets/alpaca-walk.jpg";
 import donkeyPicnic from "@/assets/donkey-picnic.jpg";
-import farmStore from "@/assets/farm-store.jpg";
-import giftAGoat from "@/assets/gift-a-goat.png";
-import goatCuddles from "@/assets/goat-cuddles.jpg";
 import highlandHero from "@/assets/highland-hero.jpg";
-import iceCream from "@/assets/ice-cream.jpg";
+import animalsForSaleAsset from "@/assets/homepage-animals-for-sale.png.asset.json";
+import experiencesPhotoAsset from "@/assets/homepage-experiences.png.asset.json";
+import giftAGoatAsset from "@/assets/homepage-gift-a-goat.png.asset.json";
+import glampingPhotoAsset from "@/assets/homepage-glamping.png.asset.json";
+import iceCreamAsset from "@/assets/homepage-ice-cream.png.asset.json";
+import storePhotoAsset from "@/assets/homepage-store.png.asset.json";
+import tripadvisor2023 from "@/assets/tripadvisor-2023.png.asset.json";
+import tripadvisor2024 from "@/assets/tripadvisor-2024.png.asset.json";
+import tripadvisor2025 from "@/assets/tripadvisor-2025.png.asset.json";
+import tripadvisor2026 from "@/assets/tripadvisor-2026.png.asset.json";
+
+const experiencesPhoto = experiencesPhotoAsset.url;
+const glampingPhoto = glampingPhotoAsset.url;
+const animalsForSalePhoto = animalsForSaleAsset.url;
+const farmStore = storePhotoAsset.url;
+const iceCream = iceCreamAsset.url;
+const giftAGoat = giftAGoatAsset.url;
 import ownersFamily from "@/assets/owners-family.jpg";
 import ownersFun from "@/assets/owners-fun.jpg";
 import { GiftGoatCounter } from "@/components/home/GiftGoatCounter";
