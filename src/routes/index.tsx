@@ -255,15 +255,15 @@ function Index() {
           <div className="mx-auto flex max-w-[1500px] flex-col items-center gap-5 px-5 md:flex-row md:justify-between md:px-8">
             <div className="text-center md:max-w-[24rem] md:text-left">
               <p className="font-display text-lg font-black uppercase leading-tight text-headline">
-                TripAdvisor Travelers’ Choice
+                TripAdvisor Travellers&apos; Choice
               </p>
               <p className="mt-1 text-sm font-semibold">TripAdvisor kinda has a thing for us.</p>
             </div>
 
-            <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-7">
+            <ul className="grid w-full max-w-72 grid-cols-2 place-items-center gap-5 md:flex md:w-auto md:max-w-none md:gap-7">
               {awards.map((award, index) => (
-                <li key={award.year} className={index % 2 === 0 ? "-rotate-3" : "rotate-3"}>
-                  <img src={award.badge} alt={`TripAdvisor Travelers' Choice Award ${award.year}`} width={1080} height={1080} loading="lazy" className="size-20 rounded-full border-2 border-headline object-cover shadow-[3px_3px_0_var(--headline)] md:size-24" />
+                <li key={award.year} tabIndex={0} className={`cursor-pointer rounded-full outline-none transition-transform duration-500 motion-safe:hover:scale-110 motion-safe:hover:rotate-6 motion-safe:active:scale-95 motion-safe:active:-rotate-6 focus-visible:ring-4 focus-visible:ring-ring ${index % 2 === 0 ? "-rotate-3" : "rotate-3"}`}>
+                  <img src={award.badge} alt={`TripAdvisor Travellers' Choice Award ${award.year}`} width={1080} height={1080} loading="lazy" className="size-28 rounded-full border-2 border-headline object-cover shadow-[3px_3px_0_var(--headline)] md:size-24" />
                 </li>
               ))}
             </ul>
@@ -401,7 +401,7 @@ function Index() {
 
             {/* Gift A Goat */}
             <div className="grid items-center gap-10 border-2 border-headline bg-farm-beige p-7 shadow-[10px_10px_0_var(--headline)] md:grid-cols-[auto_1fr_auto] md:p-12">
-              <img src={giftAGoat} alt="Gift A Goat program logo" width={1080} height={1080} loading="lazy" className="mx-auto size-36 -rotate-3 rounded-full border-2 border-headline bg-background object-contain shadow-[4px_4px_0_var(--headline)] md:size-44" />
+              <img src={giftAGoat} alt="Gift A Goat program logo" width={1080} height={1080} loading="lazy" tabIndex={0} className="mx-auto size-36 -rotate-3 cursor-pointer rounded-full border-2 border-headline bg-background object-contain shadow-[4px_4px_0_var(--headline)] outline-none transition-transform duration-500 motion-safe:hover:rotate-12 motion-safe:hover:scale-110 motion-safe:active:-rotate-12 motion-safe:active:scale-95 focus-visible:ring-4 focus-visible:ring-ring md:size-44" />
               <div>
                 <span className="font-accent text-xl italic text-primary-accent">Gift A Goat</span>
                 <h3 className="mt-2 font-display text-[clamp(1.9rem,4.5vw,3.6rem)] font-black uppercase leading-[0.86] text-headline">Eating ice-cream gives back</h3>

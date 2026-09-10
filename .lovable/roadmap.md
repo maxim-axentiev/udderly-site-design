@@ -11,3 +11,5 @@
 - [x] Simplify media logos and preserve responsive indicator rows
 - [x] Correct Gift A Goat copy hierarchy
 - [x] Add subtle rustic texture across homepage sections
+- [x] Improve award, media, and Gift A Goat interactions
+- [x] Apply responsive newsletter animal cutouts
