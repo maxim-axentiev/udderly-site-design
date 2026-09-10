@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Gamepad2, Instagram, Menu } from "lucide-react";
+import { ArrowRight, Instagram, Menu } from "lucide-react";
 
 import donkeyPicnic from "@/assets/donkey-picnic.jpg";
 import highlandHero from "@/assets/highland-hero.jpg";
@@ -20,8 +20,11 @@ const animalsForSalePhoto = animalsForSaleAsset.url;
 const farmStore = storePhotoAsset.url;
 const iceCream = iceCreamAsset.url;
 const giftAGoat = giftAGoatAsset.url;
-import ownersFamily from "@/assets/owners-family.jpg";
-import ownersFun from "@/assets/owners-fun.jpg";
+import ownersFamilyAsset from "@/assets/homepage-meet-the-owners-normal-photo.png.asset.json";
+import ownersFunAsset from "@/assets/meet-the-owners-funny-picture.png.asset.json";
+
+const ownersFamily = ownersFamilyAsset.url;
+const ownersFun = ownersFunAsset.url;
 import { GiftGoatCounter } from "@/components/home/GiftGoatCounter";
 import { MediaCarousel } from "@/components/home/MediaCarousel";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
@@ -304,7 +307,7 @@ function Index() {
                 <span className="absolute -bottom-5 -left-3 z-10 -rotate-2 border-2 border-headline bg-primary-accent px-4 py-2 font-display text-lg font-black uppercase text-primary-foreground">Cheryl, Greg &amp; Aspen</span>
               </div>
               <div className="relative mt-16 rotate-2 border-2 border-headline bg-background p-3 shadow-[9px_9px_0_var(--secondary-accent)]">
-                <img src={ownersFun} alt="Cheryl and Greg laughing together on the farm" width={1024} height={1280} loading="lazy" className="w-full object-cover" />
+                <img src={ownersFun} alt="Greg crawling out of a calf hutch wearing the chain as a necklace" width={1024} height={1280} loading="lazy" className="w-full object-cover" />
                 <p className="mt-3 px-1 pb-1 text-center font-accent text-lg italic text-headline">Yes, they are always like this.</p>
               </div>
             </div>
@@ -446,26 +449,6 @@ function Index() {
                 </details>
               ))}
             </div>
-          </div>
-        </section>
-
-
-        {/* 11. Easter egg */}
-        <section id="easter-egg" className="relative overflow-hidden bg-headline py-20 text-background md:py-28">
-          <div className="farm-dots absolute inset-0 opacity-10" aria-hidden="true" />
-          <div className="relative mx-auto max-w-3xl px-5 text-center md:px-8">
-            <span className="inline-flex items-center gap-2 rounded-full border-2 border-background px-4 py-2 font-display text-sm font-extrabold uppercase">
-              <Gamepad2 aria-hidden="true" size={18} /> Easter egg
-            </span>
-            <h2 className="mt-6 font-display text-[clamp(2rem,4.5vw,3.6rem)] font-black uppercase leading-[0.95]">
-              Wow... you made it all the way down here.<br />
-              We usually don&apos;t see people around here.<br />
-              Erm, since you have all this free time, want to play a quick game?
-            </h2>
-            <div className="mx-auto mt-10 flex h-64 max-w-2xl items-center justify-center border-2 border-dashed border-background/50 font-display text-xl font-black uppercase text-background/60">
-              Game area placeholder
-            </div>
-            <Button asChild size="large" className="mt-10"><a href="#experiences">Stop wasting time and book an Udderly Ridiculous farm experience</a></Button>
           </div>
         </section>
 
