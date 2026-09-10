@@ -118,14 +118,13 @@ export function MediaCarousel() {
               onClick={() => go(i)}
               aria-label={`Show ${video.outlet} video`}
               aria-current={i === index}
-              className={`flex w-full items-center justify-center border-2 border-headline bg-background font-display font-black uppercase leading-none text-headline transition-all duration-200 ${
+              className={`flex w-full items-center justify-center overflow-hidden border-2 border-headline bg-background p-1.5 transition-all duration-200 ${
                 i === index
-                  ? "h-14 max-w-24 scale-105 bg-secondary-accent text-base shadow-[4px_4px_0_var(--headline)] sm:h-16"
-                  : "h-12 max-w-20 text-sm opacity-70 hover:opacity-100"
+                  ? "h-16 max-w-28 scale-105 bg-secondary-accent shadow-[4px_4px_0_var(--headline)] sm:h-20 sm:max-w-32"
+                  : "h-14 max-w-24 opacity-70 hover:opacity-100 sm:h-16 sm:max-w-28"
               }`}
-
             >
-              {video.short}
+              <img src={video.logo} alt="" aria-hidden="true" loading="lazy" className="max-h-full max-w-full object-contain" />
             </button>
           </li>
         ))}
