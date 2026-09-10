@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Award, Gamepad2, Instagram, Menu } from "lucide-react";
+import { ArrowRight, Gamepad2, Instagram, Menu } from "lucide-react";
 
 import donkeyPicnic from "@/assets/donkey-picnic.jpg";
 import highlandHero from "@/assets/highland-hero.jpg";
@@ -367,7 +367,7 @@ function Index() {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="relative">
                 <div className="absolute -inset-4 -rotate-2 bg-secondary-accent" aria-hidden="true" />
-                <img src={farmStore} alt="Inside the Farm Market Store with wooden shelves of local products" width={1280} height={960} loading="lazy" className="relative w-full border-2 border-headline object-cover" />
+                <img src={farmStore} alt="Looking through the doorway into the Farm Market Store with wooden barrels and local products" width={1080} height={800} loading="lazy" className="relative w-full border-2 border-headline object-cover" />
               </div>
               <div>
                 <span className="inline-block -rotate-2 bg-secondary-accent px-4 py-2 font-display text-base font-black uppercase text-headline">Farm Market Store</span>
@@ -380,7 +380,7 @@ function Index() {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="lg:order-2 relative">
                 <div className="absolute -inset-4 rotate-2 bg-primary-accent" aria-hidden="true" />
-                <img src={iceCream} alt="Two cones of Udderly Ridiculous goat milk ice cream held up on the farm" width={1280} height={960} loading="lazy" className="relative w-full border-2 border-headline object-cover" />
+                <img src={iceCream} alt="Stacked tubs of Udderly Ridiculous goat milk ice cream in many flavours" width={1080} height={800} loading="lazy" className="relative w-full border-2 border-headline object-cover" />
               </div>
               <div className="lg:order-1">
                 <span className="inline-block rotate-1 bg-primary-accent px-4 py-2 font-display text-base font-black uppercase text-primary-foreground">Goat Milk Ice-Cream</span>
