@@ -20,6 +20,8 @@ const animalsForSalePhoto = animalsForSaleAsset.url;
 const farmStore = storePhotoAsset.url;
 const iceCream = iceCreamAsset.url;
 const giftAGoat = giftAGoatAsset.url;
+const heroImage = homepageHeroAsset.url;
+const trainingImage = homepageTrainingAsset.url;
 import ownersFamilyAsset from "@/assets/homepage-meet-the-owners-normal-photo.png.asset.json";
 import ownersFunAsset from "@/assets/meet-the-owners-funny-picture.png.asset.json";
 
@@ -87,8 +89,8 @@ const experiences = [
     fact: "FOR TEAMS",
     copy: "Leverage 20+ years of corporate training expertise along with the unique environment of our crazy animals to learn a lot, have fun, and bond.",
     cta: "See all training programs and team-building experiences",
-    image: donkeyPicnic,
-    alt: "Mini donkey greeting a group of visitors",
+    image: trainingImage,
+    alt: "Corporate team enjoying a farm lunch experience with alpacas",
     className: "lg:-rotate-1 lg:translate-y-10",
   },
   {
@@ -241,7 +243,7 @@ function Index() {
             <div className="relative mx-auto w-full max-w-[690px] pb-12 lg:pb-0">
               <div className="absolute -right-10 top-10 h-[80%] w-[85%] rotate-3 rounded-[48%_52%_42%_58%/45%_40%_60%_55%] bg-secondary-accent" aria-hidden="true" />
               <div className="absolute -left-2 bottom-2 z-20 -rotate-6 bg-primary-accent px-5 py-3 font-accent text-lg italic text-primary-foreground shadow-[5px_5px_0_var(--headline)] md:text-2xl">Make core memories.</div>
-              <img src={highlandHero} alt="Curious fluffy mini Highland cow looking at the camera" width={1280} height={1536} fetchPriority="high" className="relative z-10 ml-auto aspect-[4/5] w-[88%] rotate-2 rounded-[45%_45%_10%_10%/25%_25%_8%_8%] border-[5px] border-background object-cover object-center shadow-[12px_14px_0_var(--headline)]" />
+              <img src={heroImage} alt="Guest smiling while petting a fluffy mini Highland cow" width={1280} height={1536} fetchPriority="high" className="relative z-10 ml-auto aspect-[4/5] w-[88%] rotate-2 rounded-[45%_45%_10%_10%/25%_25%_8%_8%] border-[5px] border-background object-cover object-center shadow-[12px_14px_0_var(--headline)]" />
               <div className="gentle-float absolute -right-1 -top-5 z-20 flex size-28 items-center justify-center rounded-full border-2 border-headline bg-background p-3 text-center font-display text-lg font-black uppercase leading-none text-headline shadow-[4px_4px_0_var(--primary-accent)] md:size-36 md:text-2xl">Ooh,<br />amazing</div>
 
             </div>
