@@ -1,11 +1,14 @@
 import { Hand } from "lucide-react";
 import { useState } from "react";
 
-import faceAlpaca from "@/assets/face-alpaca.jpg";
-import faceChicken from "@/assets/face-chicken.jpg";
-import faceDonkey from "@/assets/face-donkey.jpg";
-import faceGoat from "@/assets/face-goat.jpg";
-import faceHighland from "@/assets/face-highland.jpg";
+import welfare1 from "@/assets/welfare-1.png.asset.json";
+import welfare2 from "@/assets/welfare-2.png.asset.json";
+import welfare3 from "@/assets/welfare-3.png.asset.json";
+import welfare4 from "@/assets/welfare-4.png.asset.json";
+import welfare5 from "@/assets/welfare-5.png.asset.json";
+import welfare6 from "@/assets/welfare-6.png.asset.json";
+import welfare7 from "@/assets/welfare-7.png.asset.json";
+import welfare8 from "@/assets/welfare-8.png.asset.json";
 import { Button } from "@/components/ui/button";
 
 const points = [
