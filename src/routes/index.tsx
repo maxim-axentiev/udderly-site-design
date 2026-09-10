@@ -450,26 +450,6 @@ function Index() {
         </section>
 
 
-        {/* 11. Easter egg */}
-        <section id="easter-egg" className="relative overflow-hidden bg-headline py-20 text-background md:py-28">
-          <div className="farm-dots absolute inset-0 opacity-10" aria-hidden="true" />
-          <div className="relative mx-auto max-w-3xl px-5 text-center md:px-8">
-            <span className="inline-flex items-center gap-2 rounded-full border-2 border-background px-4 py-2 font-display text-sm font-extrabold uppercase">
-              <Gamepad2 aria-hidden="true" size={18} /> Easter egg
-            </span>
-            <h2 className="mt-6 font-display text-[clamp(2rem,4.5vw,3.6rem)] font-black uppercase leading-[0.95]">
-              Wow... you made it all the way down here.<br />
-              We usually don&apos;t see people around here.<br />
-              Erm, since you have all this free time, want to play a quick game?
-            </h2>
-            <div className="mx-auto mt-10 flex h-64 max-w-2xl items-center justify-center border-2 border-dashed border-background/50 font-display text-xl font-black uppercase text-background/60">
-              Game area placeholder
-            </div>
-            <Button asChild size="large" className="mt-10"><a href="#experiences">Stop wasting time and book an Udderly Ridiculous farm experience</a></Button>
-          </div>
-        </section>
-
-
       </main>
 
       <footer className="border-t-2 border-headline bg-farm-beige">
