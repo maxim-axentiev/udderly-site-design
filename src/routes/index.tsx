@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Gamepad2, Instagram, Menu } from "lucide-react";
+import { ArrowRight, Instagram, Menu } from "lucide-react";
 
 import donkeyPicnic from "@/assets/donkey-picnic.jpg";
 import highlandHero from "@/assets/highland-hero.jpg";
@@ -20,8 +20,11 @@ const animalsForSalePhoto = animalsForSaleAsset.url;
 const farmStore = storePhotoAsset.url;
 const iceCream = iceCreamAsset.url;
 const giftAGoat = giftAGoatAsset.url;
-import ownersFamily from "@/assets/owners-family.jpg";
-import ownersFun from "@/assets/owners-fun.jpg";
+import ownersFamilyAsset from "@/assets/homepage-meet-the-owners-normal-photo.png.asset.json";
+import ownersFunAsset from "@/assets/meet-the-owners-funny-picture.png.asset.json";
+
+const ownersFamily = ownersFamilyAsset.url;
+const ownersFun = ownersFunAsset.url;
 import { GiftGoatCounter } from "@/components/home/GiftGoatCounter";
 import { MediaCarousel } from "@/components/home/MediaCarousel";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
