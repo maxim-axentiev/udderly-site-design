@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Instagram, Menu } from "lucide-react";
 
-import donkeyPicnic from "@/assets/donkey-picnic.jpg";
-import highlandHero from "@/assets/highland-hero.jpg";
+import homepageHeroAsset from "@/assets/homepage-hero.png.asset.json";
+import homepageTrainingAsset from "@/assets/homepage-training.png.asset.json";
 import animalsForSaleAsset from "@/assets/homepage-animals-for-sale.png.asset.json";
 import experiencesPhotoAsset from "@/assets/homepage-experiences.png.asset.json";
 import giftAGoatAsset from "@/assets/homepage-gift-a-goat.png.asset.json";
