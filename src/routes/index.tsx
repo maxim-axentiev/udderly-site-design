@@ -1,13 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Award, Gamepad2, Instagram, Menu } from "lucide-react";
+import { ArrowRight, Gamepad2, Instagram, Menu } from "lucide-react";
 
-import alpacaWalk from "@/assets/alpaca-walk.jpg";
 import donkeyPicnic from "@/assets/donkey-picnic.jpg";
-import farmStore from "@/assets/farm-store.jpg";
-import giftAGoat from "@/assets/gift-a-goat.png";
-import goatCuddles from "@/assets/goat-cuddles.jpg";
 import highlandHero from "@/assets/highland-hero.jpg";
-import iceCream from "@/assets/ice-cream.jpg";
+import animalsForSaleAsset from "@/assets/homepage-animals-for-sale.png.asset.json";
+import experiencesPhotoAsset from "@/assets/homepage-experiences.png.asset.json";
+import giftAGoatAsset from "@/assets/homepage-gift-a-goat.png.asset.json";
+import glampingPhotoAsset from "@/assets/homepage-glamping.png.asset.json";
+import iceCreamAsset from "@/assets/homepage-ice-cream.png.asset.json";
+import storePhotoAsset from "@/assets/homepage-store.png.asset.json";
+import tripadvisor2023 from "@/assets/tripadvisor-2023.png.asset.json";
+import tripadvisor2024 from "@/assets/tripadvisor-2024.png.asset.json";
+import tripadvisor2025 from "@/assets/tripadvisor-2025.png.asset.json";
+import tripadvisor2026 from "@/assets/tripadvisor-2026.png.asset.json";
+
+const experiencesPhoto = experiencesPhotoAsset.url;
+const glampingPhoto = glampingPhotoAsset.url;
+const animalsForSalePhoto = animalsForSaleAsset.url;
+const farmStore = storePhotoAsset.url;
+const iceCream = iceCreamAsset.url;
+const giftAGoat = giftAGoatAsset.url;
 import ownersFamily from "@/assets/owners-family.jpg";
 import ownersFun from "@/assets/owners-fun.jpg";
 import { GiftGoatCounter } from "@/components/home/GiftGoatCounter";
@@ -41,7 +53,12 @@ export const Route = createFileRoute("/")({
 
 const navItems = ["Experiences", "Meet the Herd", "Stay", "Adopt", "Corporate", "Our Farm"];
 
-const awards = ["2023", "2024", "2025", "2026"];
+const awards = [
+  { year: "2023", badge: tripadvisor2023.url },
+  { year: "2024", badge: tripadvisor2024.url },
+  { year: "2025", badge: tripadvisor2025.url },
+  { year: "2026", badge: tripadvisor2026.url },
+];
 
 const experiences = [
   {
@@ -49,8 +66,8 @@ const experiences = [
     fact: "MOST POPULAR",
     copy: "Get licked by a mini Highland cow, downward dog pose with a mini goat, enjoy a romantic lunch picnic with alpacas, and SOOO much more!",
     cta: "See all experiences",
-    image: highlandHero,
-    alt: "Fluffy mini Highland cow in a pasture",
+    image: experiencesPhoto,
+    alt: "Guest surrounded by playful goats during a farm experience",
     className: "lg:-rotate-2 lg:translate-y-6",
   },
   {
@@ -58,8 +75,8 @@ const experiences = [
     fact: "STAY OVER",
     copy: "Unwind in a luxury RV right on the farm, with front-row seats to stunning sunsets and animals who’ll audition for your next Instagram post.",
     cta: "Sleepover with the animals",
-    image: alpacaWalk,
-    alt: "Alpaca standing in an evening pasture",
+    image: glampingPhoto,
+    alt: "Luxury RV glowing at night beside a campfire on the farm",
     className: "lg:rotate-1",
   },
   {
@@ -76,8 +93,8 @@ const experiences = [
     fact: "FOR SALE",
     copy: "Add lovingly and Udderly ridiculously raised farm animals to your pastures.",
     cta: "View all animals for sale",
-    image: goatCuddles,
-    alt: "Young goats beside a farm fence",
+    image: animalsForSalePhoto,
+    alt: "Two fluffy mini Highland calves standing in a sunny pasture",
     className: "lg:rotate-2 lg:translate-y-2",
   },
 ];
@@ -238,11 +255,10 @@ function Index() {
               <p className="mt-1 text-sm font-semibold">TripAdvisor kinda has a thing for us.</p>
             </div>
 
-            <ul className="flex flex-wrap items-center justify-center gap-3 md:gap-5">
-              {awards.map((year) => (
-                <li key={year} className="flex items-center gap-2 rounded-full border-2 border-headline bg-farm-beige px-4 py-2">
-                  <Award aria-hidden="true" size={18} className="text-primary-accent" />
-                  <span className="font-display text-lg font-black uppercase text-headline">{year}</span>
+            <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-7">
+              {awards.map((award, index) => (
+                <li key={award.year} className={index % 2 === 0 ? "-rotate-3" : "rotate-3"}>
+                  <img src={award.badge} alt={`TripAdvisor Travelers' Choice Award ${award.year}`} width={1080} height={1080} loading="lazy" className="size-20 rounded-full border-2 border-headline object-cover shadow-[3px_3px_0_var(--headline)] md:size-24" />
                 </li>
               ))}
             </ul>
@@ -351,7 +367,7 @@ function Index() {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="relative">
                 <div className="absolute -inset-4 -rotate-2 bg-secondary-accent" aria-hidden="true" />
-                <img src={farmStore} alt="Inside the Farm Market Store with wooden shelves of local products" width={1280} height={960} loading="lazy" className="relative w-full border-2 border-headline object-cover" />
+                <img src={farmStore} alt="Looking through the doorway into the Farm Market Store with wooden barrels and local products" width={1080} height={800} loading="lazy" className="relative w-full border-2 border-headline object-cover" />
               </div>
               <div>
                 <span className="inline-block -rotate-2 bg-secondary-accent px-4 py-2 font-display text-base font-black uppercase text-headline">Farm Market Store</span>
@@ -364,7 +380,7 @@ function Index() {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="lg:order-2 relative">
                 <div className="absolute -inset-4 rotate-2 bg-primary-accent" aria-hidden="true" />
-                <img src={iceCream} alt="Two cones of Udderly Ridiculous goat milk ice cream held up on the farm" width={1280} height={960} loading="lazy" className="relative w-full border-2 border-headline object-cover" />
+                <img src={iceCream} alt="Stacked tubs of Udderly Ridiculous goat milk ice cream in many flavours" width={1080} height={800} loading="lazy" className="relative w-full border-2 border-headline object-cover" />
               </div>
               <div className="lg:order-1">
                 <span className="inline-block rotate-1 bg-primary-accent px-4 py-2 font-display text-base font-black uppercase text-primary-foreground">Goat Milk Ice-Cream</span>
@@ -380,7 +396,7 @@ function Index() {
 
             {/* Gift A Goat */}
             <div className="grid items-center gap-10 border-2 border-headline bg-farm-beige p-7 shadow-[10px_10px_0_var(--headline)] md:grid-cols-[auto_1fr_auto] md:p-12">
-              <img src={giftAGoat} alt="Gift A Goat program logo" width={700} height={700} loading="lazy" className="mx-auto size-36 object-contain md:size-44" />
+              <img src={giftAGoat} alt="Gift A Goat program logo" width={1080} height={1080} loading="lazy" className="mx-auto size-36 -rotate-3 rounded-full border-2 border-headline bg-background object-contain shadow-[4px_4px_0_var(--headline)] md:size-44" />
               <div>
                 <span className="font-accent text-xl italic text-primary-accent">Gift A Goat</span>
                 <h3 className="mt-2 font-display text-[clamp(1.9rem,4.5vw,3.6rem)] font-black uppercase leading-[0.86] text-headline">Eating ice-cream gives back</h3>
