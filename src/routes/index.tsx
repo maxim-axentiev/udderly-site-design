@@ -396,7 +396,7 @@ function Index() {
 
             {/* Gift A Goat */}
             <div className="grid items-center gap-10 border-2 border-headline bg-farm-beige p-7 shadow-[10px_10px_0_var(--headline)] md:grid-cols-[auto_1fr_auto] md:p-12">
-              <img src={giftAGoat} alt="Gift A Goat program logo" width={700} height={700} loading="lazy" className="mx-auto size-36 object-contain md:size-44" />
+              <img src={giftAGoat} alt="Gift A Goat program logo" width={1080} height={1080} loading="lazy" className="mx-auto size-36 -rotate-3 rounded-full border-2 border-headline bg-white object-contain shadow-[4px_4px_0_var(--headline)] md:size-44" />
               <div>
                 <span className="font-accent text-xl italic text-primary-accent">Gift A Goat</span>
                 <h3 className="mt-2 font-display text-[clamp(1.9rem,4.5vw,3.6rem)] font-black uppercase leading-[0.86] text-headline">Eating ice-cream gives back</h3>
