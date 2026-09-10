@@ -255,11 +255,10 @@ function Index() {
               <p className="mt-1 text-sm font-semibold">TripAdvisor kinda has a thing for us.</p>
             </div>
 
-            <ul className="flex flex-wrap items-center justify-center gap-3 md:gap-5">
-              {awards.map((year) => (
-                <li key={year} className="flex items-center gap-2 rounded-full border-2 border-headline bg-farm-beige px-4 py-2">
-                  <Award aria-hidden="true" size={18} className="text-primary-accent" />
-                  <span className="font-display text-lg font-black uppercase text-headline">{year}</span>
+            <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-7">
+              {awards.map((award, index) => (
+                <li key={award.year} className={index % 2 === 0 ? "-rotate-3" : "rotate-3"}>
+                  <img src={award.badge} alt={`TripAdvisor Travelers' Choice Award ${award.year}`} width={1080} height={1080} loading="lazy" className="size-20 rounded-full border-2 border-headline object-cover shadow-[3px_3px_0_var(--headline)] md:size-24" />
                 </li>
               ))}
             </ul>
