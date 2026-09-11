@@ -78,6 +78,7 @@ const detailPages: Record<string, string> = {
   "Alpaca Walks": "/experiences/alpaca-walks",
   "Alpaca Experience & Fibre Nesting Ball Workshop": "/experiences/alpaca-experience-and-fibre-nesting-ball-workshop",
   "Miniature Donkey Visits": "/experiences/miniature-donkey-visits",
+  "Alpaca Lunch Picnic": "/experiences/alpaca-lunch-picnic",
 };
 
 const farmExperiences: Experience[] = [
