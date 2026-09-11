@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, CalendarClock, CircleDollarSign, Mail, Sparkles, X } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import feastOnLogoAsset from "@/assets/feast-on-logo.webp.asset.json";
