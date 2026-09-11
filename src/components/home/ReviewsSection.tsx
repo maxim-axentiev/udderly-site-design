@@ -80,6 +80,7 @@ export function ReviewsSection({ cta }: { cta?: React.ReactNode }) {
           ))}
         </div>
 
+        {cta && <div className="mt-12 flex justify-center">{cta}</div>}
       </div>
 
       {lightbox && (
