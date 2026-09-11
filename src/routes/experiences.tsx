@@ -10,8 +10,9 @@ import iceCream from "@/assets/ice-cream.jpg";
 import animalsForSaleAsset from "@/assets/homepage-animals-for-sale.png.asset.json";
 import experiencesPhotoAsset from "@/assets/homepage-experiences.png.asset.json";
 import glampingPhotoAsset from "@/assets/homepage-glamping.png.asset.json";
-import heroPhotoAsset from "@/assets/homepage-hero.png.asset.json";
+import heroPhotoAsset from "@/assets/experiences-hero.png.asset.json";
 import trainingPhotoAsset from "@/assets/homepage-training.png.asset.json";
+import feastOnLogoAsset from "@/assets/feast-on-logo.webp.asset.json";
 import rainbowRegisteredAsset from "@/assets/rainbow-registered.png.asset.json";
 import { BackToCategories } from "@/components/experiences/BackToCategories";
 import { SignatureBadge } from "@/components/experiences/SignatureBadge";
@@ -149,7 +150,7 @@ function ExperiencesPage() {
       <main id="top">
         {/* Hero */}
         <section className="relative isolate flex min-h-[72vh] items-center justify-center overflow-hidden">
-          <img src={heroPhoto} alt="Guest meeting a fluffy mini Highland cow in the barn" width={1280} height={1536} fetchPriority="high" className="absolute inset-0 -z-10 h-full w-full object-cover" />
+          <img src={heroPhoto} alt="A guest holding a fluffy Highland calf on the farm with other visitors in the background" width={1920} height={1080} fetchPriority="high" className="absolute inset-0 -z-10 h-full w-full object-cover" />
           <div className="absolute inset-0 -z-10 bg-headline/65" aria-hidden="true" />
           <div className="mx-auto max-w-4xl px-5 py-24 text-center md:px-8 md:py-32">
             <h1 className="font-display text-[clamp(3.2rem,9vw,8rem)] font-black uppercase leading-[0.8] text-background">
@@ -307,7 +308,7 @@ function ExperiencesPage() {
                 </div>
               </article>
 
-              <article className="flex flex-col border-2 border-headline bg-farm-beige shadow-[10px_10px_0_var(--headline)]">
+              <article className="flex flex-col border-2 border-headline bg-background shadow-[10px_10px_0_var(--headline)]">
                 <img src={alpacaWalk} alt="Alpacas walking with guests along a farm path" width={1280} height={860} loading="lazy" className="aspect-[16/9] w-full border-b-2 border-headline object-cover" />
                 <div className="flex flex-1 flex-col p-7 md:p-9">
                   <h3 className="font-display text-3xl font-black uppercase leading-none text-headline md:text-4xl">Experiential Tourism Development</h3>
@@ -337,6 +338,28 @@ function ExperiencesPage() {
               <p className="mt-6 max-w-xl text-base leading-relaxed md:text-lg">
                 Placeholder copy. Udderly Ridiculous Farm Life is a Rainbow Registered business, which means we are committed to providing a welcoming, safe and inclusive environment for 2SLGBTQI+ visitors, families, employees and community members. Everybody gets the same warm welcome here, and the animals genuinely do not care who you are — they just want the brush.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* FeastON Certification */}
+        <section id="feast-on" className="bg-farm-beige py-20 md:py-28">
+          <div className="mx-auto grid max-w-[1200px] items-center gap-12 px-5 md:px-8 lg:grid-cols-[1fr_0.85fr]">
+            <div className="order-2 lg:order-1">
+              <p className="font-accent text-xl italic text-primary-accent">Certified Local by FeastON</p>
+              <h2 className="mt-3 font-display text-[clamp(2.6rem,6vw,5.4rem)] font-black uppercase leading-[0.82] text-headline">
+                We eat — and serve —<br />local.
+              </h2>
+              <p className="mt-6 max-w-xl text-base leading-relaxed md:text-lg">
+                FeastON officially verifies that a significant portion of our ingredients and products are sourced right here in Ontario. We only support local, Ontario-made products, and so far we have had the privilege of supporting more than 140 local producers through everything we serve, sell and celebrate on the farm.
+              </p>
+              <p className="mt-4 max-w-xl text-base leading-relaxed md:text-lg">
+                When you visit, you are not just meeting the animals — you are tasting the neighbourhood.
+              </p>
+            </div>
+
+            <div className="order-1 mx-auto flex w-full max-w-sm rotate-2 items-center justify-center border-2 border-headline bg-background p-6 shadow-[10px_10px_0_var(--primary-accent)] lg:order-2">
+              <img src={feastOnLogoAsset.url} alt="FeastON Certified Local by the Culinary Tourism Alliance logo" width={800} height={800} loading="lazy" className="h-auto w-full" />
             </div>
           </div>
         </section>
