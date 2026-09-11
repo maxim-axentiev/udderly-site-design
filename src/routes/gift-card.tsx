@@ -9,7 +9,7 @@ import experiencesPhotoAsset from "@/assets/homepage-experiences.png.asset.json"
 import glampingPhotoAsset from "@/assets/homepage-glamping.png.asset.json";
 import iceCreamPhotoAsset from "@/assets/homepage-ice-cream.png.asset.json";
 import storePhotoAsset from "@/assets/homepage-store.png.asset.json";
-import giftCard from "@/assets/gift-card.jpg";
+import giftCard from "@/assets/gift-card.png";
 import alpacaWalk from "@/assets/alpaca-walk.jpg";
 import donkeyPicnic from "@/assets/donkey-picnic.jpg";
 import goatCuddles from "@/assets/goat-cuddles.jpg";
