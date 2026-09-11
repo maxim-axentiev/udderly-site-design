@@ -2,6 +2,7 @@ import { Star } from "lucide-react";
 import { useState } from "react";
 
 import { CarouselTrack } from "@/components/experience/CarouselTrack";
+import { Button } from "@/components/ui/button";
 
 export type CuratedReview = { text: string; name: string };
 
@@ -44,28 +45,21 @@ function ReviewCard({ review }: { review: CuratedReview }) {
 
 export function CuratedReviews({
   title,
-  credibility,
   reviews,
+  ctaLabel,
+  ctaHref,
 }: {
   title: string;
-  credibility: string;
   reviews: CuratedReview[];
+  ctaLabel: string;
+  ctaHref: string;
 }) {
   return (
     <section id="reviews" className="overflow-hidden bg-farm-blue py-20 md:py-28">
       <div className="mx-auto max-w-[1500px] px-5 md:px-8">
-        <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
-          <h2 className="max-w-3xl font-display text-[clamp(2.6rem,7vw,6rem)] font-black uppercase leading-[0.8] text-headline">
-            {title}
-          </h2>
-          <div className="flex items-center gap-4 border-2 border-headline bg-background px-5 py-4 shadow-[6px_6px_0_var(--headline)]">
-            <span className="font-display text-5xl font-black leading-none text-headline">5.0</span>
-            <div>
-              <Stars size={18} />
-              <p className="mt-1 text-sm font-bold uppercase text-headline">{credibility}</p>
-            </div>
-          </div>
-        </div>
+        <h2 className="max-w-3xl font-display text-[clamp(2.6rem,7vw,6rem)] font-black uppercase leading-[0.8] text-headline">
+          {title}
+        </h2>
 
         <div className="mt-14">
           <CarouselTrack label="Guest reviews" itemClassName="w-[85%] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
@@ -73,6 +67,12 @@ export function CuratedReviews({
               <ReviewCard key={review.name + review.text.slice(0, 12)} review={review} />
             ))}
           </CarouselTrack>
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Button asChild size="large">
+            <a href={ctaHref}>{ctaLabel}</a>
+          </Button>
         </div>
       </div>
     </section>

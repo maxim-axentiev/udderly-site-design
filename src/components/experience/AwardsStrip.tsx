@@ -12,7 +12,7 @@ const awards = [
 
 export function AwardsStrip({ tagline }: { tagline: string }) {
   return (
-    <section aria-label="TripAdvisor awards" className="border-y-2 border-headline bg-background py-6">
+    <section aria-label="TripAdvisor awards" className="border-y-2 border-headline bg-farm-beige py-6">
       <div className="mx-auto flex max-w-[1500px] flex-col items-center gap-5 px-5 md:flex-row md:justify-between md:px-8">
         <div className="text-center md:max-w-[24rem] md:text-left">
           <p className="font-display text-lg font-black uppercase leading-tight text-headline">
