@@ -10,8 +10,9 @@ import iceCream from "@/assets/ice-cream.jpg";
 import animalsForSaleAsset from "@/assets/homepage-animals-for-sale.png.asset.json";
 import experiencesPhotoAsset from "@/assets/homepage-experiences.png.asset.json";
 import glampingPhotoAsset from "@/assets/homepage-glamping.png.asset.json";
-import heroPhotoAsset from "@/assets/homepage-hero.png.asset.json";
+import heroPhotoAsset from "@/assets/experiences-hero.png.asset.json";
 import trainingPhotoAsset from "@/assets/homepage-training.png.asset.json";
+import feastOnLogoAsset from "@/assets/feast-on-logo.webp.asset.json";
 import rainbowRegisteredAsset from "@/assets/rainbow-registered.png.asset.json";
 import { BackToCategories } from "@/components/experiences/BackToCategories";
 import { SignatureBadge } from "@/components/experiences/SignatureBadge";
@@ -307,7 +308,7 @@ function ExperiencesPage() {
                 </div>
               </article>
 
-              <article className="flex flex-col border-2 border-headline bg-farm-beige shadow-[10px_10px_0_var(--headline)]">
+              <article className="flex flex-col border-2 border-headline bg-background shadow-[10px_10px_0_var(--headline)]">
                 <img src={alpacaWalk} alt="Alpacas walking with guests along a farm path" width={1280} height={860} loading="lazy" className="aspect-[16/9] w-full border-b-2 border-headline object-cover" />
                 <div className="flex flex-1 flex-col p-7 md:p-9">
                   <h3 className="font-display text-3xl font-black uppercase leading-none text-headline md:text-4xl">Experiential Tourism Development</h3>
