@@ -2,6 +2,7 @@ import { Star } from "lucide-react";
 import { useState } from "react";
 
 import { CarouselTrack } from "@/components/experience/CarouselTrack";
+import { Button } from "@/components/ui/button";
 
 export type CuratedReview = { text: string; name: string };
 

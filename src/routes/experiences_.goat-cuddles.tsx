@@ -117,30 +117,31 @@ function GoatCuddlesPage() {
 
         {/* 3. Experience introduction */}
         <section id="book" className="scroll-mt-20 overflow-hidden bg-background py-20 md:py-28">
-          <div className="mx-auto grid max-w-[1400px] items-start gap-14 px-5 md:px-8 lg:grid-cols-[1.05fr_1fr]">
-            <ExperienceGallery images={gallery} caption="Yes, they do that" />
+          <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+            <div className="grid items-start gap-14 lg:grid-cols-[1.05fr_1fr]">
+              <ExperienceGallery images={gallery} />
 
-            <div>
-              <p className="font-accent text-xl italic text-primary-accent">45 minutes of hooves on your lap</p>
-              <h2 className="mt-3 font-display text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.82] text-headline">
-                An armful<br /><span className="text-stroke">of goat.</span>
-              </h2>
-              <p className="mt-6 text-base leading-relaxed md:text-lg">
-                Placeholder description. You will sit down in the straw with a small group and let the goats decide how the next hour goes. Some will climb straight into your lap, some will investigate your pockets, and at least one will attempt to eat your coat zipper. Our team stays with you the whole time to introduce every goat by name, share their (extremely dramatic) backstories, and make sure both humans and hooves are having a great day.
-              </p>
-              <p className="mt-4 text-base leading-relaxed md:text-lg">
-                Placeholder description. No experience needed, no schedule to race through, and absolutely no pressure. Just goats, straw, and the specific kind of laughing you cannot fake.
-              </p>
+              <div>
+                <h2 className="font-display text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.82] text-headline">
+                  An armful<br /><span className="text-stroke">of goat.</span>
+                </h2>
+                <p className="mt-6 text-base leading-relaxed md:text-lg">
+                  Placeholder description. You will sit down in the straw with a small group and let the goats decide how the next hour goes. Some will climb straight into your lap, some will investigate your pockets, and at least one will attempt to eat your coat zipper. Our team stays with you the whole time to introduce every goat by name, share their (extremely dramatic) backstories, and make sure both humans and hooves are having a great day.
+                </p>
+                <p className="mt-4 text-base leading-relaxed md:text-lg">
+                  Placeholder description. No experience needed, no schedule to race through, and absolutely no pressure. Just goats, straw, and the specific kind of laughing you cannot fake.
+                </p>
 
-              <Button asChild size="large" className="mt-8">
-                <a href={BOOK_HREF}>{BOOK_CTA} <ArrowRight aria-hidden="true" /></a>
-              </Button>
+                <Button asChild size="large" className="mt-8">
+                  <a href={BOOK_HREF}>{BOOK_CTA} <ArrowRight aria-hidden="true" /></a>
+                </Button>
+              </div>
+            </div>
 
-              <div className="mt-10">
-                <h3 className="font-display text-2xl font-black uppercase text-headline">Experience Details</h3>
-                <div className="mt-5">
-                  <ExperienceDetails details={details} />
-                </div>
+            <div className="mt-16">
+              <h3 className="font-display text-2xl font-black uppercase text-headline">Experience Details</h3>
+              <div className="mt-5">
+                <ExperienceDetails details={details} />
               </div>
             </div>
           </div>
