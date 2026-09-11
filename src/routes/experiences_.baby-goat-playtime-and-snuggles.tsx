@@ -2,11 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { ExperiencePageTemplate } from "@/components/experience/ExperiencePageTemplate";
 
-const TITLE = "Goat Cuddles";
+const TITLE = "Baby Goat Playtime & Snuggles";
 const INTRO =
-  "Come meet our 4-legged toddlers, teenagers and adults. Slow down, snuggle up, and experience the pure joy of goat cuddles.";
+  "Placeholder copy. Kid season only. Tiny hooves, big personalities, and an hour you will talk about for years.";
 
-export const Route = createFileRoute("/experiences_/goat-cuddles")({
+export const Route = createFileRoute("/experiences_/baby-goat-playtime-and-snuggles")({
   head: () => ({
     meta: [
       { title: `${TITLE} | Udderly Ridiculous Farm Life` },

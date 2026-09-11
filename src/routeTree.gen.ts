@@ -11,7 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
+import { Route as ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport } from './routes/experiences_.alpaca-experience-and-fibre-nesting-ball-workshop'
+import { Route as ExperiencesAlpacaWalksRouteImport } from './routes/experiences_.alpaca-walks'
+import { Route as ExperiencesBabyGoatPlaytimeAndSnugglesRouteImport } from './routes/experiences_.baby-goat-playtime-and-snuggles'
 import { Route as ExperiencesGoatCuddlesRouteImport } from './routes/experiences_.goat-cuddles'
+import { Route as ExperiencesGoatRecessRouteImport } from './routes/experiences_.goat-recess'
+import { Route as ExperiencesMiniHighlandCalfMeetAndGreetRouteImport } from './routes/experiences_.mini-highland-calf-meet-and-greet'
+import { Route as ExperiencesMiniHighlandCowExperienceRouteImport } from './routes/experiences_.mini-highland-cow-experience'
+import { Route as ExperiencesMiniatureDonkeyVisitsRouteImport } from './routes/experiences_.miniature-donkey-visits'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,40 +30,139 @@ const ExperiencesRoute = ExperiencesRouteImport.update({
   path: '/experiences',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute =
+  ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport.update({
+    id: '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop',
+    path: '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ExperiencesAlpacaWalksRoute = ExperiencesAlpacaWalksRouteImport.update({
+  id: '/experiences_/alpaca-walks',
+  path: '/experiences/alpaca-walks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperiencesBabyGoatPlaytimeAndSnugglesRoute =
+  ExperiencesBabyGoatPlaytimeAndSnugglesRouteImport.update({
+    id: '/experiences_/baby-goat-playtime-and-snuggles',
+    path: '/experiences/baby-goat-playtime-and-snuggles',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ExperiencesGoatCuddlesRoute = ExperiencesGoatCuddlesRouteImport.update({
   id: '/experiences_/goat-cuddles',
   path: '/experiences/goat-cuddles',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperiencesGoatRecessRoute = ExperiencesGoatRecessRouteImport.update({
+  id: '/experiences_/goat-recess',
+  path: '/experiences/goat-recess',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperiencesMiniHighlandCalfMeetAndGreetRoute =
+  ExperiencesMiniHighlandCalfMeetAndGreetRouteImport.update({
+    id: '/experiences_/mini-highland-calf-meet-and-greet',
+    path: '/experiences/mini-highland-calf-meet-and-greet',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ExperiencesMiniHighlandCowExperienceRoute =
+  ExperiencesMiniHighlandCowExperienceRouteImport.update({
+    id: '/experiences_/mini-highland-cow-experience',
+    path: '/experiences/mini-highland-cow-experience',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ExperiencesMiniatureDonkeyVisitsRoute =
+  ExperiencesMiniatureDonkeyVisitsRouteImport.update({
+    id: '/experiences_/miniature-donkey-visits',
+    path: '/experiences/miniature-donkey-visits',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
+  '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
+  '/experiences/alpaca-walks': typeof ExperiencesAlpacaWalksRoute
+  '/experiences/baby-goat-playtime-and-snuggles': typeof ExperiencesBabyGoatPlaytimeAndSnugglesRoute
   '/experiences/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
+  '/experiences/goat-recess': typeof ExperiencesGoatRecessRoute
+  '/experiences/mini-highland-calf-meet-and-greet': typeof ExperiencesMiniHighlandCalfMeetAndGreetRoute
+  '/experiences/mini-highland-cow-experience': typeof ExperiencesMiniHighlandCowExperienceRoute
+  '/experiences/miniature-donkey-visits': typeof ExperiencesMiniatureDonkeyVisitsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
+  '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
+  '/experiences/alpaca-walks': typeof ExperiencesAlpacaWalksRoute
+  '/experiences/baby-goat-playtime-and-snuggles': typeof ExperiencesBabyGoatPlaytimeAndSnugglesRoute
   '/experiences/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
+  '/experiences/goat-recess': typeof ExperiencesGoatRecessRoute
+  '/experiences/mini-highland-calf-meet-and-greet': typeof ExperiencesMiniHighlandCalfMeetAndGreetRoute
+  '/experiences/mini-highland-cow-experience': typeof ExperiencesMiniHighlandCowExperienceRoute
+  '/experiences/miniature-donkey-visits': typeof ExperiencesMiniatureDonkeyVisitsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
+  '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
+  '/experiences_/alpaca-walks': typeof ExperiencesAlpacaWalksRoute
+  '/experiences_/baby-goat-playtime-and-snuggles': typeof ExperiencesBabyGoatPlaytimeAndSnugglesRoute
   '/experiences_/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
+  '/experiences_/goat-recess': typeof ExperiencesGoatRecessRoute
+  '/experiences_/mini-highland-calf-meet-and-greet': typeof ExperiencesMiniHighlandCalfMeetAndGreetRoute
+  '/experiences_/mini-highland-cow-experience': typeof ExperiencesMiniHighlandCowExperienceRoute
+  '/experiences_/miniature-donkey-visits': typeof ExperiencesMiniatureDonkeyVisitsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/experiences' | '/experiences/goat-cuddles'
+  fullPaths:
+    | '/'
+    | '/experiences'
+    | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
+    | '/experiences/alpaca-walks'
+    | '/experiences/baby-goat-playtime-and-snuggles'
+    | '/experiences/goat-cuddles'
+    | '/experiences/goat-recess'
+    | '/experiences/mini-highland-calf-meet-and-greet'
+    | '/experiences/mini-highland-cow-experience'
+    | '/experiences/miniature-donkey-visits'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/experiences' | '/experiences/goat-cuddles'
-  id: '__root__' | '/' | '/experiences' | '/experiences_/goat-cuddles'
+  to:
+    | '/'
+    | '/experiences'
+    | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
+    | '/experiences/alpaca-walks'
+    | '/experiences/baby-goat-playtime-and-snuggles'
+    | '/experiences/goat-cuddles'
+    | '/experiences/goat-recess'
+    | '/experiences/mini-highland-calf-meet-and-greet'
+    | '/experiences/mini-highland-cow-experience'
+    | '/experiences/miniature-donkey-visits'
+  id:
+    | '__root__'
+    | '/'
+    | '/experiences'
+    | '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop'
+    | '/experiences_/alpaca-walks'
+    | '/experiences_/baby-goat-playtime-and-snuggles'
+    | '/experiences_/goat-cuddles'
+    | '/experiences_/goat-recess'
+    | '/experiences_/mini-highland-calf-meet-and-greet'
+    | '/experiences_/mini-highland-cow-experience'
+    | '/experiences_/miniature-donkey-visits'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ExperiencesRoute: typeof ExperiencesRoute
+  ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute: typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
+  ExperiencesAlpacaWalksRoute: typeof ExperiencesAlpacaWalksRoute
+  ExperiencesBabyGoatPlaytimeAndSnugglesRoute: typeof ExperiencesBabyGoatPlaytimeAndSnugglesRoute
   ExperiencesGoatCuddlesRoute: typeof ExperiencesGoatCuddlesRoute
+  ExperiencesGoatRecessRoute: typeof ExperiencesGoatRecessRoute
+  ExperiencesMiniHighlandCalfMeetAndGreetRoute: typeof ExperiencesMiniHighlandCalfMeetAndGreetRoute
+  ExperiencesMiniHighlandCowExperienceRoute: typeof ExperiencesMiniHighlandCowExperienceRoute
+  ExperiencesMiniatureDonkeyVisitsRoute: typeof ExperiencesMiniatureDonkeyVisitsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -75,11 +181,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperiencesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': {
+      id: '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop'
+      path: '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
+      fullPath: '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
+      preLoaderRoute: typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences_/alpaca-walks': {
+      id: '/experiences_/alpaca-walks'
+      path: '/experiences/alpaca-walks'
+      fullPath: '/experiences/alpaca-walks'
+      preLoaderRoute: typeof ExperiencesAlpacaWalksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences_/baby-goat-playtime-and-snuggles': {
+      id: '/experiences_/baby-goat-playtime-and-snuggles'
+      path: '/experiences/baby-goat-playtime-and-snuggles'
+      fullPath: '/experiences/baby-goat-playtime-and-snuggles'
+      preLoaderRoute: typeof ExperiencesBabyGoatPlaytimeAndSnugglesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/experiences_/goat-cuddles': {
       id: '/experiences_/goat-cuddles'
       path: '/experiences/goat-cuddles'
       fullPath: '/experiences/goat-cuddles'
       preLoaderRoute: typeof ExperiencesGoatCuddlesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences_/goat-recess': {
+      id: '/experiences_/goat-recess'
+      path: '/experiences/goat-recess'
+      fullPath: '/experiences/goat-recess'
+      preLoaderRoute: typeof ExperiencesGoatRecessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences_/mini-highland-calf-meet-and-greet': {
+      id: '/experiences_/mini-highland-calf-meet-and-greet'
+      path: '/experiences/mini-highland-calf-meet-and-greet'
+      fullPath: '/experiences/mini-highland-calf-meet-and-greet'
+      preLoaderRoute: typeof ExperiencesMiniHighlandCalfMeetAndGreetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences_/mini-highland-cow-experience': {
+      id: '/experiences_/mini-highland-cow-experience'
+      path: '/experiences/mini-highland-cow-experience'
+      fullPath: '/experiences/mini-highland-cow-experience'
+      preLoaderRoute: typeof ExperiencesMiniHighlandCowExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences_/miniature-donkey-visits': {
+      id: '/experiences_/miniature-donkey-visits'
+      path: '/experiences/miniature-donkey-visits'
+      fullPath: '/experiences/miniature-donkey-visits'
+      preLoaderRoute: typeof ExperiencesMiniatureDonkeyVisitsRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -88,7 +243,18 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ExperiencesRoute: ExperiencesRoute,
+  ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute:
+    ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute,
+  ExperiencesAlpacaWalksRoute: ExperiencesAlpacaWalksRoute,
+  ExperiencesBabyGoatPlaytimeAndSnugglesRoute:
+    ExperiencesBabyGoatPlaytimeAndSnugglesRoute,
   ExperiencesGoatCuddlesRoute: ExperiencesGoatCuddlesRoute,
+  ExperiencesGoatRecessRoute: ExperiencesGoatRecessRoute,
+  ExperiencesMiniHighlandCalfMeetAndGreetRoute:
+    ExperiencesMiniHighlandCalfMeetAndGreetRoute,
+  ExperiencesMiniHighlandCowExperienceRoute:
+    ExperiencesMiniHighlandCowExperienceRoute,
+  ExperiencesMiniatureDonkeyVisitsRoute: ExperiencesMiniatureDonkeyVisitsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

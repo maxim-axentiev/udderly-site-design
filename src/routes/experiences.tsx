@@ -71,6 +71,13 @@ type Experience = {
 /** Experiences that already have their own detail page. */
 const detailPages: Record<string, string> = {
   "Goat Cuddles": "/experiences/goat-cuddles",
+  "Goat Recess": "/experiences/goat-recess",
+  "Baby Goat Playtime & Snuggles": "/experiences/baby-goat-playtime-and-snuggles",
+  "Mini Highland Cow Experience": "/experiences/mini-highland-cow-experience",
+  "Mini Highland Calf Meet & Greet": "/experiences/mini-highland-calf-meet-and-greet",
+  "Alpaca Walks": "/experiences/alpaca-walks",
+  "Alpaca Experience & Fibre Nesting Ball Workshop": "/experiences/alpaca-experience-and-fibre-nesting-ball-workshop",
+  "Miniature Donkey Visits": "/experiences/miniature-donkey-visits",
 };
 
 const farmExperiences: Experience[] = [
