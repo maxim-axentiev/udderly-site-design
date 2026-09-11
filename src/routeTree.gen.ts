@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
+import { Route as ExperiencesGoatCuddlesRouteImport } from './routes/experiences_.goat-cuddles'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,40 @@ const ExperiencesRoute = ExperiencesRouteImport.update({
   path: '/experiences',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperiencesGoatCuddlesRoute = ExperiencesGoatCuddlesRouteImport.update({
+  id: '/experiences_/goat-cuddles',
+  path: '/experiences/goat-cuddles',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
+  '/experiences/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
+  '/experiences/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
+  '/experiences_/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/experiences'
+  fullPaths: '/' | '/experiences' | '/experiences/goat-cuddles'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/experiences'
-  id: '__root__' | '/' | '/experiences'
+  to: '/' | '/experiences' | '/experiences/goat-cuddles'
+  id: '__root__' | '/' | '/experiences' | '/experiences_/goat-cuddles'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ExperiencesRoute: typeof ExperiencesRoute
+  ExperiencesGoatCuddlesRoute: typeof ExperiencesGoatCuddlesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperiencesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experiences_/goat-cuddles': {
+      id: '/experiences_/goat-cuddles'
+      path: '/experiences/goat-cuddles'
+      fullPath: '/experiences/goat-cuddles'
+      preLoaderRoute: typeof ExperiencesGoatCuddlesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ExperiencesRoute: ExperiencesRoute,
+  ExperiencesGoatCuddlesRoute: ExperiencesGoatCuddlesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -68,6 +68,11 @@ type Experience = {
   signature?: boolean;
 };
 
+/** Experiences that already have their own detail page. */
+const detailPages: Record<string, string> = {
+  "Goat Cuddles": "/experiences/goat-cuddles",
+};
+
 const farmExperiences: Experience[] = [
   { title: "Goat Yoga", copy: "Placeholder description. Downward dog, upward goat. Stretch while tiny hooves audit your form.", season: "May to October", age: "16+", booking: "public", image: goatCuddles, alt: "Goats climbing on guests during a farm yoga class" },
   { title: "Goat Recess", copy: "Placeholder description. Sixty minutes of unstructured goat chaos, supervised by professionals.", season: "May to October", age: "All ages", booking: "public", image: goatsPhoto, alt: "Guest surrounded by playful goats in the pasture" },
@@ -124,7 +129,9 @@ function ExperienceCard({ experience }: { experience: Experience }) {
         </ul>
 
         <div className="mt-5 flex flex-col gap-3">
-          <Button asChild variant="outline" className="w-full"><a href="#farm-experiences">Learn More</a></Button>
+          <Button asChild variant="outline" className="w-full">
+            <a href={detailPages[experience.title] ?? "#farm-experiences"}>Learn More</a>
+          </Button>
           {experience.booking === "both" ? (
             <>
               <Button asChild className="w-full"><a href="#farm-experiences">Book Public Experience</a></Button>
