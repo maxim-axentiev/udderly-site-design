@@ -7,7 +7,7 @@ export const navItems = [
   { label: "Experiences", href: "/experiences" },
   { label: "Meet the Herd", href: "/#meet-the-herd" },
   { label: "Stay", href: "/experiences#farm-stays" },
-  { label: "Adopt", href: "/experiences#gifts" },
+  { label: "Adopt", href: "/adopt-an-animal" },
   { label: "Corporate", href: "/experiences#for-businesses" },
   { label: "Our Farm", href: "/#store" },
 ];
