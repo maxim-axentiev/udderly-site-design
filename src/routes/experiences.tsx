@@ -104,7 +104,7 @@ const farmExperiences: Experience[] = [
 ];
 
 const stays = [
-  { title: "Farm Glamping", copy: "Placeholder description. A luxury RV parked where the sunsets are unreasonable and the neighbours have hooves.", season: "May to October", age: "All ages", image: glampingPhoto, alt: "Luxury RV lit at night beside a campfire on the farm", cta: "Book Farm Glamping", limited: false },
+  { title: "Farm Glamping", copy: "Placeholder description. A luxury RV parked where the sunsets are unreasonable and the neighbours have hooves.", season: "May to October", age: "All ages", image: glampingPhoto, alt: "Luxury RV lit at night beside a campfire on the farm", cta: "Book Farm Glamping", limited: false, detailHref: "/experiences/farm-glamping" },
   { title: "The Farm Hopping Experience", copy: "Placeholder description. One night on the farm, stitched together with experiences across the countryside.", season: "Select dates", age: "16+", image: highlandCta, alt: "Golden hour over the farm with animals grazing", cta: "Book Farm Hopping", limited: true },
 ];
 
@@ -253,7 +253,7 @@ function ExperiencesPage() {
                       <QuickFact icon={Users}>{stay.age}</QuickFact>
                     </ul>
                     <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                      <Button asChild size="large" variant="outline"><a href="#farm-stays">Learn More</a></Button>
+                      <Button asChild size="large" variant="outline"><a href={"detailHref" in stay ? stay.detailHref : "#farm-stays"}>Learn More</a></Button>
                       <Button asChild size="large"><a href="#farm-stays">{stay.cta} <ArrowRight aria-hidden="true" /></a></Button>
                     </div>
                   </div>
