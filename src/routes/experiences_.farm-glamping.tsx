@@ -252,6 +252,12 @@ function FarmGlampingPage() {
                 </article>
               ))}
             </div>
+
+            <div className="mt-14 flex justify-center">
+              <Button asChild size="large">
+                <a href={BOOK_HREF}>Book Farm Glamping <ArrowRight aria-hidden="true" /></a>
+              </Button>
+            </div>
           </div>
         </section>
 
