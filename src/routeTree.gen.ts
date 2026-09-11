@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdoptAnAnimalRouteImport } from './routes/adopt-an-animal'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as GiftCardRouteImport } from './routes/gift-card'
 import { Route as ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport } from './routes/experiences_.alpaca-experience-and-fibre-nesting-ball-workshop'
@@ -31,6 +32,11 @@ import { Route as ExperiencesTasteOfFarmLifeFamilyFriendlyRouteImport } from './
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdoptAnAnimalRoute = AdoptAnAnimalRouteImport.update({
+  id: '/adopt-an-animal',
+  path: '/adopt-an-animal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperiencesRoute = ExperiencesRouteImport.update({
@@ -132,6 +138,7 @@ const ExperiencesTasteOfFarmLifeFamilyFriendlyRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/adopt-an-animal': typeof AdoptAnAnimalRoute
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
@@ -152,6 +159,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/adopt-an-animal': typeof AdoptAnAnimalRoute
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
@@ -173,6 +181,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/adopt-an-animal': typeof AdoptAnAnimalRoute
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
   '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
@@ -195,6 +204,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/adopt-an-animal'
     | '/experiences'
     | '/gift-card'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
@@ -215,6 +225,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/adopt-an-animal'
     | '/experiences'
     | '/gift-card'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
@@ -235,6 +246,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/adopt-an-animal'
     | '/experiences'
     | '/gift-card'
     | '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop'
@@ -256,6 +268,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdoptAnAnimalRoute: typeof AdoptAnAnimalRoute
   ExperiencesRoute: typeof ExperiencesRoute
   GiftCardRoute: typeof GiftCardRoute
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute: typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
@@ -282,6 +295,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adopt-an-animal': {
+      id: '/adopt-an-animal'
+      path: '/adopt-an-animal'
+      fullPath: '/adopt-an-animal'
+      preLoaderRoute: typeof AdoptAnAnimalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experiences': {
@@ -408,6 +428,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdoptAnAnimalRoute: AdoptAnAnimalRoute,
   ExperiencesRoute: ExperiencesRoute,
   GiftCardRoute: GiftCardRoute,
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute:
