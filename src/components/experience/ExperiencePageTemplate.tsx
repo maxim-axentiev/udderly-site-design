@@ -1,6 +1,7 @@
 import { ArrowRight, CalendarClock, CircleDollarSign, Sparkles, Users } from "lucide-react";
 
 import feastOnLogoAsset from "@/assets/feast-on-logo.webp.asset.json";
+import oswSignatureAsset from "@/assets/osw-signature-experience.webp.asset.json";
 import goatIcon1 from "@/assets/goat-icon-1.jpg";
 import goatIcon2 from "@/assets/goat-icon-2.jpg";
 import goatIcon3 from "@/assets/goat-icon-3.jpg";
@@ -73,7 +74,7 @@ const goats = [
  * Reusable individual-experience page layout.
  * Content is placeholder for now; only the title and CTA label vary per experience.
  */
-export function ExperiencePageTemplate({ title, intro, showFeastOn = false }: { title: string; intro: string; showFeastOn?: boolean }) {
+export function ExperiencePageTemplate({ title, intro, showFeastOn = false, showSignature = false }: { title: string; intro: string; showFeastOn?: boolean; showSignature?: boolean }) {
   const words = title.split(" ");
   const lead = words.slice(0, -1).join(" ");
   const accent = words[words.length - 1];
@@ -241,6 +242,35 @@ export function ExperiencePageTemplate({ title, intro, showFeastOn = false }: { 
             </div>
           </div>
         </section>
+
+        {/* 7b. Signature Experience */}
+        {showSignature && (
+          <section id="signature-experience" className="bg-background py-20 md:py-28">
+            <div className="mx-auto grid max-w-[1200px] items-center gap-12 px-5 md:px-8 lg:grid-cols-[1fr_0.85fr]">
+              <div>
+                <p className="font-accent text-xl italic text-primary-accent">An Ontario's Southwest Signature Experience</p>
+                <h2 className="mt-3 font-display text-[clamp(2.6rem,6vw,5.4rem)] font-black uppercase leading-[0.82] text-headline">
+                  Officially<br />a big deal.
+                </h2>
+                <p className="mt-6 max-w-xl text-base leading-relaxed md:text-lg">
+                  Placeholder copy. This experience has been hand-picked and verified as a Signature Experience by Ontario's Southwest — meaning it is one of the most distinctive, memorable things you can do in the entire region. Not our words. Theirs. On an official logo and everything.
+                </p>
+                <Button asChild size="large" className="mt-8">
+                  <a href={BOOK_HREF}>{bookCta} <ArrowRight aria-hidden="true" /></a>
+                </Button>
+              </div>
+
+              <a
+                href="https://www.ontariosouthwest.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="mx-auto block w-full max-w-sm transition-transform duration-300 hover:scale-105 hover:rotate-2 active:scale-95"
+              >
+                <img src={oswSignatureAsset.url} alt="Ontario's Southwest Signature Experience logo" width={1080} height={1080} loading="lazy" className="h-auto w-full" />
+              </a>
+            </div>
+          </section>
+        )}
 
         {/* 8. FeastON Certification */}
         {showFeastOn && (

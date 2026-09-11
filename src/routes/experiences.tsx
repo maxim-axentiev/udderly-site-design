@@ -82,6 +82,8 @@ const detailPages: Record<string, string> = {
   "Alpaca Sunset Picnic": "/experiences/alpaca-sunset-picnic",
   "Private Miniature Donkey Lunch Picnic": "/experiences/private-miniature-donkey-lunch-picnic",
   "Private Miniature Donkey Sunset Picnic": "/experiences/private-miniature-donkey-sunset-picnic",
+  "Taste of Farm Life": "/experiences/taste-of-farm-life",
+  "Taste of Farm Life Family Friendly": "/experiences/taste-of-farm-life-family-friendly",
 };
 
 const farmExperiences: Experience[] = [
