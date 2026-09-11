@@ -15,7 +15,6 @@ import donkeyPicnic from "@/assets/donkey-picnic.jpg";
 import goatCuddles from "@/assets/goat-cuddles.jpg";
 import highlandHero from "@/assets/highland-hero.jpg";
 import { AwardsStrip } from "@/components/experience/AwardsStrip";
-import { ExperienceDetails, type ExperienceDetail } from "@/components/experience/ExperienceDetails";
 import { LocationSection } from "@/components/experience/LocationSection";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
 import { ReviewsSection } from "@/components/home/ReviewsSection";
