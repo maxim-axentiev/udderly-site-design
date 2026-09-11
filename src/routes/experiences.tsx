@@ -150,7 +150,7 @@ function ExperiencesPage() {
       <main id="top">
         {/* Hero */}
         <section className="relative isolate flex min-h-[72vh] items-center justify-center overflow-hidden">
-          <img src={heroPhoto} alt="Guest meeting a fluffy mini Highland cow in the barn" width={1280} height={1536} fetchPriority="high" className="absolute inset-0 -z-10 h-full w-full object-cover" />
+          <img src={heroPhoto} alt="A guest holding a fluffy Highland calf on the farm with other visitors in the background" width={1920} height={1080} fetchPriority="high" className="absolute inset-0 -z-10 h-full w-full object-cover" />
           <div className="absolute inset-0 -z-10 bg-headline/65" aria-hidden="true" />
           <div className="mx-auto max-w-4xl px-5 py-24 text-center md:px-8 md:py-32">
             <h1 className="font-display text-[clamp(3.2rem,9vw,8rem)] font-black uppercase leading-[0.8] text-background">
