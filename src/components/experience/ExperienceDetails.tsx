@@ -13,7 +13,7 @@ export function ExperienceDetails({ details }: { details: ExperienceDetail[] }) 
       {details.map(({ icon: Icon, label, lines }, index) => (
         <li
           key={label}
-          className={`border-2 border-headline bg-background p-4 shadow-[6px_6px_0_var(--headline)] ${index % 2 === 0 ? "-rotate-1" : "rotate-1"}`}
+          className={`border-2 border-headline bg-background p-4 shadow-[6px_6px_0_var(--headline)] transition-all duration-200 hover:scale-105 hover:shadow-[10px_10px_0_var(--headline)] active:scale-95 ${index % 2 === 0 ? "-rotate-1 hover:-rotate-2" : "rotate-1 hover:rotate-2"}`}
         >
           <span className="flex items-center gap-2 font-display text-sm font-black uppercase tracking-wide text-primary-accent">
             <Icon size={18} aria-hidden="true" /> {label}
