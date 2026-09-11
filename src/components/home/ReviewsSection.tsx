@@ -1,5 +1,5 @@
 import { Star, X } from "lucide-react";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 import alpacaWalk from "@/assets/alpaca-walk.jpg";
 import donkeyPicnic from "@/assets/donkey-picnic.jpg";
@@ -29,7 +29,7 @@ const reviews = [
   },
 ];
 
-export function ReviewsSection() {
+export function ReviewsSection({ cta }: { cta?: ReactNode }) {
   const [lightbox, setLightbox] = useState<{ src: string; name: string } | null>(null);
 
   return (
@@ -80,6 +80,7 @@ export function ReviewsSection() {
           ))}
         </div>
 
+        {cta && <div className="mt-12 flex justify-center">{cta}</div>}
       </div>
 
       {lightbox && (

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, CalendarClock, CircleDollarSign, Mail, Sparkles, X } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import feastOnLogoAsset from "@/assets/feast-on-logo.webp.asset.json";
@@ -9,13 +9,12 @@ import experiencesPhotoAsset from "@/assets/homepage-experiences.png.asset.json"
 import glampingPhotoAsset from "@/assets/homepage-glamping.png.asset.json";
 import iceCreamPhotoAsset from "@/assets/homepage-ice-cream.png.asset.json";
 import storePhotoAsset from "@/assets/homepage-store.png.asset.json";
-import giftCard from "@/assets/gift-card.jpg";
+import giftCard from "@/assets/gift-card.png";
 import alpacaWalk from "@/assets/alpaca-walk.jpg";
 import donkeyPicnic from "@/assets/donkey-picnic.jpg";
 import goatCuddles from "@/assets/goat-cuddles.jpg";
 import highlandHero from "@/assets/highland-hero.jpg";
 import { AwardsStrip } from "@/components/experience/AwardsStrip";
-import { ExperienceDetails, type ExperienceDetail } from "@/components/experience/ExperienceDetails";
 import { LocationSection } from "@/components/experience/LocationSection";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
 import { ReviewsSection } from "@/components/home/ReviewsSection";
@@ -28,13 +27,6 @@ const INTRO =
   "Give a day on the farm. Goats, alpacas, mini cows, ice cream — whatever they pick, it beats socks.";
 const BUY_HREF = "#buy";
 const CTA = "Get a Gift Card";
-
-const details: ExperienceDetail[] = [
-  { icon: CircleDollarSign, label: "Value", lines: ["Any amount you like"] },
-  { icon: Mail, label: "Delivery", lines: ["Instantly by email"] },
-  { icon: CalendarClock, label: "Expiry", lines: ["Never expires"] },
-  { icon: Sparkles, label: "Use it on", lines: ["Experiences, store & more"] },
-];
 
 const gallery = [
   { src: goatCuddles, alt: "Guest cuddling a mini goat in the barn" },
@@ -54,7 +46,7 @@ const thingsToKnow = [
   "No expiration date – gift certificates never expire.",
 ];
 
-export const Route = createFileRoute("/experiences_/gift-card")({
+export const Route = createFileRoute("/gift-card")({
   head: () => ({
     meta: [
       { title: `${TITLE} | Udderly Ridiculous Farm Life` },
@@ -157,15 +149,14 @@ function GiftCardPage() {
         <section id="buy" className="scroll-mt-20 overflow-hidden bg-background py-20 md:py-28">
           <div className="mx-auto max-w-[1400px] px-5 md:px-8">
             <div className="grid items-start gap-14 lg:grid-cols-[1.05fr_1fr]">
-              <div className="relative">
-                <div className="absolute -inset-3 -rotate-2 bg-secondary-accent" aria-hidden="true" />
+              <div>
                 <img
                   src={giftCard}
                   alt="Udderly Ridiculous Farm Life gift card featuring a baby goat"
                   width={1280}
                   height={960}
                   loading="lazy"
-                  className="relative aspect-[4/3] w-full border-2 border-headline object-cover"
+                  className="w-full"
                 />
               </div>
 
@@ -185,31 +176,13 @@ function GiftCardPage() {
                 </Button>
               </div>
             </div>
-
-            <div className="mt-16">
-              <h3 className="font-display text-2xl font-black uppercase text-headline">Gift Card Details</h3>
-              <div className="mt-5">
-                <ExperienceDetails details={details} />
-              </div>
-            </div>
           </div>
         </section>
 
         {/* 4. Fun gallery */}
-        <section id="gallery" className="overflow-hidden bg-farm-beige py-20 md:py-28">
+        <section id="gallery" className="overflow-hidden bg-background pb-20 md:pb-28">
           <div className="mx-auto max-w-[1400px] px-5 md:px-8">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <h2 className="font-display text-[clamp(2.6rem,7vw,6rem)] font-black uppercase leading-[0.8] text-headline">
-                What they<br /><span className="text-primary-accent">could pick.</span>
-              </h2>
-              <p className="max-w-md border-l-4 border-primary-accent pl-5 text-lg font-semibold">
-                Tap any photo to see it full size. Warning: you may end up gifting one to yourself.
-              </p>
-            </div>
-
-            <div className="mt-14">
-              <GiftGallery />
-            </div>
+            <GiftGallery />
 
             <div className="mt-12 flex justify-center">
               <Button asChild size="large"><a href={BUY_HREF}>{CTA} <ArrowRight aria-hidden="true" /></a></Button>
@@ -218,13 +191,13 @@ function GiftCardPage() {
         </section>
 
         {/* 5. Reviews (reused) */}
-        <ReviewsSection />
-
-        <section className="bg-background py-14">
-          <div className="mx-auto flex max-w-[1400px] justify-center px-5 md:px-8">
-            <Button asChild size="large"><a href={BUY_HREF}>{CTA} <ArrowRight aria-hidden="true" /></a></Button>
-          </div>
-        </section>
+        <ReviewsSection
+          cta={
+            <Button asChild size="large">
+              <a href={BUY_HREF}>{CTA} <ArrowRight aria-hidden="true" /></a>
+            </Button>
+          }
+        />
 
         {/* 6. Things to know */}
         <section id="things-to-know" className="overflow-hidden bg-farm-beige py-20 md:py-28">
