@@ -286,7 +286,7 @@ function ExperiencesPage() {
                   <h3 className="mt-4 font-display text-4xl font-black uppercase leading-[0.9] text-headline">A ridiculous day, wrapped</h3>
                   <p className="mt-3 leading-relaxed">Placeholder description. They pick the animals, the date and the level of chaos. You look like a genius.</p>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                    <Button asChild size="large" variant="outline"><Link to="/experiences/gift-card">Learn More</Link></Button>
+                    <Button asChild size="large" variant="outline"><Link to="/gift-card">Learn More</Link></Button>
                     <Button asChild size="large"><a href="#gifts">Give a Farm Experience <ArrowRight aria-hidden="true" /></a></Button>
                   </div>
                 </div>
