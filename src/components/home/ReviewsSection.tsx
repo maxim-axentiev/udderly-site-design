@@ -80,12 +80,6 @@ export function ReviewsSection() {
           ))}
         </div>
 
-        <div className="mt-14 flex justify-center">
-          <Button asChild size="large">
-            <a href="#experiences">Experience the ridiculousness for yourself</a>
-          </Button>
-        </div>
-
       </div>
 
       {lightbox && (
