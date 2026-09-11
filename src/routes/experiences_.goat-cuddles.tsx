@@ -5,7 +5,6 @@ import goatIcon1 from "@/assets/goat-icon-1.jpg";
 import goatIcon2 from "@/assets/goat-icon-2.jpg";
 import goatIcon3 from "@/assets/goat-icon-3.jpg";
 import goatCuddles from "@/assets/goat-cuddles.jpg";
-import highlandCta from "@/assets/highland-cta.jpg";
 import experiencesPhotoAsset from "@/assets/homepage-experiences.png.asset.json";
 import heroPhotoAsset from "@/assets/experiences-hero.png.asset.json";
 import { AwardsStrip } from "@/components/experience/AwardsStrip";
