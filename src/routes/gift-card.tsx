@@ -46,7 +46,7 @@ const thingsToKnow = [
   "No expiration date – gift certificates never expire.",
 ];
 
-export const Route = createFileRoute("/experiences_/gift-card")({
+export const Route = createFileRoute("/gift-card")({
   head: () => ({
     meta: [
       { title: `${TITLE} | Udderly Ridiculous Farm Life` },
