@@ -73,7 +73,7 @@ const goats = [
  * Reusable individual-experience page layout.
  * Content is placeholder for now; only the title and CTA label vary per experience.
  */
-export function ExperiencePageTemplate({ title, intro }: { title: string; intro: string }) {
+export function ExperiencePageTemplate({ title, intro, showFeastOn = false }: { title: string; intro: string; showFeastOn?: boolean }) {
   const words = title.split(" ");
   const lead = words.slice(0, -1).join(" ");
   const accent = words[words.length - 1];
