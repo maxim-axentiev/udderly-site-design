@@ -28,13 +28,6 @@ const INTRO =
 const BUY_HREF = "#buy";
 const CTA = "Get a Gift Card";
 
-const details: ExperienceDetail[] = [
-  { icon: CircleDollarSign, label: "Value", lines: ["Any amount you like"] },
-  { icon: Mail, label: "Delivery", lines: ["Instantly by email"] },
-  { icon: CalendarClock, label: "Expiry", lines: ["Never expires"] },
-  { icon: Sparkles, label: "Use it on", lines: ["Experiences, store & more"] },
-];
-
 const gallery = [
   { src: goatCuddles, alt: "Guest cuddling a mini goat in the barn" },
   { src: experiencesPhotoAsset.url, alt: "Goats crowding around a laughing visitor" },
