@@ -124,7 +124,9 @@ function ExperienceCard({ experience }: { experience: Experience }) {
         </ul>
 
         <div className="mt-5 flex flex-col gap-3">
-          <Button asChild variant="outline" className="w-full"><a href="#farm-experiences">Learn More</a></Button>
+          <Button asChild variant="outline" className="w-full">
+            <a href={detailPages[experience.title] ?? "#farm-experiences"}>Learn More</a>
+          </Button>
           {experience.booking === "both" ? (
             <>
               <Button asChild className="w-full"><a href="#farm-experiences">Book Public Experience</a></Button>
