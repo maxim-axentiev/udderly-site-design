@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport } from './routes/experiences_.alpaca-experience-and-fibre-nesting-ball-workshop'
+import { Route as ExperiencesAlpacaLunchPicnicRouteImport } from './routes/experiences_.alpaca-lunch-picnic'
 import { Route as ExperiencesAlpacaWalksRouteImport } from './routes/experiences_.alpaca-walks'
 import { Route as ExperiencesBabyGoatPlaytimeAndSnugglesRouteImport } from './routes/experiences_.baby-goat-playtime-and-snuggles'
 import { Route as ExperiencesGoatCuddlesRouteImport } from './routes/experiences_.goat-cuddles'
@@ -34,6 +35,12 @@ const ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute =
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport.update({
     id: '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop',
     path: '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ExperiencesAlpacaLunchPicnicRoute =
+  ExperiencesAlpacaLunchPicnicRouteImport.update({
+    id: '/experiences_/alpaca-lunch-picnic',
+    path: '/experiences/alpaca-lunch-picnic',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ExperiencesAlpacaWalksRoute = ExperiencesAlpacaWalksRouteImport.update({
@@ -80,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
+  '/experiences/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences/alpaca-walks': typeof ExperiencesAlpacaWalksRoute
   '/experiences/baby-goat-playtime-and-snuggles': typeof ExperiencesBabyGoatPlaytimeAndSnugglesRoute
   '/experiences/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
@@ -92,6 +100,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
+  '/experiences/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences/alpaca-walks': typeof ExperiencesAlpacaWalksRoute
   '/experiences/baby-goat-playtime-and-snuggles': typeof ExperiencesBabyGoatPlaytimeAndSnugglesRoute
   '/experiences/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
@@ -105,6 +114,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
   '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
+  '/experiences_/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences_/alpaca-walks': typeof ExperiencesAlpacaWalksRoute
   '/experiences_/baby-goat-playtime-and-snuggles': typeof ExperiencesBabyGoatPlaytimeAndSnugglesRoute
   '/experiences_/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/'
     | '/experiences'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
+    | '/experiences/alpaca-lunch-picnic'
     | '/experiences/alpaca-walks'
     | '/experiences/baby-goat-playtime-and-snuggles'
     | '/experiences/goat-cuddles'
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/'
     | '/experiences'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
+    | '/experiences/alpaca-lunch-picnic'
     | '/experiences/alpaca-walks'
     | '/experiences/baby-goat-playtime-and-snuggles'
     | '/experiences/goat-cuddles'
@@ -143,6 +155,7 @@ export interface FileRouteTypes {
     | '/'
     | '/experiences'
     | '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop'
+    | '/experiences_/alpaca-lunch-picnic'
     | '/experiences_/alpaca-walks'
     | '/experiences_/baby-goat-playtime-and-snuggles'
     | '/experiences_/goat-cuddles'
@@ -156,6 +169,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ExperiencesRoute: typeof ExperiencesRoute
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute: typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
+  ExperiencesAlpacaLunchPicnicRoute: typeof ExperiencesAlpacaLunchPicnicRoute
   ExperiencesAlpacaWalksRoute: typeof ExperiencesAlpacaWalksRoute
   ExperiencesBabyGoatPlaytimeAndSnugglesRoute: typeof ExperiencesBabyGoatPlaytimeAndSnugglesRoute
   ExperiencesGoatCuddlesRoute: typeof ExperiencesGoatCuddlesRoute
@@ -186,6 +200,13 @@ declare module '@tanstack/react-router' {
       path: '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
       fullPath: '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
       preLoaderRoute: typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences_/alpaca-lunch-picnic': {
+      id: '/experiences_/alpaca-lunch-picnic'
+      path: '/experiences/alpaca-lunch-picnic'
+      fullPath: '/experiences/alpaca-lunch-picnic'
+      preLoaderRoute: typeof ExperiencesAlpacaLunchPicnicRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experiences_/alpaca-walks': {
@@ -245,6 +266,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExperiencesRoute: ExperiencesRoute,
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute:
     ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute,
+  ExperiencesAlpacaLunchPicnicRoute: ExperiencesAlpacaLunchPicnicRoute,
   ExperiencesAlpacaWalksRoute: ExperiencesAlpacaWalksRoute,
   ExperiencesBabyGoatPlaytimeAndSnugglesRoute:
     ExperiencesBabyGoatPlaytimeAndSnugglesRoute,
