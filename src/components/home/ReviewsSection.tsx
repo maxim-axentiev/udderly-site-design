@@ -6,7 +6,7 @@ import donkeyPicnic from "@/assets/donkey-picnic.jpg";
 import goatCuddles from "@/assets/goat-cuddles.jpg";
 import highlandCta from "@/assets/highland-cta.jpg";
 import highlandHero from "@/assets/highland-hero.jpg";
-import { Button } from "@/components/ui/button";
+
 
 const reviews = [
   {
@@ -78,12 +78,6 @@ export function ReviewsSection() {
               </p>
             </article>
           ))}
-        </div>
-
-        <div className="mt-14 flex justify-center">
-          <Button asChild size="large">
-            <a href="#experiences">Experience the ridiculousness for yourself</a>
-          </Button>
         </div>
 
       </div>
