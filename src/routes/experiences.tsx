@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CalendarDays, Users } from "lucide-react";
 
 import alpacaWalk from "@/assets/alpaca-walk.jpg";
