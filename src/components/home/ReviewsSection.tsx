@@ -29,7 +29,7 @@ const reviews = [
   },
 ];
 
-export function ReviewsSection() {
+export function ReviewsSection({ cta }: { cta?: React.ReactNode }) {
   const [lightbox, setLightbox] = useState<{ src: string; name: string } | null>(null);
 
   return (
