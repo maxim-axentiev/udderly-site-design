@@ -42,7 +42,7 @@ export function CarouselTrack({
         ))}
       </div>
 
-      <div className="mt-2 flex justify-end gap-3">
+      <div className="mt-2 flex justify-center gap-3 md:justify-end">
         <button
           type="button"
           onClick={() => scrollBy(-1)}

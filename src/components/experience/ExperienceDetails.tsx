@@ -9,7 +9,7 @@ export type ExperienceDetail = {
 /** Reusable, scannable fact grid used on every individual experience page. */
 export function ExperienceDetails({ details }: { details: ExperienceDetail[] }) {
   return (
-    <ul className="grid gap-4 sm:grid-cols-2">
+    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {details.map(({ icon: Icon, label, lines }, index) => (
         <li
           key={label}
