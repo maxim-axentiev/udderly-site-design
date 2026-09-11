@@ -6,7 +6,7 @@ const TITLE = "Alpaca Sunset Picnic";
 const INTRO =
   "Placeholder copy. Golden hour, long shadows, and the farm's smuggest models.";
 
-export const Route = createFileRoute("/experiences/alpaca-sunset-picnic")({
+export const Route = createFileRoute("/experiences_/alpaca-sunset-picnic")({
   head: () => ({
     meta: [
       { title: `${TITLE} | Udderly Ridiculous Farm Life` },

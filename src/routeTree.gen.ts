@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport } from './routes/experiences_.alpaca-experience-and-fibre-nesting-ball-workshop'
 import { Route as ExperiencesAlpacaLunchPicnicRouteImport } from './routes/experiences_.alpaca-lunch-picnic'
+import { Route as ExperiencesAlpacaSunsetPicnicRouteImport } from './routes/experiences_.alpaca-sunset-picnic'
 import { Route as ExperiencesAlpacaWalksRouteImport } from './routes/experiences_.alpaca-walks'
 import { Route as ExperiencesBabyGoatPlaytimeAndSnugglesRouteImport } from './routes/experiences_.baby-goat-playtime-and-snuggles'
 import { Route as ExperiencesGoatCuddlesRouteImport } from './routes/experiences_.goat-cuddles'
@@ -20,6 +21,8 @@ import { Route as ExperiencesGoatRecessRouteImport } from './routes/experiences_
 import { Route as ExperiencesMiniHighlandCalfMeetAndGreetRouteImport } from './routes/experiences_.mini-highland-calf-meet-and-greet'
 import { Route as ExperiencesMiniHighlandCowExperienceRouteImport } from './routes/experiences_.mini-highland-cow-experience'
 import { Route as ExperiencesMiniatureDonkeyVisitsRouteImport } from './routes/experiences_.miniature-donkey-visits'
+import { Route as ExperiencesPrivateMiniatureDonkeyLunchPicnicRouteImport } from './routes/experiences_.private-miniature-donkey-lunch-picnic'
+import { Route as ExperiencesPrivateMiniatureDonkeySunsetPicnicRouteImport } from './routes/experiences_.private-miniature-donkey-sunset-picnic'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -41,6 +44,12 @@ const ExperiencesAlpacaLunchPicnicRoute =
   ExperiencesAlpacaLunchPicnicRouteImport.update({
     id: '/experiences_/alpaca-lunch-picnic',
     path: '/experiences/alpaca-lunch-picnic',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ExperiencesAlpacaSunsetPicnicRoute =
+  ExperiencesAlpacaSunsetPicnicRouteImport.update({
+    id: '/experiences_/alpaca-sunset-picnic',
+    path: '/experiences/alpaca-sunset-picnic',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ExperiencesAlpacaWalksRoute = ExperiencesAlpacaWalksRouteImport.update({
@@ -82,12 +91,25 @@ const ExperiencesMiniatureDonkeyVisitsRoute =
     path: '/experiences/miniature-donkey-visits',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute =
+  ExperiencesPrivateMiniatureDonkeyLunchPicnicRouteImport.update({
+    id: '/experiences_/private-miniature-donkey-lunch-picnic',
+    path: '/experiences/private-miniature-donkey-lunch-picnic',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute =
+  ExperiencesPrivateMiniatureDonkeySunsetPicnicRouteImport.update({
+    id: '/experiences_/private-miniature-donkey-sunset-picnic',
+    path: '/experiences/private-miniature-donkey-sunset-picnic',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
+  '/experiences/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
   '/experiences/alpaca-walks': typeof ExperiencesAlpacaWalksRoute
   '/experiences/baby-goat-playtime-and-snuggles': typeof ExperiencesBabyGoatPlaytimeAndSnugglesRoute
   '/experiences/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
@@ -95,12 +117,15 @@ export interface FileRoutesByFullPath {
   '/experiences/mini-highland-calf-meet-and-greet': typeof ExperiencesMiniHighlandCalfMeetAndGreetRoute
   '/experiences/mini-highland-cow-experience': typeof ExperiencesMiniHighlandCowExperienceRoute
   '/experiences/miniature-donkey-visits': typeof ExperiencesMiniatureDonkeyVisitsRoute
+  '/experiences/private-miniature-donkey-lunch-picnic': typeof ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute
+  '/experiences/private-miniature-donkey-sunset-picnic': typeof ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
+  '/experiences/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
   '/experiences/alpaca-walks': typeof ExperiencesAlpacaWalksRoute
   '/experiences/baby-goat-playtime-and-snuggles': typeof ExperiencesBabyGoatPlaytimeAndSnugglesRoute
   '/experiences/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
@@ -108,6 +133,8 @@ export interface FileRoutesByTo {
   '/experiences/mini-highland-calf-meet-and-greet': typeof ExperiencesMiniHighlandCalfMeetAndGreetRoute
   '/experiences/mini-highland-cow-experience': typeof ExperiencesMiniHighlandCowExperienceRoute
   '/experiences/miniature-donkey-visits': typeof ExperiencesMiniatureDonkeyVisitsRoute
+  '/experiences/private-miniature-donkey-lunch-picnic': typeof ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute
+  '/experiences/private-miniature-donkey-sunset-picnic': typeof ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -115,6 +142,7 @@ export interface FileRoutesById {
   '/experiences': typeof ExperiencesRoute
   '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences_/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
+  '/experiences_/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
   '/experiences_/alpaca-walks': typeof ExperiencesAlpacaWalksRoute
   '/experiences_/baby-goat-playtime-and-snuggles': typeof ExperiencesBabyGoatPlaytimeAndSnugglesRoute
   '/experiences_/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
@@ -122,6 +150,8 @@ export interface FileRoutesById {
   '/experiences_/mini-highland-calf-meet-and-greet': typeof ExperiencesMiniHighlandCalfMeetAndGreetRoute
   '/experiences_/mini-highland-cow-experience': typeof ExperiencesMiniHighlandCowExperienceRoute
   '/experiences_/miniature-donkey-visits': typeof ExperiencesMiniatureDonkeyVisitsRoute
+  '/experiences_/private-miniature-donkey-lunch-picnic': typeof ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute
+  '/experiences_/private-miniature-donkey-sunset-picnic': typeof ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -130,6 +160,7 @@ export interface FileRouteTypes {
     | '/experiences'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences/alpaca-lunch-picnic'
+    | '/experiences/alpaca-sunset-picnic'
     | '/experiences/alpaca-walks'
     | '/experiences/baby-goat-playtime-and-snuggles'
     | '/experiences/goat-cuddles'
@@ -137,12 +168,15 @@ export interface FileRouteTypes {
     | '/experiences/mini-highland-calf-meet-and-greet'
     | '/experiences/mini-highland-cow-experience'
     | '/experiences/miniature-donkey-visits'
+    | '/experiences/private-miniature-donkey-lunch-picnic'
+    | '/experiences/private-miniature-donkey-sunset-picnic'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/experiences'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences/alpaca-lunch-picnic'
+    | '/experiences/alpaca-sunset-picnic'
     | '/experiences/alpaca-walks'
     | '/experiences/baby-goat-playtime-and-snuggles'
     | '/experiences/goat-cuddles'
@@ -150,12 +184,15 @@ export interface FileRouteTypes {
     | '/experiences/mini-highland-calf-meet-and-greet'
     | '/experiences/mini-highland-cow-experience'
     | '/experiences/miniature-donkey-visits'
+    | '/experiences/private-miniature-donkey-lunch-picnic'
+    | '/experiences/private-miniature-donkey-sunset-picnic'
   id:
     | '__root__'
     | '/'
     | '/experiences'
     | '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences_/alpaca-lunch-picnic'
+    | '/experiences_/alpaca-sunset-picnic'
     | '/experiences_/alpaca-walks'
     | '/experiences_/baby-goat-playtime-and-snuggles'
     | '/experiences_/goat-cuddles'
@@ -163,6 +200,8 @@ export interface FileRouteTypes {
     | '/experiences_/mini-highland-calf-meet-and-greet'
     | '/experiences_/mini-highland-cow-experience'
     | '/experiences_/miniature-donkey-visits'
+    | '/experiences_/private-miniature-donkey-lunch-picnic'
+    | '/experiences_/private-miniature-donkey-sunset-picnic'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -170,6 +209,7 @@ export interface RootRouteChildren {
   ExperiencesRoute: typeof ExperiencesRoute
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute: typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   ExperiencesAlpacaLunchPicnicRoute: typeof ExperiencesAlpacaLunchPicnicRoute
+  ExperiencesAlpacaSunsetPicnicRoute: typeof ExperiencesAlpacaSunsetPicnicRoute
   ExperiencesAlpacaWalksRoute: typeof ExperiencesAlpacaWalksRoute
   ExperiencesBabyGoatPlaytimeAndSnugglesRoute: typeof ExperiencesBabyGoatPlaytimeAndSnugglesRoute
   ExperiencesGoatCuddlesRoute: typeof ExperiencesGoatCuddlesRoute
@@ -177,6 +217,8 @@ export interface RootRouteChildren {
   ExperiencesMiniHighlandCalfMeetAndGreetRoute: typeof ExperiencesMiniHighlandCalfMeetAndGreetRoute
   ExperiencesMiniHighlandCowExperienceRoute: typeof ExperiencesMiniHighlandCowExperienceRoute
   ExperiencesMiniatureDonkeyVisitsRoute: typeof ExperiencesMiniatureDonkeyVisitsRoute
+  ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute: typeof ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute
+  ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute: typeof ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -207,6 +249,13 @@ declare module '@tanstack/react-router' {
       path: '/experiences/alpaca-lunch-picnic'
       fullPath: '/experiences/alpaca-lunch-picnic'
       preLoaderRoute: typeof ExperiencesAlpacaLunchPicnicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences_/alpaca-sunset-picnic': {
+      id: '/experiences_/alpaca-sunset-picnic'
+      path: '/experiences/alpaca-sunset-picnic'
+      fullPath: '/experiences/alpaca-sunset-picnic'
+      preLoaderRoute: typeof ExperiencesAlpacaSunsetPicnicRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experiences_/alpaca-walks': {
@@ -258,6 +307,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperiencesMiniatureDonkeyVisitsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experiences_/private-miniature-donkey-lunch-picnic': {
+      id: '/experiences_/private-miniature-donkey-lunch-picnic'
+      path: '/experiences/private-miniature-donkey-lunch-picnic'
+      fullPath: '/experiences/private-miniature-donkey-lunch-picnic'
+      preLoaderRoute: typeof ExperiencesPrivateMiniatureDonkeyLunchPicnicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences_/private-miniature-donkey-sunset-picnic': {
+      id: '/experiences_/private-miniature-donkey-sunset-picnic'
+      path: '/experiences/private-miniature-donkey-sunset-picnic'
+      fullPath: '/experiences/private-miniature-donkey-sunset-picnic'
+      preLoaderRoute: typeof ExperiencesPrivateMiniatureDonkeySunsetPicnicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -267,6 +330,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute:
     ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute,
   ExperiencesAlpacaLunchPicnicRoute: ExperiencesAlpacaLunchPicnicRoute,
+  ExperiencesAlpacaSunsetPicnicRoute: ExperiencesAlpacaSunsetPicnicRoute,
   ExperiencesAlpacaWalksRoute: ExperiencesAlpacaWalksRoute,
   ExperiencesBabyGoatPlaytimeAndSnugglesRoute:
     ExperiencesBabyGoatPlaytimeAndSnugglesRoute,
@@ -277,6 +341,10 @@ const rootRouteChildren: RootRouteChildren = {
   ExperiencesMiniHighlandCowExperienceRoute:
     ExperiencesMiniHighlandCowExperienceRoute,
   ExperiencesMiniatureDonkeyVisitsRoute: ExperiencesMiniatureDonkeyVisitsRoute,
+  ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute:
+    ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute,
+  ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute:
+    ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

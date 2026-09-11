@@ -6,7 +6,7 @@ const TITLE = "Private Miniature Donkey Sunset Picnic";
 const INTRO =
   "Placeholder copy. Same donkeys, better lighting, significantly more romance.";
 
-export const Route = createFileRoute("/experiences/private-miniature-donkey-sunset-picnic")({
+export const Route = createFileRoute("/experiences_/private-miniature-donkey-sunset-picnic")({
   head: () => ({
     meta: [
       { title: `${TITLE} | Udderly Ridiculous Farm Life` },
