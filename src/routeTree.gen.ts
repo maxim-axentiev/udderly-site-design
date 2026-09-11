@@ -24,6 +24,8 @@ import { Route as ExperiencesMiniHighlandCowExperienceRouteImport } from './rout
 import { Route as ExperiencesMiniatureDonkeyVisitsRouteImport } from './routes/experiences_.miniature-donkey-visits'
 import { Route as ExperiencesPrivateMiniatureDonkeyLunchPicnicRouteImport } from './routes/experiences_.private-miniature-donkey-lunch-picnic'
 import { Route as ExperiencesPrivateMiniatureDonkeySunsetPicnicRouteImport } from './routes/experiences_.private-miniature-donkey-sunset-picnic'
+import { Route as ExperiencesTasteOfFarmLifeRouteImport } from './routes/experiences_.taste-of-farm-life'
+import { Route as ExperiencesTasteOfFarmLifeFamilyFriendlyRouteImport } from './routes/experiences_.taste-of-farm-life-family-friendly'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -109,6 +111,18 @@ const ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute =
     path: '/experiences/private-miniature-donkey-sunset-picnic',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ExperiencesTasteOfFarmLifeRoute =
+  ExperiencesTasteOfFarmLifeRouteImport.update({
+    id: '/experiences_/taste-of-farm-life',
+    path: '/experiences/taste-of-farm-life',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ExperiencesTasteOfFarmLifeFamilyFriendlyRoute =
+  ExperiencesTasteOfFarmLifeFamilyFriendlyRouteImport.update({
+    id: '/experiences_/taste-of-farm-life-family-friendly',
+    path: '/experiences/taste-of-farm-life-family-friendly',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -126,6 +140,8 @@ export interface FileRoutesByFullPath {
   '/experiences/miniature-donkey-visits': typeof ExperiencesMiniatureDonkeyVisitsRoute
   '/experiences/private-miniature-donkey-lunch-picnic': typeof ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute
   '/experiences/private-miniature-donkey-sunset-picnic': typeof ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute
+  '/experiences/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
+  '/experiences/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -143,6 +159,8 @@ export interface FileRoutesByTo {
   '/experiences/miniature-donkey-visits': typeof ExperiencesMiniatureDonkeyVisitsRoute
   '/experiences/private-miniature-donkey-lunch-picnic': typeof ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute
   '/experiences/private-miniature-donkey-sunset-picnic': typeof ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute
+  '/experiences/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
+  '/experiences/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -161,6 +179,8 @@ export interface FileRoutesById {
   '/experiences_/miniature-donkey-visits': typeof ExperiencesMiniatureDonkeyVisitsRoute
   '/experiences_/private-miniature-donkey-lunch-picnic': typeof ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute
   '/experiences_/private-miniature-donkey-sunset-picnic': typeof ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute
+  '/experiences_/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
+  '/experiences_/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -180,6 +200,8 @@ export interface FileRouteTypes {
     | '/experiences/miniature-donkey-visits'
     | '/experiences/private-miniature-donkey-lunch-picnic'
     | '/experiences/private-miniature-donkey-sunset-picnic'
+    | '/experiences/taste-of-farm-life'
+    | '/experiences/taste-of-farm-life-family-friendly'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -197,6 +219,8 @@ export interface FileRouteTypes {
     | '/experiences/miniature-donkey-visits'
     | '/experiences/private-miniature-donkey-lunch-picnic'
     | '/experiences/private-miniature-donkey-sunset-picnic'
+    | '/experiences/taste-of-farm-life'
+    | '/experiences/taste-of-farm-life-family-friendly'
   id:
     | '__root__'
     | '/'
@@ -214,6 +238,8 @@ export interface FileRouteTypes {
     | '/experiences_/miniature-donkey-visits'
     | '/experiences_/private-miniature-donkey-lunch-picnic'
     | '/experiences_/private-miniature-donkey-sunset-picnic'
+    | '/experiences_/taste-of-farm-life'
+    | '/experiences_/taste-of-farm-life-family-friendly'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -232,6 +258,8 @@ export interface RootRouteChildren {
   ExperiencesMiniatureDonkeyVisitsRoute: typeof ExperiencesMiniatureDonkeyVisitsRoute
   ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute: typeof ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute
   ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute: typeof ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute
+  ExperiencesTasteOfFarmLifeRoute: typeof ExperiencesTasteOfFarmLifeRoute
+  ExperiencesTasteOfFarmLifeFamilyFriendlyRoute: typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -341,6 +369,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperiencesPrivateMiniatureDonkeySunsetPicnicRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experiences_/taste-of-farm-life': {
+      id: '/experiences_/taste-of-farm-life'
+      path: '/experiences/taste-of-farm-life'
+      fullPath: '/experiences/taste-of-farm-life'
+      preLoaderRoute: typeof ExperiencesTasteOfFarmLifeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences_/taste-of-farm-life-family-friendly': {
+      id: '/experiences_/taste-of-farm-life-family-friendly'
+      path: '/experiences/taste-of-farm-life-family-friendly'
+      fullPath: '/experiences/taste-of-farm-life-family-friendly'
+      preLoaderRoute: typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -366,6 +408,9 @@ const rootRouteChildren: RootRouteChildren = {
     ExperiencesPrivateMiniatureDonkeyLunchPicnicRoute,
   ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute:
     ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute,
+  ExperiencesTasteOfFarmLifeRoute: ExperiencesTasteOfFarmLifeRoute,
+  ExperiencesTasteOfFarmLifeFamilyFriendlyRoute:
+    ExperiencesTasteOfFarmLifeFamilyFriendlyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
