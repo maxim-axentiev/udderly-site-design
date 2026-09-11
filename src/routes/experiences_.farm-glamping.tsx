@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 const TITLE = "Farm Glamping";
 const BOOK_HREF = "#book";
 
-export const Route = createFileRoute("/experiences/farm-glamping")({
+export const Route = createFileRoute("/experiences_/farm-glamping")({
   head: () => ({
     meta: [
       { title: "Farm Glamping — Udderly Ridiculous Farm Life" },
