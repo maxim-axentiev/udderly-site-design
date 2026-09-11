@@ -157,15 +157,14 @@ function GiftCardPage() {
         <section id="buy" className="scroll-mt-20 overflow-hidden bg-background py-20 md:py-28">
           <div className="mx-auto max-w-[1400px] px-5 md:px-8">
             <div className="grid items-start gap-14 lg:grid-cols-[1.05fr_1fr]">
-              <div className="relative">
-                <div className="absolute -inset-3 -rotate-2 bg-secondary-accent" aria-hidden="true" />
+              <div>
                 <img
                   src={giftCard}
                   alt="Udderly Ridiculous Farm Life gift card featuring a baby goat"
                   width={1280}
                   height={960}
                   loading="lazy"
-                  className="relative aspect-[4/3] w-full border-2 border-headline object-cover"
+                  className="w-full"
                 />
               </div>
 
@@ -183,13 +182,6 @@ function GiftCardPage() {
                 <Button asChild size="large" className="mt-8">
                   <a href={BUY_HREF}>{CTA} <ArrowRight aria-hidden="true" /></a>
                 </Button>
-              </div>
-            </div>
-
-            <div className="mt-16">
-              <h3 className="font-display text-2xl font-black uppercase text-headline">Gift Card Details</h3>
-              <div className="mt-5">
-                <ExperienceDetails details={details} />
               </div>
             </div>
           </div>
