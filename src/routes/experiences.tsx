@@ -326,9 +326,14 @@ function ExperiencesPage() {
         {/* Rainbow Registered */}
         <section id="rainbow-registered" className="bg-background py-20 md:py-28">
           <div className="mx-auto grid max-w-[1200px] items-center gap-12 px-5 md:px-8 lg:grid-cols-[0.75fr_1fr]">
-            <div className="mx-auto flex w-full max-w-sm -rotate-2 items-center justify-center border-2 border-headline bg-background p-6 shadow-[10px_10px_0_var(--secondary-accent)]">
+            <a
+              href="https://www.rainbowregistered.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="mx-auto block w-full max-w-md transition-transform duration-300 hover:scale-105 hover:-rotate-2 active:scale-95"
+            >
               <img src={rainbowRegisteredAsset.url} alt="Rainbow Registered / Arc-en-ciel Officiel accreditation logo" width={1920} height={620} loading="lazy" className="h-auto w-full" />
-            </div>
+            </a>
 
             <div>
               <p className="font-accent text-xl italic text-primary-accent">Proudly Rainbow Registered</p>
