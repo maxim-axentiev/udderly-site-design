@@ -242,7 +242,39 @@ export function ExperiencePageTemplate({ title, intro, showFeastOn = false }: { 
           </div>
         </section>
 
-        {/* 8. Newsletter (reused) */}
+        {/* 8. FeastON Certification */}
+        {showFeastOn && (
+          <section id="feast-on" className="bg-farm-beige py-20 md:py-28">
+            <div className="mx-auto grid max-w-[1200px] items-center gap-12 px-5 md:px-8 lg:grid-cols-[1fr_0.85fr]">
+              <div className="order-2 lg:order-1">
+                <p className="font-accent text-xl italic text-primary-accent">Certified Local by FeastON</p>
+                <h2 className="mt-3 font-display text-[clamp(2.6rem,6vw,5.4rem)] font-black uppercase leading-[0.82] text-headline">
+                  We eat<br />and serve local.
+                </h2>
+                <p className="mt-6 max-w-xl text-base leading-relaxed md:text-lg">
+                  FeastON officially verifies that a significant portion of our ingredients and products are sourced right here in Ontario. This experience only includes local, Ontario-made food, so you are tasting the neighbourhood with every bite.
+                </p>
+                <p className="mt-4 max-w-xl text-base leading-relaxed md:text-lg">
+                  So far we have had the privilege of supporting more than 140 local producers through everything we serve, sell and celebrate on the farm.
+                </p>
+                <Button asChild size="large" className="mt-8">
+                  <a href={BOOK_HREF}>{bookCta} <ArrowRight aria-hidden="true" /></a>
+                </Button>
+              </div>
+
+              <a
+                href="https://feaston.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="order-1 mx-auto block w-full max-w-sm transition-transform duration-300 hover:scale-105 hover:rotate-2 active:scale-95 lg:order-2"
+              >
+                <img src={feastOnLogoAsset.url} alt="FeastON Certified Local by the Culinary Tourism Alliance logo" width={800} height={800} loading="lazy" className="h-auto w-full" />
+              </a>
+            </div>
+          </section>
+        )}
+
+        {/* 9. Newsletter (reused) */}
         <NewsletterSection />
 
         {/* 9. Location (reused) */}
