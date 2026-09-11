@@ -1,5 +1,5 @@
 import { Star, X } from "lucide-react";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 import alpacaWalk from "@/assets/alpaca-walk.jpg";
 import donkeyPicnic from "@/assets/donkey-picnic.jpg";
