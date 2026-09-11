@@ -59,7 +59,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const navItems = ["Experiences", "Meet the Herd", "Stay", "Adopt", "Corporate", "Our Farm"];
+
 
 const awards = [
   { year: "2023", badge: tripadvisor2023.url },
