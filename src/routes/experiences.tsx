@@ -353,7 +353,7 @@ function ExperiencesPage() {
             <div className="order-2 lg:order-1">
               <p className="font-accent text-xl italic text-primary-accent">Certified Local by FeastON</p>
               <h2 className="mt-3 font-display text-[clamp(2.6rem,6vw,5.4rem)] font-black uppercase leading-[0.82] text-headline">
-                We eat — and serve —<br />local.
+                We eat<br />and serve local.
               </h2>
               <p className="mt-6 max-w-xl text-base leading-relaxed md:text-lg">
                 FeastON officially verifies that a significant portion of our ingredients and products are sourced right here in Ontario. We only support local, Ontario-made products, and so far we have had the privilege of supporting more than 140 local producers through everything we serve, sell and celebrate on the farm.
@@ -363,9 +363,14 @@ function ExperiencesPage() {
               </p>
             </div>
 
-            <div className="order-1 mx-auto flex w-full max-w-sm rotate-2 items-center justify-center border-2 border-headline bg-background p-6 shadow-[10px_10px_0_var(--primary-accent)] lg:order-2">
+            <a
+              href="https://feaston.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="order-1 mx-auto block w-full max-w-sm transition-transform duration-300 hover:scale-105 hover:rotate-2 active:scale-95 lg:order-2"
+            >
               <img src={feastOnLogoAsset.url} alt="FeastON Certified Local by the Culinary Tourism Alliance logo" width={800} height={800} loading="lazy" className="h-auto w-full" />
-            </div>
+            </a>
           </div>
         </section>
 
