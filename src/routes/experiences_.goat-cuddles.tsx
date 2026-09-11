@@ -181,6 +181,12 @@ function GoatCuddlesPage() {
                 </ul>
               </div>
             </div>
+
+            <div className="mt-12 flex justify-center">
+              <Button asChild size="large">
+                <a href={BOOK_HREF}>{BOOK_CTA} <ArrowRight aria-hidden="true" /></a>
+              </Button>
+            </div>
           </div>
         </section>
 
