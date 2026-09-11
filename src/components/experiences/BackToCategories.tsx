@@ -9,7 +9,7 @@ export function BackToCategories() {
     if (!target) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => setVisible(entry.boundingClientRect.top < 0 && !entry.isIntersecting),
+      ([entry]) => setVisible(!!entry && entry.boundingClientRect.top < 0 && !entry.isIntersecting),
       { threshold: 0 },
     );
     observer.observe(target);
