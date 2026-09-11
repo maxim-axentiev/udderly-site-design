@@ -188,20 +188,9 @@ function GiftCardPage() {
         </section>
 
         {/* 4. Fun gallery */}
-        <section id="gallery" className="overflow-hidden bg-farm-beige py-20 md:py-28">
+        <section id="gallery" className="overflow-hidden bg-background pb-20 md:pb-28">
           <div className="mx-auto max-w-[1400px] px-5 md:px-8">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <h2 className="font-display text-[clamp(2.6rem,7vw,6rem)] font-black uppercase leading-[0.8] text-headline">
-                What they<br /><span className="text-primary-accent">could pick.</span>
-              </h2>
-              <p className="max-w-md border-l-4 border-primary-accent pl-5 text-lg font-semibold">
-                Tap any photo to see it full size. Warning: you may end up gifting one to yourself.
-              </p>
-            </div>
-
-            <div className="mt-14">
-              <GiftGallery />
-            </div>
+            <GiftGallery />
 
             <div className="mt-12 flex justify-center">
               <Button asChild size="large"><a href={BUY_HREF}>{CTA} <ArrowRight aria-hidden="true" /></a></Button>
@@ -210,13 +199,13 @@ function GiftCardPage() {
         </section>
 
         {/* 5. Reviews (reused) */}
-        <ReviewsSection />
-
-        <section className="bg-background py-14">
-          <div className="mx-auto flex max-w-[1400px] justify-center px-5 md:px-8">
-            <Button asChild size="large"><a href={BUY_HREF}>{CTA} <ArrowRight aria-hidden="true" /></a></Button>
-          </div>
-        </section>
+        <ReviewsSection
+          cta={
+            <Button asChild size="large">
+              <a href={BUY_HREF}>{CTA} <ArrowRight aria-hidden="true" /></a>
+            </Button>
+          }
+        />
 
         {/* 6. Things to know */}
         <section id="things-to-know" className="overflow-hidden bg-farm-beige py-20 md:py-28">
