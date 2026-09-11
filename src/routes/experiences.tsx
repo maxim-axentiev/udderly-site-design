@@ -88,8 +88,8 @@ const farmExperiences: Experience[] = [
 ];
 
 const stays = [
-  { title: "Farm Glamping", copy: "Placeholder description. A luxury RV parked where the sunsets are unreasonable and the neighbours have hooves.", facts: ["May to October", "All ages"], image: glampingPhoto, alt: "Luxury RV lit at night beside a campfire on the farm", cta: "Book Farm Glamping", limited: false },
-  { title: "The Farm Hopping Experience", copy: "Placeholder description. One night on the farm, stitched together with experiences across the countryside.", facts: ["Select dates", "16+"], image: highlandCta, alt: "Golden hour over the farm with animals grazing", cta: "Book Farm Hopping", limited: true },
+  { title: "Farm Glamping", copy: "Placeholder description. A luxury RV parked where the sunsets are unreasonable and the neighbours have hooves.", season: "May to October", age: "All ages", image: glampingPhoto, alt: "Luxury RV lit at night beside a campfire on the farm", cta: "Book Farm Glamping", limited: false },
+  { title: "The Farm Hopping Experience", copy: "Placeholder description. One night on the farm, stitched together with experiences across the countryside.", season: "Select dates", age: "16+", image: highlandCta, alt: "Golden hour over the farm with animals grazing", cta: "Book Farm Hopping", limited: true },
 ];
 
 function QuickFact({ icon: Icon, children }: { icon: typeof Users; children: string }) {
