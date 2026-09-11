@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Instagram, Menu } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SiteHeader } from "@/components/layout/SiteHeader";
 
 import homepageHeroAsset from "@/assets/homepage-hero.png.asset.json";
 import homepageTrainingAsset from "@/assets/homepage-training.png.asset.json";
@@ -56,7 +59,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const navItems = ["Experiences", "Meet the Herd", "Stay", "Adopt", "Corporate", "Our Farm"];
+
 
 const awards = [
   { year: "2023", badge: tripadvisor2023.url },
@@ -197,30 +200,8 @@ const faqs = [
 function Index() {
   return (
     <div className="min-h-screen bg-background text-body-copy">
-      <header className="relative z-50 border-b-2 border-headline bg-background">
-        <div className="mx-auto flex min-h-24 max-w-[1500px] items-center justify-between gap-6 px-5 md:px-8">
-          <a href="#top" className="group flex max-w-52 -rotate-1 flex-col font-display font-black uppercase leading-[0.78] text-headline md:max-w-60" aria-label="Udderly Ridiculous Farm Life home">
-            <span className="text-[1.7rem] md:text-[2rem]">Udderly Ridiculous</span>
-            <span className="mt-1 flex items-center gap-2 text-sm tracking-[0.16em] text-primary-accent"><span className="h-1.5 w-7 bg-secondary-accent" /> Farm Life</span>
-          </a>
+      <SiteHeader />
 
-          <nav className="hidden items-center gap-5 xl:flex" aria-label="Main navigation">
-            {navItems.map((item) => <a key={item} href={`#${item.toLowerCase().replaceAll(" ", "-")}`} className="font-display text-base font-bold uppercase text-headline decoration-secondary-accent decoration-[3px] underline-offset-8 hover:underline">{item}</a>)}
-          </nav>
-
-          <Button asChild className="hidden lg:inline-flex"><a href="#experiences">Book an Experience <ArrowRight aria-hidden="true" size={18} /></a></Button>
-
-          <details className="relative xl:hidden">
-            <summary className="flex size-12 cursor-pointer list-none items-center justify-center rounded-full border-2 border-headline bg-farm-beige text-headline [&::-webkit-details-marker]:hidden" aria-label="Open navigation"><Menu aria-hidden="true" /></summary>
-            <div className="absolute right-0 top-14 w-72 border-2 border-headline bg-background p-5 shadow-[7px_7px_0_var(--secondary-accent)]">
-              <nav className="flex flex-col" aria-label="Mobile navigation">
-                {navItems.map((item) => <a key={item} href={`#${item.toLowerCase().replaceAll(" ", "-")}`} className="border-b border-border py-3 font-display text-xl font-bold uppercase text-headline">{item}</a>)}
-                <Button asChild className="mt-5"><a href="#experiences">Book an Experience</a></Button>
-              </nav>
-            </div>
-          </details>
-        </div>
-      </header>
 
       <main id="top">
         {/* 1. Hero */}
@@ -457,26 +438,8 @@ function Index() {
 
       </main>
 
-      <footer className="border-t-2 border-headline bg-farm-beige">
-        <div className="mx-auto max-w-[1500px] px-5 py-14 md:px-8">
-          <div className="grid gap-12 md:grid-cols-[1.1fr_1.5fr_0.5fr]">
-            <div>
-              <p className="max-w-sm font-display text-5xl font-black uppercase leading-[0.8] text-headline">Udderly<br /><span className="text-primary-accent">Ridiculous</span><br />Farm Life</p>
-              <p className="mt-5 max-w-xs font-accent text-lg italic text-headline">Made with questionable judgement and excellent animal care.</p>
-            </div>
-            <nav className="grid grid-cols-2 gap-x-8 gap-y-4 self-start" aria-label="Footer navigation">
-              {[...navItems, "Contact"].map((item) => <a key={item} href={item === "Meet the Herd" ? "#meet-the-herd" : "#experiences"} className="font-display text-xl font-bold uppercase text-headline hover:text-primary-accent hover:underline">{item}</a>)}
-            </nav>
-            <div className="flex items-start gap-3 md:justify-end">
-              <a href="#top" aria-label="Instagram" className="flex size-12 items-center justify-center rounded-full border-2 border-headline bg-secondary-accent text-headline transition-transform hover:-rotate-6"><Instagram aria-hidden="true" /></a>
-              <a href="#top" aria-label="TikTok" className="flex size-12 items-center justify-center rounded-full border-2 border-headline bg-background font-display text-lg font-black text-headline transition-transform hover:rotate-6">TT</a>
-            </div>
-          </div>
-          <div className="mt-14 flex flex-wrap justify-between gap-4 border-t-2 border-headline pt-5 text-sm font-semibold">
-            <p>Ontario, Canada · Farm life, but make it ridiculous.</p><p>© 2026 Udderly Ridiculous Farm Life</p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
+
     </div>
   );
 }
