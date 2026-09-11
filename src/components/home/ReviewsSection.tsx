@@ -6,7 +6,7 @@ import donkeyPicnic from "@/assets/donkey-picnic.jpg";
 import goatCuddles from "@/assets/goat-cuddles.jpg";
 import highlandCta from "@/assets/highland-cta.jpg";
 import highlandHero from "@/assets/highland-hero.jpg";
-import { Button } from "@/components/ui/button";
+
 
 const reviews = [
   {
