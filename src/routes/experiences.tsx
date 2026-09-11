@@ -230,10 +230,9 @@ function ExperiencesPage() {
                   <div className="border-2 border-headline bg-background p-7 shadow-[10px_10px_0_var(--headline)] md:p-10">
                     <h3 className="font-display text-[clamp(2rem,4.5vw,3.6rem)] font-black uppercase leading-[0.86] text-headline">{stay.title}</h3>
                     <p className="mt-4 text-base leading-relaxed md:text-lg">{stay.copy}</p>
-                    <ul className="mt-6 flex flex-wrap gap-2">
-                      {stay.facts.map((fact) => (
-                        <li key={fact} className="rounded-full border-2 border-headline bg-farm-beige px-3 py-1 text-sm font-bold text-headline">{fact}</li>
-                      ))}
+                    <ul className="mt-6 flex-1 space-y-2 border-t-2 border-dashed border-headline/30 pt-4">
+                      <QuickFact icon={CalendarDays}>{stay.season}</QuickFact>
+                      <QuickFact icon={Users}>{stay.age}</QuickFact>
                     </ul>
                     <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                       <Button asChild size="large" variant="outline"><a href="#farm-stays">Learn More</a></Button>
