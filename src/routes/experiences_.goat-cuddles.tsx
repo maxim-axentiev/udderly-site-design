@@ -188,8 +188,9 @@ function GoatCuddlesPage() {
         {/* 5. Curated reviews */}
         <CuratedReviews
           title="People came for goats. They left different."
-          credibility="Hand-picked from 1,200+ guest reviews"
           reviews={reviews}
+          ctaLabel={BOOK_CTA}
+          ctaHref={BOOK_HREF}
         />
 
         {/* 6. Meet some of the icons */}
@@ -232,28 +233,20 @@ function GoatCuddlesPage() {
         {/* 7. Happy, healthy goats */}
         <section id="welfare" className="relative overflow-hidden bg-farm-blue py-20 md:py-28">
           <div className="farm-dots absolute -left-10 top-10 h-40 w-40 opacity-20" aria-hidden="true" />
-          <div className="mx-auto max-w-[1300px] px-5 text-center md:px-8">
-            <p className="font-accent text-xl italic text-primary-accent">This is not a petting zoo</p>
-            <h2 className="mx-auto mt-3 max-w-4xl font-display text-[clamp(2.8rem,8vw,7rem)] font-black uppercase leading-[0.78] text-headline">
+          <div className="mx-auto grid max-w-[1300px] items-center gap-8 px-5 md:px-8 lg:grid-cols-2 lg:gap-14">
+            <h2 className="font-display text-[clamp(2.8rem,8vw,6rem)] font-black uppercase leading-[0.78] text-headline lg:col-start-1 lg:row-start-1">
               Happy goats.<br />Happy humans.
             </h2>
 
-            <div className="relative mt-12 grid gap-6 md:grid-cols-3">
-              <figure className="relative m-0 md:mt-10">
-                <img src={goatIcon2} alt="Goat standing on a straw bale in the barn" width={1024} height={1024} loading="lazy" className="aspect-[4/5] w-full -rotate-2 border-2 border-headline object-cover shadow-[10px_10px_0_var(--background)]" />
-              </figure>
-              <div className="order-first flex flex-col justify-center border-2 border-headline bg-background p-7 text-left shadow-[12px_12px_0_var(--headline)] md:order-none md:p-9">
-                <p className="text-base leading-relaxed md:text-lg">
-                  Placeholder copy. Group sizes stay small on purpose, and every goat works a short shift with real rest periods, shade, enrichment and a quiet space no human is allowed into. They live in stable social groups, see the vet regularly, and are handled the way our team teaches every guest at the start of the experience.
-                </p>
-                <p className="mt-4 text-base leading-relaxed md:text-lg">
-                  Placeholder copy. Most importantly, the goats choose. If one wants to climb into your lap, wonderful. If one wants to nap in the corner instead, that is allowed too — and honestly, fair.
-                </p>
-                <Button asChild size="large" className="mt-8 self-start"><a href={BOOK_HREF}>{BOOK_CTA} <ArrowRight aria-hidden="true" /></a></Button>
-              </div>
-              <figure className="relative m-0">
-                <img src={highlandCta} alt="Golden hour over the farm pasture where the animals graze" width={1024} height={1280} loading="lazy" className="aspect-[4/5] w-full rotate-2 border-2 border-headline object-cover shadow-[10px_10px_0_var(--background)]" />
-              </figure>
+            <figure className="relative m-0 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+              <img src={goatIcon2} alt="Goat standing on a straw bale in the barn" width={1024} height={1024} loading="lazy" className="aspect-[4/5] w-full rotate-1 border-2 border-headline object-cover shadow-[12px_12px_0_var(--background)]" />
+            </figure>
+
+            <div className="flex flex-col border-2 border-headline bg-background p-7 text-left shadow-[12px_12px_0_var(--headline)] md:p-9 lg:col-start-1 lg:row-start-2">
+              <p className="text-base leading-relaxed md:text-lg">
+                Placeholder copy. Small groups, short shifts, real rest, enrichment and a quiet space no human is allowed into. Most importantly, the goats choose — lap or nap, both are allowed.
+              </p>
+              <Button asChild size="large" className="mt-8 self-start"><a href={BOOK_HREF}>{BOOK_CTA} <ArrowRight aria-hidden="true" /></a></Button>
             </div>
           </div>
         </section>
