@@ -1,5 +1,6 @@
 import { ArrowRight, CalendarClock, CircleDollarSign, Sparkles, Users } from "lucide-react";
 
+import feastOnLogoAsset from "@/assets/feast-on-logo.webp.asset.json";
 import goatIcon1 from "@/assets/goat-icon-1.jpg";
 import goatIcon2 from "@/assets/goat-icon-2.jpg";
 import goatIcon3 from "@/assets/goat-icon-3.jpg";
