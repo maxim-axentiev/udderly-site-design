@@ -51,8 +51,8 @@ export function CuratedReviews({
 }: {
   title: string;
   reviews: CuratedReview[];
-  ctaLabel: string;
-  ctaHref: string;
+  ctaLabel?: string;
+  ctaHref?: string;
 }) {
   return (
     <section id="reviews" className="overflow-hidden bg-farm-blue py-20 md:py-28">
@@ -69,11 +69,13 @@ export function CuratedReviews({
           </CarouselTrack>
         </div>
 
-        <div className="mt-10 flex justify-center">
-          <Button asChild size="large">
-            <a href={ctaHref}>{ctaLabel}</a>
-          </Button>
-        </div>
+        {ctaLabel && ctaHref ? (
+          <div className="mt-10 flex justify-center">
+            <Button asChild size="large">
+              <a href={ctaHref}>{ctaLabel}</a>
+            </Button>
+          </div>
+        ) : null}
       </div>
     </section>
   );

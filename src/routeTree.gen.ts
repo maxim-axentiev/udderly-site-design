@@ -22,6 +22,8 @@ import { Route as AdoptAnAnimalGregRouteImport } from './routes/adopt-an-animal.
 import { Route as AdoptAnAnimalMichaelRouteImport } from './routes/adopt-an-animal.michael'
 import { Route as AdoptAnAnimalSassafrasRouteImport } from './routes/adopt-an-animal.sassafras'
 import { Route as AdoptAnAnimalStanleyRouteImport } from './routes/adopt-an-animal.stanley'
+import { Route as CorporateTrainingIndexRouteImport } from './routes/corporate-training.index'
+import { Route as CorporateTrainingDiscAssessmentRouteImport } from './routes/corporate-training.disc-assessment'
 import { Route as ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport } from './routes/experiences_.alpaca-experience-and-fibre-nesting-ball-workshop'
 import { Route as ExperiencesAlpacaLunchPicnicRouteImport } from './routes/experiences_.alpaca-lunch-picnic'
 import { Route as ExperiencesAlpacaSunsetPicnicRouteImport } from './routes/experiences_.alpaca-sunset-picnic'
@@ -103,6 +105,17 @@ const AdoptAnAnimalStanleyRoute = AdoptAnAnimalStanleyRouteImport.update({
   path: '/stanley',
   getParentRoute: () => AdoptAnAnimalRoute,
 } as any)
+const CorporateTrainingIndexRoute = CorporateTrainingIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CorporateTrainingRoute,
+} as any)
+const CorporateTrainingDiscAssessmentRoute =
+  CorporateTrainingDiscAssessmentRouteImport.update({
+    id: '/disc-assessment',
+    path: '/disc-assessment',
+    getParentRoute: () => CorporateTrainingRoute,
+  } as any)
 const ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute =
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport.update({
     id: '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop',
@@ -193,7 +206,7 @@ const ExperiencesTasteOfFarmLifeFamilyFriendlyRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
-  '/corporate-training': typeof CorporateTrainingRoute
+  '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
@@ -203,6 +216,7 @@ export interface FileRoutesByFullPath {
   '/adopt-an-animal/michael': typeof AdoptAnAnimalMichaelRoute
   '/adopt-an-animal/sassafras': typeof AdoptAnAnimalSassafrasRoute
   '/adopt-an-animal/stanley': typeof AdoptAnAnimalStanleyRoute
+  '/corporate-training/disc-assessment': typeof CorporateTrainingDiscAssessmentRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -219,10 +233,10 @@ export interface FileRoutesByFullPath {
   '/experiences/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
   '/experiences/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
   '/adopt-an-animal/': typeof AdoptAnAnimalIndexRoute
+  '/corporate-training/': typeof CorporateTrainingIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/corporate-training': typeof CorporateTrainingRoute
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
@@ -232,6 +246,7 @@ export interface FileRoutesByTo {
   '/adopt-an-animal/michael': typeof AdoptAnAnimalMichaelRoute
   '/adopt-an-animal/sassafras': typeof AdoptAnAnimalSassafrasRoute
   '/adopt-an-animal/stanley': typeof AdoptAnAnimalStanleyRoute
+  '/corporate-training/disc-assessment': typeof CorporateTrainingDiscAssessmentRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -248,12 +263,13 @@ export interface FileRoutesByTo {
   '/experiences/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
   '/experiences/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
   '/adopt-an-animal': typeof AdoptAnAnimalIndexRoute
+  '/corporate-training': typeof CorporateTrainingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
-  '/corporate-training': typeof CorporateTrainingRoute
+  '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
@@ -263,6 +279,7 @@ export interface FileRoutesById {
   '/adopt-an-animal/michael': typeof AdoptAnAnimalMichaelRoute
   '/adopt-an-animal/sassafras': typeof AdoptAnAnimalSassafrasRoute
   '/adopt-an-animal/stanley': typeof AdoptAnAnimalStanleyRoute
+  '/corporate-training/disc-assessment': typeof CorporateTrainingDiscAssessmentRoute
   '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences_/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences_/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -279,6 +296,7 @@ export interface FileRoutesById {
   '/experiences_/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
   '/experiences_/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
   '/adopt-an-animal/': typeof AdoptAnAnimalIndexRoute
+  '/corporate-training/': typeof CorporateTrainingIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -295,6 +313,7 @@ export interface FileRouteTypes {
     | '/adopt-an-animal/michael'
     | '/adopt-an-animal/sassafras'
     | '/adopt-an-animal/stanley'
+    | '/corporate-training/disc-assessment'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences/alpaca-lunch-picnic'
     | '/experiences/alpaca-sunset-picnic'
@@ -311,10 +330,10 @@ export interface FileRouteTypes {
     | '/experiences/taste-of-farm-life'
     | '/experiences/taste-of-farm-life-family-friendly'
     | '/adopt-an-animal/'
+    | '/corporate-training/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/corporate-training'
     | '/experiences'
     | '/gift-card'
     | '/adopt-an-animal/bronnie'
@@ -324,6 +343,7 @@ export interface FileRouteTypes {
     | '/adopt-an-animal/michael'
     | '/adopt-an-animal/sassafras'
     | '/adopt-an-animal/stanley'
+    | '/corporate-training/disc-assessment'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences/alpaca-lunch-picnic'
     | '/experiences/alpaca-sunset-picnic'
@@ -340,6 +360,7 @@ export interface FileRouteTypes {
     | '/experiences/taste-of-farm-life'
     | '/experiences/taste-of-farm-life-family-friendly'
     | '/adopt-an-animal'
+    | '/corporate-training'
   id:
     | '__root__'
     | '/'
@@ -354,6 +375,7 @@ export interface FileRouteTypes {
     | '/adopt-an-animal/michael'
     | '/adopt-an-animal/sassafras'
     | '/adopt-an-animal/stanley'
+    | '/corporate-training/disc-assessment'
     | '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences_/alpaca-lunch-picnic'
     | '/experiences_/alpaca-sunset-picnic'
@@ -370,12 +392,13 @@ export interface FileRouteTypes {
     | '/experiences_/taste-of-farm-life'
     | '/experiences_/taste-of-farm-life-family-friendly'
     | '/adopt-an-animal/'
+    | '/corporate-training/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdoptAnAnimalRoute: typeof AdoptAnAnimalRouteWithChildren
-  CorporateTrainingRoute: typeof CorporateTrainingRoute
+  CorporateTrainingRoute: typeof CorporateTrainingRouteWithChildren
   ExperiencesRoute: typeof ExperiencesRoute
   GiftCardRoute: typeof GiftCardRoute
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute: typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
@@ -487,6 +510,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/adopt-an-animal/stanley'
       preLoaderRoute: typeof AdoptAnAnimalStanleyRouteImport
       parentRoute: typeof AdoptAnAnimalRoute
+    }
+    '/corporate-training/': {
+      id: '/corporate-training/'
+      path: '/'
+      fullPath: '/corporate-training/'
+      preLoaderRoute: typeof CorporateTrainingIndexRouteImport
+      parentRoute: typeof CorporateTrainingRoute
+    }
+    '/corporate-training/disc-assessment': {
+      id: '/corporate-training/disc-assessment'
+      path: '/disc-assessment'
+      fullPath: '/corporate-training/disc-assessment'
+      preLoaderRoute: typeof CorporateTrainingDiscAssessmentRouteImport
+      parentRoute: typeof CorporateTrainingRoute
     }
     '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': {
       id: '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop'
@@ -622,10 +659,23 @@ const AdoptAnAnimalRouteWithChildren = AdoptAnAnimalRoute._addFileChildren(
   AdoptAnAnimalRouteChildren,
 )
 
+interface CorporateTrainingRouteChildren {
+  CorporateTrainingDiscAssessmentRoute: typeof CorporateTrainingDiscAssessmentRoute
+  CorporateTrainingIndexRoute: typeof CorporateTrainingIndexRoute
+}
+
+const CorporateTrainingRouteChildren: CorporateTrainingRouteChildren = {
+  CorporateTrainingDiscAssessmentRoute: CorporateTrainingDiscAssessmentRoute,
+  CorporateTrainingIndexRoute: CorporateTrainingIndexRoute,
+}
+
+const CorporateTrainingRouteWithChildren =
+  CorporateTrainingRoute._addFileChildren(CorporateTrainingRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdoptAnAnimalRoute: AdoptAnAnimalRouteWithChildren,
-  CorporateTrainingRoute: CorporateTrainingRoute,
+  CorporateTrainingRoute: CorporateTrainingRouteWithChildren,
   ExperiencesRoute: ExperiencesRoute,
   GiftCardRoute: GiftCardRoute,
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute:
