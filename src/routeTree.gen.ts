@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdoptAnAnimalRouteImport } from './routes/adopt-an-animal'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as GiftCardRouteImport } from './routes/gift-card'
+import { Route as AdoptAnAnimalClaraRouteImport } from './routes/adopt-an-animal.clara'
 import { Route as ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport } from './routes/experiences_.alpaca-experience-and-fibre-nesting-ball-workshop'
 import { Route as ExperiencesAlpacaLunchPicnicRouteImport } from './routes/experiences_.alpaca-lunch-picnic'
 import { Route as ExperiencesAlpacaSunsetPicnicRouteImport } from './routes/experiences_.alpaca-sunset-picnic'
@@ -48,6 +49,11 @@ const GiftCardRoute = GiftCardRouteImport.update({
   id: '/gift-card',
   path: '/gift-card',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AdoptAnAnimalClaraRoute = AdoptAnAnimalClaraRouteImport.update({
+  id: '/clara',
+  path: '/clara',
+  getParentRoute: () => AdoptAnAnimalRoute,
 } as any)
 const ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute =
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport.update({
@@ -138,9 +144,10 @@ const ExperiencesTasteOfFarmLifeFamilyFriendlyRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/adopt-an-animal': typeof AdoptAnAnimalRoute
+  '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
+  '/adopt-an-animal/clara': typeof AdoptAnAnimalClaraRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -159,9 +166,10 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/adopt-an-animal': typeof AdoptAnAnimalRoute
+  '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
+  '/adopt-an-animal/clara': typeof AdoptAnAnimalClaraRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -181,9 +189,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/adopt-an-animal': typeof AdoptAnAnimalRoute
+  '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
+  '/adopt-an-animal/clara': typeof AdoptAnAnimalClaraRoute
   '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences_/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences_/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -207,6 +216,7 @@ export interface FileRouteTypes {
     | '/adopt-an-animal'
     | '/experiences'
     | '/gift-card'
+    | '/adopt-an-animal/clara'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences/alpaca-lunch-picnic'
     | '/experiences/alpaca-sunset-picnic'
@@ -228,6 +238,7 @@ export interface FileRouteTypes {
     | '/adopt-an-animal'
     | '/experiences'
     | '/gift-card'
+    | '/adopt-an-animal/clara'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences/alpaca-lunch-picnic'
     | '/experiences/alpaca-sunset-picnic'
@@ -249,6 +260,7 @@ export interface FileRouteTypes {
     | '/adopt-an-animal'
     | '/experiences'
     | '/gift-card'
+    | '/adopt-an-animal/clara'
     | '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences_/alpaca-lunch-picnic'
     | '/experiences_/alpaca-sunset-picnic'
@@ -268,7 +280,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AdoptAnAnimalRoute: typeof AdoptAnAnimalRoute
+  AdoptAnAnimalRoute: typeof AdoptAnAnimalRouteWithChildren
   ExperiencesRoute: typeof ExperiencesRoute
   GiftCardRoute: typeof GiftCardRoute
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute: typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
@@ -317,6 +329,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/gift-card'
       preLoaderRoute: typeof GiftCardRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/adopt-an-animal/clara': {
+      id: '/adopt-an-animal/clara'
+      path: '/clara'
+      fullPath: '/adopt-an-animal/clara'
+      preLoaderRoute: typeof AdoptAnAnimalClaraRouteImport
+      parentRoute: typeof AdoptAnAnimalRoute
     }
     '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': {
       id: '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop'
@@ -426,9 +445,21 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AdoptAnAnimalRouteChildren {
+  AdoptAnAnimalClaraRoute: typeof AdoptAnAnimalClaraRoute
+}
+
+const AdoptAnAnimalRouteChildren: AdoptAnAnimalRouteChildren = {
+  AdoptAnAnimalClaraRoute: AdoptAnAnimalClaraRoute,
+}
+
+const AdoptAnAnimalRouteWithChildren = AdoptAnAnimalRoute._addFileChildren(
+  AdoptAnAnimalRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AdoptAnAnimalRoute: AdoptAnAnimalRoute,
+  AdoptAnAnimalRoute: AdoptAnAnimalRouteWithChildren,
   ExperiencesRoute: ExperiencesRoute,
   GiftCardRoute: GiftCardRoute,
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute:

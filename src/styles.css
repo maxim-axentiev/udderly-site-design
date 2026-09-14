@@ -70,6 +70,8 @@
   --color-secondary-accent: var(--secondary-accent);
   --color-farm-beige: var(--farm-beige);
   --color-farm-blue: var(--farm-blue);
+  --color-farm-silver: var(--farm-silver);
+  --color-farm-gold: var(--farm-gold);
 }
 
 :root {
