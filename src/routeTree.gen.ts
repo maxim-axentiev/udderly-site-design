@@ -22,6 +22,7 @@ import { Route as AdoptAnAnimalGregRouteImport } from './routes/adopt-an-animal.
 import { Route as AdoptAnAnimalMichaelRouteImport } from './routes/adopt-an-animal.michael'
 import { Route as AdoptAnAnimalSassafrasRouteImport } from './routes/adopt-an-animal.sassafras'
 import { Route as AdoptAnAnimalStanleyRouteImport } from './routes/adopt-an-animal.stanley'
+import { Route as CorporateTrainingIndexRouteImport } from './routes/corporate-training.index'
 import { Route as ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport } from './routes/experiences_.alpaca-experience-and-fibre-nesting-ball-workshop'
 import { Route as ExperiencesAlpacaLunchPicnicRouteImport } from './routes/experiences_.alpaca-lunch-picnic'
 import { Route as ExperiencesAlpacaSunsetPicnicRouteImport } from './routes/experiences_.alpaca-sunset-picnic'
@@ -102,6 +103,11 @@ const AdoptAnAnimalStanleyRoute = AdoptAnAnimalStanleyRouteImport.update({
   id: '/stanley',
   path: '/stanley',
   getParentRoute: () => AdoptAnAnimalRoute,
+} as any)
+const CorporateTrainingIndexRoute = CorporateTrainingIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CorporateTrainingRoute,
 } as any)
 const ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute =
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport.update({
@@ -193,7 +199,7 @@ const ExperiencesTasteOfFarmLifeFamilyFriendlyRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
-  '/corporate-training': typeof CorporateTrainingRoute
+  '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
@@ -219,10 +225,10 @@ export interface FileRoutesByFullPath {
   '/experiences/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
   '/experiences/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
   '/adopt-an-animal/': typeof AdoptAnAnimalIndexRoute
+  '/corporate-training/': typeof CorporateTrainingIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/corporate-training': typeof CorporateTrainingRoute
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
@@ -248,12 +254,13 @@ export interface FileRoutesByTo {
   '/experiences/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
   '/experiences/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
   '/adopt-an-animal': typeof AdoptAnAnimalIndexRoute
+  '/corporate-training': typeof CorporateTrainingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
-  '/corporate-training': typeof CorporateTrainingRoute
+  '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
@@ -279,6 +286,7 @@ export interface FileRoutesById {
   '/experiences_/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
   '/experiences_/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
   '/adopt-an-animal/': typeof AdoptAnAnimalIndexRoute
+  '/corporate-training/': typeof CorporateTrainingIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -311,10 +319,10 @@ export interface FileRouteTypes {
     | '/experiences/taste-of-farm-life'
     | '/experiences/taste-of-farm-life-family-friendly'
     | '/adopt-an-animal/'
+    | '/corporate-training/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/corporate-training'
     | '/experiences'
     | '/gift-card'
     | '/adopt-an-animal/bronnie'
@@ -340,6 +348,7 @@ export interface FileRouteTypes {
     | '/experiences/taste-of-farm-life'
     | '/experiences/taste-of-farm-life-family-friendly'
     | '/adopt-an-animal'
+    | '/corporate-training'
   id:
     | '__root__'
     | '/'
@@ -370,12 +379,13 @@ export interface FileRouteTypes {
     | '/experiences_/taste-of-farm-life'
     | '/experiences_/taste-of-farm-life-family-friendly'
     | '/adopt-an-animal/'
+    | '/corporate-training/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdoptAnAnimalRoute: typeof AdoptAnAnimalRouteWithChildren
-  CorporateTrainingRoute: typeof CorporateTrainingRoute
+  CorporateTrainingRoute: typeof CorporateTrainingRouteWithChildren
   ExperiencesRoute: typeof ExperiencesRoute
   GiftCardRoute: typeof GiftCardRoute
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute: typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
@@ -487,6 +497,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/adopt-an-animal/stanley'
       preLoaderRoute: typeof AdoptAnAnimalStanleyRouteImport
       parentRoute: typeof AdoptAnAnimalRoute
+    }
+    '/corporate-training/': {
+      id: '/corporate-training/'
+      path: '/'
+      fullPath: '/corporate-training/'
+      preLoaderRoute: typeof CorporateTrainingIndexRouteImport
+      parentRoute: typeof CorporateTrainingRoute
     }
     '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': {
       id: '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop'
@@ -622,10 +639,21 @@ const AdoptAnAnimalRouteWithChildren = AdoptAnAnimalRoute._addFileChildren(
   AdoptAnAnimalRouteChildren,
 )
 
+interface CorporateTrainingRouteChildren {
+  CorporateTrainingIndexRoute: typeof CorporateTrainingIndexRoute
+}
+
+const CorporateTrainingRouteChildren: CorporateTrainingRouteChildren = {
+  CorporateTrainingIndexRoute: CorporateTrainingIndexRoute,
+}
+
+const CorporateTrainingRouteWithChildren =
+  CorporateTrainingRoute._addFileChildren(CorporateTrainingRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdoptAnAnimalRoute: AdoptAnAnimalRouteWithChildren,
-  CorporateTrainingRoute: CorporateTrainingRoute,
+  CorporateTrainingRoute: CorporateTrainingRouteWithChildren,
   ExperiencesRoute: ExperiencesRoute,
   GiftCardRoute: GiftCardRoute,
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute:
