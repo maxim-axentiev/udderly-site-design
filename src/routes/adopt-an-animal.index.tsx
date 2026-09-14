@@ -21,12 +21,12 @@ const INTRO =
 
 const animals = [
   { name: "Clara", image: goatIcon1, alt: "Clara the goat looking straight at the camera", href: "/adopt-an-animal/clara" },
-  { name: "Biscuit", image: goatIcon2, alt: "Biscuit the goat standing on a straw bale" },
-  { name: "Marshmallow", image: goatIcon3, alt: "Marshmallow the goat being held by a visitor" },
-  { name: "Maple", image: highlandHero, alt: "Maple the mini Highland cow with a dramatic fringe" },
-  { name: "Socks", image: alpacaWalk, alt: "Socks the alpaca walking along the farm path" },
-  { name: "Pippin", image: donkeyPicnic, alt: "Pippin the miniature donkey beside a picnic" },
-  { name: "Sprout", image: goatCuddles, alt: "Sprout the goat cuddling with a guest" },
+  { name: "Sassafras", image: goatIcon2, alt: "Sassafras the goat standing on a straw bale", href: "/adopt-an-animal/sassafras" },
+  { name: "Stanley", image: goatIcon3, alt: "Stanley the goat being held by a visitor", href: "/adopt-an-animal/stanley" },
+  { name: "Bronnie", image: highlandHero, alt: "Bronnie the mini Highland cow with a dramatic fringe", href: "/adopt-an-animal/bronnie" },
+  { name: "Michael", image: alpacaWalk, alt: "Michael the alpaca walking along the farm path", href: "/adopt-an-animal/michael" },
+  { name: "Greg", image: donkeyPicnic, alt: "Greg the miniature donkey beside a picnic", href: "/adopt-an-animal/greg" },
+  { name: "Chicken", image: goatCuddles, alt: "Chicken the farm chicken keeping an eye on things", href: "/adopt-an-animal/chicken" },
 ];
 
 export const Route = createFileRoute("/adopt-an-animal/")({
