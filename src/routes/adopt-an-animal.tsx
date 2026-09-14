@@ -181,45 +181,7 @@ function AdoptAnAnimalPage() {
           </div>
         </section>
 
-        {/* 5. Adoption packages */}
-        <section id="adopt" className="overflow-hidden bg-background py-20 md:py-28">
-          <div className="mx-auto max-w-[1200px] px-5 md:px-8">
-            <h2 className="text-center font-display text-[clamp(2.6rem,6.5vw,5.4rem)] font-black uppercase leading-[0.8] text-headline">
-              Choose your<br />adoption package.
-            </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-center text-lg leading-relaxed">
-              Every package includes a direct contribution to your animal's care. The bigger the package, the more farm perks come with it.
-            </p>
-
-            <div className="mt-14 grid gap-6 md:grid-cols-3">
-              {packages.map((pkg, index) => (
-                <div
-                  key={pkg.name}
-                  className={`border-2 border-headline bg-farm-beige p-7 shadow-[10px_10px_0_var(--headline)] md:p-9 ${index === 1 ? "rotate-1" : index === 2 ? "-rotate-1" : ""}`}
-                >
-                  <h3 className="font-display text-3xl font-black uppercase leading-none text-headline">{pkg.name}</h3>
-                  <p className="mt-2 font-display text-2xl font-black text-primary-accent">{pkg.price}</p>
-                  <ul className="mt-6 space-y-3">
-                    {pkg.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-base leading-relaxed">
-                        <span aria-hidden="true" className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border-2 border-headline bg-background font-display text-xs font-black text-headline">✓</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 flex justify-center">
-              <Button asChild size="large">
-                <a href="#available-animals">See all animals available for adoption <ArrowRight aria-hidden="true" /></a>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* 6. How adoption supports */}
+        {/* 5. How adoption supports */}
         <section className="relative overflow-hidden bg-farm-blue py-20 md:py-28">
           <div className="farm-dots absolute -left-10 top-10 h-40 w-40 opacity-20" aria-hidden="true" />
           <div className="mx-auto grid max-w-[1300px] items-center gap-8 px-5 md:px-8 lg:grid-cols-2 lg:gap-14">
