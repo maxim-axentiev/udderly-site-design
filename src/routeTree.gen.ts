@@ -24,6 +24,7 @@ import { Route as AdoptAnAnimalSassafrasRouteImport } from './routes/adopt-an-an
 import { Route as AdoptAnAnimalStanleyRouteImport } from './routes/adopt-an-animal.stanley'
 import { Route as CorporateTrainingIndexRouteImport } from './routes/corporate-training.index'
 import { Route as CorporateTrainingDiscAssessmentRouteImport } from './routes/corporate-training.disc-assessment'
+import { Route as CorporateTrainingThePowerOfConversationRouteImport } from './routes/corporate-training.the-power-of-conversation'
 import { Route as ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport } from './routes/experiences_.alpaca-experience-and-fibre-nesting-ball-workshop'
 import { Route as ExperiencesAlpacaLunchPicnicRouteImport } from './routes/experiences_.alpaca-lunch-picnic'
 import { Route as ExperiencesAlpacaSunsetPicnicRouteImport } from './routes/experiences_.alpaca-sunset-picnic'
@@ -114,6 +115,12 @@ const CorporateTrainingDiscAssessmentRoute =
   CorporateTrainingDiscAssessmentRouteImport.update({
     id: '/disc-assessment',
     path: '/disc-assessment',
+    getParentRoute: () => CorporateTrainingRoute,
+  } as any)
+const CorporateTrainingThePowerOfConversationRoute =
+  CorporateTrainingThePowerOfConversationRouteImport.update({
+    id: '/the-power-of-conversation',
+    path: '/the-power-of-conversation',
     getParentRoute: () => CorporateTrainingRoute,
   } as any)
 const ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute =
@@ -217,6 +224,7 @@ export interface FileRoutesByFullPath {
   '/adopt-an-animal/sassafras': typeof AdoptAnAnimalSassafrasRoute
   '/adopt-an-animal/stanley': typeof AdoptAnAnimalStanleyRoute
   '/corporate-training/disc-assessment': typeof CorporateTrainingDiscAssessmentRoute
+  '/corporate-training/the-power-of-conversation': typeof CorporateTrainingThePowerOfConversationRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -247,6 +255,7 @@ export interface FileRoutesByTo {
   '/adopt-an-animal/sassafras': typeof AdoptAnAnimalSassafrasRoute
   '/adopt-an-animal/stanley': typeof AdoptAnAnimalStanleyRoute
   '/corporate-training/disc-assessment': typeof CorporateTrainingDiscAssessmentRoute
+  '/corporate-training/the-power-of-conversation': typeof CorporateTrainingThePowerOfConversationRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -280,6 +289,7 @@ export interface FileRoutesById {
   '/adopt-an-animal/sassafras': typeof AdoptAnAnimalSassafrasRoute
   '/adopt-an-animal/stanley': typeof AdoptAnAnimalStanleyRoute
   '/corporate-training/disc-assessment': typeof CorporateTrainingDiscAssessmentRoute
+  '/corporate-training/the-power-of-conversation': typeof CorporateTrainingThePowerOfConversationRoute
   '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences_/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences_/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -314,6 +324,7 @@ export interface FileRouteTypes {
     | '/adopt-an-animal/sassafras'
     | '/adopt-an-animal/stanley'
     | '/corporate-training/disc-assessment'
+    | '/corporate-training/the-power-of-conversation'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences/alpaca-lunch-picnic'
     | '/experiences/alpaca-sunset-picnic'
@@ -344,6 +355,7 @@ export interface FileRouteTypes {
     | '/adopt-an-animal/sassafras'
     | '/adopt-an-animal/stanley'
     | '/corporate-training/disc-assessment'
+    | '/corporate-training/the-power-of-conversation'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences/alpaca-lunch-picnic'
     | '/experiences/alpaca-sunset-picnic'
@@ -376,6 +388,7 @@ export interface FileRouteTypes {
     | '/adopt-an-animal/sassafras'
     | '/adopt-an-animal/stanley'
     | '/corporate-training/disc-assessment'
+    | '/corporate-training/the-power-of-conversation'
     | '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences_/alpaca-lunch-picnic'
     | '/experiences_/alpaca-sunset-picnic'
@@ -525,6 +538,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CorporateTrainingDiscAssessmentRouteImport
       parentRoute: typeof CorporateTrainingRoute
     }
+    '/corporate-training/the-power-of-conversation': {
+      id: '/corporate-training/the-power-of-conversation'
+      path: '/the-power-of-conversation'
+      fullPath: '/corporate-training/the-power-of-conversation'
+      preLoaderRoute: typeof CorporateTrainingThePowerOfConversationRouteImport
+      parentRoute: typeof CorporateTrainingRoute
+    }
     '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': {
       id: '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop'
       path: '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
@@ -661,11 +681,14 @@ const AdoptAnAnimalRouteWithChildren = AdoptAnAnimalRoute._addFileChildren(
 
 interface CorporateTrainingRouteChildren {
   CorporateTrainingDiscAssessmentRoute: typeof CorporateTrainingDiscAssessmentRoute
+  CorporateTrainingThePowerOfConversationRoute: typeof CorporateTrainingThePowerOfConversationRoute
   CorporateTrainingIndexRoute: typeof CorporateTrainingIndexRoute
 }
 
 const CorporateTrainingRouteChildren: CorporateTrainingRouteChildren = {
   CorporateTrainingDiscAssessmentRoute: CorporateTrainingDiscAssessmentRoute,
+  CorporateTrainingThePowerOfConversationRoute:
+    CorporateTrainingThePowerOfConversationRoute,
   CorporateTrainingIndexRoute: CorporateTrainingIndexRoute,
 }
 
