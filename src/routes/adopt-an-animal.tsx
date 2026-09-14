@@ -29,37 +29,6 @@ const animals = [
   { name: "Sprout", image: goatCuddles, alt: "Sprout the goat cuddling with a guest" },
 ];
 
-const packages = [
-  {
-    name: "Digital Supporter",
-    price: "$35/year",
-    includes: [
-      "Digital adoption certificate",
-      "Photo of your adopted animal",
-      "Quarterly farm updates by email",
-    ],
-  },
-  {
-    name: "Farm Friend",
-    price: "$75/year",
-    includes: [
-      "Everything in Digital Supporter",
-      "One free visit to the farm",
-      "10% off experiences and store",
-    ],
-  },
-  {
-    name: "Barn Bestie",
-    price: "$150/year",
-    includes: [
-      "Everything in Farm Friend",
-      "Behind-the-scenes barn tour",
-      "Priority booking for experiences",
-      "Year-end animal holiday card",
-    ],
-  },
-];
-
 export const Route = createFileRoute("/adopt-an-animal")({
   head: () => ({
     meta: [
@@ -215,7 +184,7 @@ function AdoptAnAnimalPage() {
           </div>
         </section>
 
-        {/* 7. Newsletter */}
+        {/* 6. Newsletter */}
         <NewsletterSection />
       </main>
 
