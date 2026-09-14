@@ -20,7 +20,7 @@ const INTRO =
   "Take a piece of the farm home with you — symbolically, of course. Our adoption program helps cover food, shelter, enrichment, and the occasional fancy hat for the animals who make every visit ridiculous.";
 
 const animals = [
-  { name: "Pekoe", image: goatIcon1, alt: "Pekoe the goat looking straight at the camera" },
+  { name: "Clara", image: goatIcon1, alt: "Clara the goat looking straight at the camera", href: "/adopt-an-animal/clara" },
   { name: "Biscuit", image: goatIcon2, alt: "Biscuit the goat standing on a straw bale" },
   { name: "Marshmallow", image: goatIcon3, alt: "Marshmallow the goat being held by a visitor" },
   { name: "Maple", image: highlandHero, alt: "Maple the mini Highland cow with a dramatic fringe" },
