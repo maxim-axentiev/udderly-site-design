@@ -143,7 +143,7 @@ const facilities: Facility[] = [
 ];
 
 const facilityGallery: GalleryImage[] = [
-  { src: farmStore.toString(), alt: "The farm market store set up as a training classroom" },
+  { src: farmStore, alt: "The farm market store set up as a training classroom" },
   { src: trainingPhotoAsset.url, alt: "Participants seated in pods during a farm training session" },
   { src: iceCream, alt: "Locally sourced treats served during a farm coffee break" },
   { src: goatCuddles, alt: "Goats in the barn attached to the training room" },
@@ -276,7 +276,7 @@ function CorporateTrainingPage() {
                 <p className="mt-4 text-base leading-relaxed md:text-lg">
                   Placeholder description. No modules, no assessments, no flip charts. Just your team, the animals, and a few hours of shared ridiculousness that does more for trust than any trust fall ever has.
                 </p>
-                <Button asChild size="large" variant="secondary" className="mt-7">
+                <Button asChild size="large" variant="outline" className="mt-7">
                   <a href="#contact">Learn More <ArrowRight aria-hidden="true" /></a>
                 </Button>
               </div>
