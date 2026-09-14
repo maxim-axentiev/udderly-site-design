@@ -57,7 +57,7 @@ type Program = {
   copy: string;
   image: string;
   alt: string;
-  to?: "/corporate-training/disc-assessment";
+  to?: string;
 };
 
 const programs: Program[] = [
