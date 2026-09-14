@@ -14,7 +14,13 @@ import { Route as AdoptAnAnimalRouteImport } from './routes/adopt-an-animal'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as GiftCardRouteImport } from './routes/gift-card'
 import { Route as AdoptAnAnimalIndexRouteImport } from './routes/adopt-an-animal.index'
+import { Route as AdoptAnAnimalBronnieRouteImport } from './routes/adopt-an-animal.bronnie'
+import { Route as AdoptAnAnimalChickenRouteImport } from './routes/adopt-an-animal.chicken'
 import { Route as AdoptAnAnimalClaraRouteImport } from './routes/adopt-an-animal.clara'
+import { Route as AdoptAnAnimalGregRouteImport } from './routes/adopt-an-animal.greg'
+import { Route as AdoptAnAnimalMichaelRouteImport } from './routes/adopt-an-animal.michael'
+import { Route as AdoptAnAnimalSassafrasRouteImport } from './routes/adopt-an-animal.sassafras'
+import { Route as AdoptAnAnimalStanleyRouteImport } from './routes/adopt-an-animal.stanley'
 import { Route as ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRouteImport } from './routes/experiences_.alpaca-experience-and-fibre-nesting-ball-workshop'
 import { Route as ExperiencesAlpacaLunchPicnicRouteImport } from './routes/experiences_.alpaca-lunch-picnic'
 import { Route as ExperiencesAlpacaSunsetPicnicRouteImport } from './routes/experiences_.alpaca-sunset-picnic'
@@ -56,9 +62,39 @@ const AdoptAnAnimalIndexRoute = AdoptAnAnimalIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AdoptAnAnimalRoute,
 } as any)
+const AdoptAnAnimalBronnieRoute = AdoptAnAnimalBronnieRouteImport.update({
+  id: '/bronnie',
+  path: '/bronnie',
+  getParentRoute: () => AdoptAnAnimalRoute,
+} as any)
+const AdoptAnAnimalChickenRoute = AdoptAnAnimalChickenRouteImport.update({
+  id: '/chicken',
+  path: '/chicken',
+  getParentRoute: () => AdoptAnAnimalRoute,
+} as any)
 const AdoptAnAnimalClaraRoute = AdoptAnAnimalClaraRouteImport.update({
   id: '/clara',
   path: '/clara',
+  getParentRoute: () => AdoptAnAnimalRoute,
+} as any)
+const AdoptAnAnimalGregRoute = AdoptAnAnimalGregRouteImport.update({
+  id: '/greg',
+  path: '/greg',
+  getParentRoute: () => AdoptAnAnimalRoute,
+} as any)
+const AdoptAnAnimalMichaelRoute = AdoptAnAnimalMichaelRouteImport.update({
+  id: '/michael',
+  path: '/michael',
+  getParentRoute: () => AdoptAnAnimalRoute,
+} as any)
+const AdoptAnAnimalSassafrasRoute = AdoptAnAnimalSassafrasRouteImport.update({
+  id: '/sassafras',
+  path: '/sassafras',
+  getParentRoute: () => AdoptAnAnimalRoute,
+} as any)
+const AdoptAnAnimalStanleyRoute = AdoptAnAnimalStanleyRouteImport.update({
+  id: '/stanley',
+  path: '/stanley',
   getParentRoute: () => AdoptAnAnimalRoute,
 } as any)
 const ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute =
@@ -153,7 +189,13 @@ export interface FileRoutesByFullPath {
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
+  '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
+  '/adopt-an-animal/chicken': typeof AdoptAnAnimalChickenRoute
   '/adopt-an-animal/clara': typeof AdoptAnAnimalClaraRoute
+  '/adopt-an-animal/greg': typeof AdoptAnAnimalGregRoute
+  '/adopt-an-animal/michael': typeof AdoptAnAnimalMichaelRoute
+  '/adopt-an-animal/sassafras': typeof AdoptAnAnimalSassafrasRoute
+  '/adopt-an-animal/stanley': typeof AdoptAnAnimalStanleyRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -175,7 +217,13 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
+  '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
+  '/adopt-an-animal/chicken': typeof AdoptAnAnimalChickenRoute
   '/adopt-an-animal/clara': typeof AdoptAnAnimalClaraRoute
+  '/adopt-an-animal/greg': typeof AdoptAnAnimalGregRoute
+  '/adopt-an-animal/michael': typeof AdoptAnAnimalMichaelRoute
+  '/adopt-an-animal/sassafras': typeof AdoptAnAnimalSassafrasRoute
+  '/adopt-an-animal/stanley': typeof AdoptAnAnimalStanleyRoute
   '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -199,7 +247,13 @@ export interface FileRoutesById {
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
+  '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
+  '/adopt-an-animal/chicken': typeof AdoptAnAnimalChickenRoute
   '/adopt-an-animal/clara': typeof AdoptAnAnimalClaraRoute
+  '/adopt-an-animal/greg': typeof AdoptAnAnimalGregRoute
+  '/adopt-an-animal/michael': typeof AdoptAnAnimalMichaelRoute
+  '/adopt-an-animal/sassafras': typeof AdoptAnAnimalSassafrasRoute
+  '/adopt-an-animal/stanley': typeof AdoptAnAnimalStanleyRoute
   '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   '/experiences_/alpaca-lunch-picnic': typeof ExperiencesAlpacaLunchPicnicRoute
   '/experiences_/alpaca-sunset-picnic': typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -224,7 +278,13 @@ export interface FileRouteTypes {
     | '/adopt-an-animal'
     | '/experiences'
     | '/gift-card'
+    | '/adopt-an-animal/bronnie'
+    | '/adopt-an-animal/chicken'
     | '/adopt-an-animal/clara'
+    | '/adopt-an-animal/greg'
+    | '/adopt-an-animal/michael'
+    | '/adopt-an-animal/sassafras'
+    | '/adopt-an-animal/stanley'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences/alpaca-lunch-picnic'
     | '/experiences/alpaca-sunset-picnic'
@@ -246,7 +306,13 @@ export interface FileRouteTypes {
     | '/'
     | '/experiences'
     | '/gift-card'
+    | '/adopt-an-animal/bronnie'
+    | '/adopt-an-animal/chicken'
     | '/adopt-an-animal/clara'
+    | '/adopt-an-animal/greg'
+    | '/adopt-an-animal/michael'
+    | '/adopt-an-animal/sassafras'
+    | '/adopt-an-animal/stanley'
     | '/experiences/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences/alpaca-lunch-picnic'
     | '/experiences/alpaca-sunset-picnic'
@@ -269,7 +335,13 @@ export interface FileRouteTypes {
     | '/adopt-an-animal'
     | '/experiences'
     | '/gift-card'
+    | '/adopt-an-animal/bronnie'
+    | '/adopt-an-animal/chicken'
     | '/adopt-an-animal/clara'
+    | '/adopt-an-animal/greg'
+    | '/adopt-an-animal/michael'
+    | '/adopt-an-animal/sassafras'
+    | '/adopt-an-animal/stanley'
     | '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop'
     | '/experiences_/alpaca-lunch-picnic'
     | '/experiences_/alpaca-sunset-picnic'
@@ -347,11 +419,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdoptAnAnimalIndexRouteImport
       parentRoute: typeof AdoptAnAnimalRoute
     }
+    '/adopt-an-animal/bronnie': {
+      id: '/adopt-an-animal/bronnie'
+      path: '/bronnie'
+      fullPath: '/adopt-an-animal/bronnie'
+      preLoaderRoute: typeof AdoptAnAnimalBronnieRouteImport
+      parentRoute: typeof AdoptAnAnimalRoute
+    }
+    '/adopt-an-animal/chicken': {
+      id: '/adopt-an-animal/chicken'
+      path: '/chicken'
+      fullPath: '/adopt-an-animal/chicken'
+      preLoaderRoute: typeof AdoptAnAnimalChickenRouteImport
+      parentRoute: typeof AdoptAnAnimalRoute
+    }
     '/adopt-an-animal/clara': {
       id: '/adopt-an-animal/clara'
       path: '/clara'
       fullPath: '/adopt-an-animal/clara'
       preLoaderRoute: typeof AdoptAnAnimalClaraRouteImport
+      parentRoute: typeof AdoptAnAnimalRoute
+    }
+    '/adopt-an-animal/greg': {
+      id: '/adopt-an-animal/greg'
+      path: '/greg'
+      fullPath: '/adopt-an-animal/greg'
+      preLoaderRoute: typeof AdoptAnAnimalGregRouteImport
+      parentRoute: typeof AdoptAnAnimalRoute
+    }
+    '/adopt-an-animal/michael': {
+      id: '/adopt-an-animal/michael'
+      path: '/michael'
+      fullPath: '/adopt-an-animal/michael'
+      preLoaderRoute: typeof AdoptAnAnimalMichaelRouteImport
+      parentRoute: typeof AdoptAnAnimalRoute
+    }
+    '/adopt-an-animal/sassafras': {
+      id: '/adopt-an-animal/sassafras'
+      path: '/sassafras'
+      fullPath: '/adopt-an-animal/sassafras'
+      preLoaderRoute: typeof AdoptAnAnimalSassafrasRouteImport
+      parentRoute: typeof AdoptAnAnimalRoute
+    }
+    '/adopt-an-animal/stanley': {
+      id: '/adopt-an-animal/stanley'
+      path: '/stanley'
+      fullPath: '/adopt-an-animal/stanley'
+      preLoaderRoute: typeof AdoptAnAnimalStanleyRouteImport
       parentRoute: typeof AdoptAnAnimalRoute
     }
     '/experiences_/alpaca-experience-and-fibre-nesting-ball-workshop': {
@@ -463,12 +577,24 @@ declare module '@tanstack/react-router' {
 }
 
 interface AdoptAnAnimalRouteChildren {
+  AdoptAnAnimalBronnieRoute: typeof AdoptAnAnimalBronnieRoute
+  AdoptAnAnimalChickenRoute: typeof AdoptAnAnimalChickenRoute
   AdoptAnAnimalClaraRoute: typeof AdoptAnAnimalClaraRoute
+  AdoptAnAnimalGregRoute: typeof AdoptAnAnimalGregRoute
+  AdoptAnAnimalMichaelRoute: typeof AdoptAnAnimalMichaelRoute
+  AdoptAnAnimalSassafrasRoute: typeof AdoptAnAnimalSassafrasRoute
+  AdoptAnAnimalStanleyRoute: typeof AdoptAnAnimalStanleyRoute
   AdoptAnAnimalIndexRoute: typeof AdoptAnAnimalIndexRoute
 }
 
 const AdoptAnAnimalRouteChildren: AdoptAnAnimalRouteChildren = {
+  AdoptAnAnimalBronnieRoute: AdoptAnAnimalBronnieRoute,
+  AdoptAnAnimalChickenRoute: AdoptAnAnimalChickenRoute,
   AdoptAnAnimalClaraRoute: AdoptAnAnimalClaraRoute,
+  AdoptAnAnimalGregRoute: AdoptAnAnimalGregRoute,
+  AdoptAnAnimalMichaelRoute: AdoptAnAnimalMichaelRoute,
+  AdoptAnAnimalSassafrasRoute: AdoptAnAnimalSassafrasRoute,
+  AdoptAnAnimalStanleyRoute: AdoptAnAnimalStanleyRoute,
   AdoptAnAnimalIndexRoute: AdoptAnAnimalIndexRoute,
 }
 
