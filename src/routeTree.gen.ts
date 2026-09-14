@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdoptAnAnimalRouteImport } from './routes/adopt-an-animal'
+import { Route as CorporateTrainingRouteImport } from './routes/corporate-training'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as GiftCardRouteImport } from './routes/gift-card'
 import { Route as AdoptAnAnimalIndexRouteImport } from './routes/adopt-an-animal.index'
@@ -45,6 +46,11 @@ const IndexRoute = IndexRouteImport.update({
 const AdoptAnAnimalRoute = AdoptAnAnimalRouteImport.update({
   id: '/adopt-an-animal',
   path: '/adopt-an-animal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CorporateTrainingRoute = CorporateTrainingRouteImport.update({
+  id: '/corporate-training',
+  path: '/corporate-training',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperiencesRoute = ExperiencesRouteImport.update({
@@ -187,6 +193,7 @@ const ExperiencesTasteOfFarmLifeFamilyFriendlyRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
+  '/corporate-training': typeof CorporateTrainingRoute
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
@@ -215,6 +222,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/corporate-training': typeof CorporateTrainingRoute
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
@@ -245,6 +253,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
+  '/corporate-training': typeof CorporateTrainingRoute
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
@@ -276,6 +285,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/adopt-an-animal'
+    | '/corporate-training'
     | '/experiences'
     | '/gift-card'
     | '/adopt-an-animal/bronnie'
@@ -304,6 +314,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/corporate-training'
     | '/experiences'
     | '/gift-card'
     | '/adopt-an-animal/bronnie'
@@ -333,6 +344,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/adopt-an-animal'
+    | '/corporate-training'
     | '/experiences'
     | '/gift-card'
     | '/adopt-an-animal/bronnie'
@@ -363,6 +375,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdoptAnAnimalRoute: typeof AdoptAnAnimalRouteWithChildren
+  CorporateTrainingRoute: typeof CorporateTrainingRoute
   ExperiencesRoute: typeof ExperiencesRoute
   GiftCardRoute: typeof GiftCardRoute
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute: typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
@@ -396,6 +409,13 @@ declare module '@tanstack/react-router' {
       path: '/adopt-an-animal'
       fullPath: '/adopt-an-animal'
       preLoaderRoute: typeof AdoptAnAnimalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/corporate-training': {
+      id: '/corporate-training'
+      path: '/corporate-training'
+      fullPath: '/corporate-training'
+      preLoaderRoute: typeof CorporateTrainingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experiences': {
@@ -605,6 +625,7 @@ const AdoptAnAnimalRouteWithChildren = AdoptAnAnimalRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdoptAnAnimalRoute: AdoptAnAnimalRouteWithChildren,
+  CorporateTrainingRoute: CorporateTrainingRoute,
   ExperiencesRoute: ExperiencesRoute,
   GiftCardRoute: GiftCardRoute,
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute:
