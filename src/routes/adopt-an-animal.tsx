@@ -137,7 +137,7 @@ function AdoptAnAnimalPage() {
                     </p>
                     <div className="mt-5 flex flex-wrap gap-3">
                       <Button asChild variant="outline" size="default">
-                        <a href={`#${animal.name.toLowerCase()}`}>Learn More</a>
+                        <a href={animal.href ?? `#${animal.name.toLowerCase()}`}>Learn More</a>
                       </Button>
                       <Button asChild size="default">
                         <a href="#adopt">Adopt {animal.name} <ArrowRight aria-hidden="true" size={16} /></a>
