@@ -345,7 +345,19 @@ function CorporateTrainingPage() {
         {/* Sticky reveal hero */}
         <section aria-label="The farm learning environment" className="relative h-[150vh]">
           <div className="sticky top-0 h-screen overflow-hidden">
-            <img src={highlandCta} alt="The farm at sunset, with the pasture glowing gold" width={1920} height={1080} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+            <div
+              className="absolute inset-0 bg-cover bg-fixed bg-center"
+              style={{ backgroundImage: `url(${highlandCta})` }}
+              aria-hidden="true"
+            />
+            <img
+              src={highlandCta}
+              alt="The farm at sunset, with the pasture glowing gold"
+              width={1920}
+              height={1080}
+              loading="lazy"
+              className="sr-only"
+            />
             <div className="absolute inset-0 bg-headline/50" aria-hidden="true" />
             <div className="relative mx-auto flex h-full max-w-4xl items-center px-5 text-center md:px-8">
               <div>
