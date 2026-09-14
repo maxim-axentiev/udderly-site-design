@@ -1,7 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
   Car,
+  Check,
+  Clock3,
   Coffee,
   MonitorPlay,
   Trees,
@@ -13,14 +15,11 @@ import { useState } from "react";
 import alpacaWalk from "@/assets/alpaca-walk.jpg";
 import goatCuddles from "@/assets/goat-cuddles.jpg";
 import highlandCta from "@/assets/highland-cta.jpg";
-import highlandHero from "@/assets/highland-hero.jpg";
 import ownersFamily from "@/assets/owners-family.jpg";
-import donkeyPicnic from "@/assets/donkey-picnic.jpg";
 import farmStore from "@/assets/farm-store.jpg";
 import iceCream from "@/assets/ice-cream.jpg";
-import heroPhotoAsset from "@/assets/experiences-hero.png.asset.json";
 import trainingPhotoAsset from "@/assets/homepage-training.png.asset.json";
-import experiencesPhotoAsset from "@/assets/homepage-experiences.png.asset.json";
+import heroPhotoAsset from "@/assets/experiences-hero.png.asset.json";
 import { AwardsStrip } from "@/components/experience/AwardsStrip";
 import { CuratedReviews, type CuratedReview } from "@/components/experience/CuratedReviews";
 import { ExperienceGallery, type GalleryImage } from "@/components/experience/ExperienceGallery";
@@ -29,76 +28,41 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { Button } from "@/components/ui/button";
 
 const DESCRIPTION =
-  "Corporate training and team building on a working Ontario farm, led by a facilitator with 20+ years of experience, with alpacas, goats, mini Highland cows and donkeys.";
+  "The Power of Conversation — a corporate training program on a working Ontario farm that teaches teams to manage tension, give feedback, and have the conversations that matter.";
 
-export const Route = createFileRoute("/corporate-training/")({
+export const Route = createFileRoute("/corporate-training/the-power-of-conversation")({
   head: () => ({
     meta: [
-      { title: "Corporate Training & Team Building on a Farm | Udderly Ridiculous" },
+      { title: "The Power of Conversation | Corporate Training | Udderly Ridiculous" },
       { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: "Corporate Training & Team Building on a Farm" },
+      { property: "og:title", content: "The Power of Conversation | Corporate Training" },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: CorporateTrainingPage,
+  component: PowerOfConversationPage,
 });
 
 const introGallery: GalleryImage[] = [
+  { src: goatCuddles, alt: "Two colleagues talking while a goat looks on" },
   { src: trainingPhotoAsset.url, alt: "A team gathered together for a training session on the farm" },
   { src: alpacaWalk, alt: "Participants walking alpacas along the farm lane" },
-  { src: experiencesPhotoAsset.url, alt: "Colleagues laughing with goats in the pasture" },
-  { src: highlandHero, alt: "Team meeting a mini Highland cow during a break" },
+  { src: iceCream, alt: "Team members debriefing over locally sourced treats" },
 ];
 
-type Program = {
-  title: string;
-  copy: string;
-  image: string;
-  alt: string;
-  to?: "/corporate-training/disc-assessment";
-};
-
-const programs: Program[] = [
-  {
-    title: "DiSC Assessment",
-    copy: "Placeholder description. Understand how your team communicates, decides and collides, then put it into practice with a few very opinionated animals watching.",
-    image: trainingPhotoAsset.url,
-    alt: "Facilitator leading a DiSC session in the farm classroom",
-    to: "/corporate-training/disc-assessment",
-  },
-  {
-    title: "The Power of Conversation",
-    copy: "Placeholder description. Real conversations, the hard ones included, practised in a space where nobody can hide behind a screen.",
-    image: goatCuddles,
-    alt: "Two colleagues talking while a goat looks on",
-    to: "/corporate-training/the-power-of-conversation",
-  },
-  {
-    title: "Alpaca Emotional Intelligence",
-    copy: "Placeholder description. Alpacas read the room faster than any of us. Learn self-awareness and empathy from the professionals.",
-    image: alpacaWalk,
-    alt: "Alpaca standing calmly beside a workshop participant",
-  },
-  {
-    title: "Beyond Engagement",
-    copy: "Placeholder description. Move past survey scores to the culture habits that actually keep good people around.",
-    image: highlandHero,
-    alt: "Team working through an exercise outdoors on the farm",
-  },
-  {
-    title: "Innovation on the Farm",
-    copy: "Placeholder description. Creative problem solving with real constraints, real mud and absolutely no whiteboard clichés.",
-    image: donkeyPicnic,
-    alt: "Group solving a challenge beside the miniature donkeys",
-  },
+const learningOutcomes = [
+  "Manage emotions and apply strategies for handling tension-filled situations.",
+  "Maximize influence by balancing directness with inquiry.",
+  "Identify key issues by actively listening for what matters most in any given situation.",
+  "Provide feedback in a manner that avoids creating defensiveness.",
+  "Apply these skills to real-life situations for immediate impact.",
 ];
 
 const reviews: CuratedReview[] = [
   {
     name: "Priya S.",
-    text: "Placeholder review copy. We booked a half day expecting a novelty offsite and got a genuinely excellent training session. Cheryl read our team instantly and adapted on the fly. Three months later people still reference the alpaca exercise in meetings.",
+    text: "Placeholder review copy. We booked a half day expecting a novelty offsite and got a genuinely excellent training session. Cheryl read our team instantly and adapted on the fly. Three months later people still reference the farm exercise in meetings.",
   },
   {
     name: "Marc D.",
@@ -151,27 +115,6 @@ const facilityGallery: GalleryImage[] = [
   { src: goatCuddles, alt: "Goats in the barn attached to the training room" },
 ];
 
-function ProgramCard({ program }: { program: Program }) {
-  return (
-    <article className="group relative flex flex-col border-2 border-headline bg-background p-3 shadow-[7px_7px_0_var(--headline)] transition-transform duration-200 hover:-translate-y-2">
-      <div className="relative overflow-hidden">
-        <img src={program.image} alt={program.alt} width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-      </div>
-      <div className="flex flex-1 flex-col p-3 pb-4">
-        <h3 className="font-display text-2xl font-black uppercase leading-none text-headline">{program.title}</h3>
-        <p className="mt-3 flex-1 text-sm leading-relaxed">{program.copy}</p>
-        <Button asChild variant="outline" className="mt-5 w-full">
-          {program.to ? (
-            <Link to={program.to}>Learn More</Link>
-          ) : (
-            <a href="#contact">Learn More</a>
-          )}
-        </Button>
-      </div>
-    </article>
-  );
-}
-
 function ContactForm() {
   const [sent, setSent] = useState(false);
 
@@ -212,7 +155,7 @@ function ContactForm() {
   );
 }
 
-function CorporateTrainingPage() {
+function PowerOfConversationPage() {
   return (
     <div className="min-h-screen bg-background text-body-copy">
       <SiteHeader />
@@ -223,12 +166,11 @@ function CorporateTrainingPage() {
           <img src={heroPhotoAsset.url} alt="A team taking part in a farm-based corporate training session" width={1920} height={1080} fetchPriority="high" className="absolute inset-0 -z-10 h-full w-full object-cover" />
           <div className="absolute inset-0 -z-10 bg-headline/65" aria-hidden="true" />
           <div className="mx-auto max-w-5xl px-5 py-24 text-center md:px-8 md:py-32">
-            <h1 className="font-display text-[clamp(2.4rem,6.5vw,5.6rem)] font-black uppercase leading-[0.85] text-background">
-              Corporate Training &amp; Team Building with Real Animals on a{" "}
-              <span className="text-secondary-accent">Real Farm</span>
+            <h1 className="font-display text-[clamp(2.6rem,7vw,6rem)] font-black uppercase leading-[0.85] text-background">
+              The Power of <span className="text-secondary-accent">Conversation</span>
             </h1>
             <p className="mx-auto mt-7 max-w-3xl text-lg font-medium leading-relaxed text-background md:text-xl">
-              Backed by 20+ years of corporate facilitation, designed to ignite learning, connection, and growth in boots... not boardrooms.
+              Have the conversations that matter — the hard ones, the honest ones, the ones that change everything — with a little help from the farm.
             </p>
           </div>
         </section>
@@ -237,90 +179,78 @@ function CorporateTrainingPage() {
 
         {/* Intro */}
         <section className="overflow-hidden bg-background py-20 md:py-28">
-          <div className="mx-auto max-w-[1400px] px-5 md:px-8">
-            <div className="grid items-start gap-14 lg:grid-cols-[1.05fr_1fr]">
-              <ExperienceGallery images={introGallery} />
+          <div className="mx-auto max-w-[1300px] px-5 md:px-8">
+            <div className="grid items-center gap-12 lg:grid-cols-2">
+              <figure className="relative m-0">
+                <div className="absolute -inset-3 rotate-2 bg-secondary-accent" aria-hidden="true" />
+                <img src={trainingPhotoAsset.url} alt="A team learning conversation skills in the farm classroom" width={1280} height={960} loading="lazy" className="relative aspect-[4/3] w-full border-2 border-headline object-cover" />
+              </figure>
 
               <div>
                 <h2 className="font-display text-[clamp(2.2rem,5.2vw,4.4rem)] font-black uppercase leading-[0.85] text-headline">
-                  Step into an environment that <span className="text-stroke">engages and inspires</span>
+                  Conversations that <span className="text-stroke">actually land</span>
                 </h2>
                 <p className="mt-6 text-base leading-relaxed md:text-lg">
-                  Forget stale boardrooms and awkward icebreakers. At Udderly Ridiculous Farm Life, we deliver Corporate Training &amp; Team Building experiences that actually stick.
+                  Placeholder description. Most workplace tension isn’t caused by bad people — it’s caused by avoided conversations. The Power of Conversation gives your team a practical, repeatable framework for handling high-stakes dialogue with clarity, empathy and confidence.
                 </p>
                 <p className="mt-4 text-base leading-relaxed md:text-lg">
-                  Led by a seasoned facilitator with over 20 years of corporate training experience, our programs are immersive, interactive, and completely unforgettable—because they happen on a working farm, with real animals as part of the learning environment. Alpacas. Goats. Mini Highland cows. Miniature donkeys. Even chickens. Each session taps into the grounding energy and emotional intelligence these animals naturally bring, creating space for real connection, deeper reflection, and team growth.
+                  Through facilitated exercises, real-play scenarios and a few unscripted animal moments, participants practice managing emotion, listening for what matters and giving feedback that lands instead of defends. Keep scrolling to learn about the program!
                 </p>
-                <p className="mt-4 text-base leading-relaxed md:text-lg">
-                  We don’t believe in cookie-cutter workshops or the latest “flavour of the month.” Whether you’re building on existing training or starting fresh, every session is tailored to your team’s goals, culture, and context. The result? More meaningful engagement, more memorable takeaways, and a team that leaves energized, aligned, and maybe a little muddy.
-                </p>
-                <p className="mt-8 inline-block -rotate-1 border-2 border-headline bg-secondary-accent px-4 py-2 font-display text-lg font-black uppercase text-headline shadow-[5px_5px_0_var(--headline)]">
-                  See all of our training programs below
-                </p>
+                <Button asChild size="large" className="mt-8">
+                  <a href="#contact">Contact Us <ArrowRight aria-hidden="true" /></a>
+                </Button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Programs */}
-        <section id="training-programs" className="scroll-mt-20 overflow-hidden bg-farm-beige py-20 md:py-28">
+        {/* Learning outcomes + details */}
+        <section className="overflow-hidden bg-farm-beige py-20 md:py-28">
           <div className="mx-auto max-w-[1500px] px-5 md:px-8">
             <h2 className="max-w-3xl font-display text-[clamp(2.6rem,7vw,6rem)] font-black uppercase leading-[0.8] text-headline">
-              Our training programs
+              What your team will take away
             </h2>
-
-            {/* Featured: Team Building Experiences */}
-            <article className="relative mt-14 grid items-center gap-8 border-4 border-headline bg-primary-accent p-4 shadow-[16px_16px_0_var(--headline)] lg:grid-cols-2 lg:gap-12 lg:p-6">
-              <img src={experiencesPhotoAsset.url} alt="A team laughing together during a farm team building session" width={1280} height={860} loading="lazy" className="aspect-[16/10] w-full border-2 border-headline object-cover" />
-              <div className="text-primary-foreground lg:pr-6">
-                <span className="inline-block -rotate-2 border-2 border-headline bg-secondary-accent px-3 py-1 font-display text-sm font-black uppercase text-headline">
-                  Not training — pure team building
-                </span>
-                <h3 className="mt-5 font-display text-[clamp(2.2rem,5vw,4rem)] font-black uppercase leading-[0.85]">
-                  Team Building Experiences
+            <div className="mt-14 grid gap-10 lg:grid-cols-2">
+              <article className="border-2 border-headline bg-background p-6 shadow-[10px_10px_0_var(--headline)] md:p-8">
+                <h3 className="font-display text-2xl font-black uppercase leading-tight text-headline">
+                  Learning outcomes
                 </h3>
-                <p className="mt-4 text-base leading-relaxed md:text-lg">
-                  Placeholder description. No modules, no assessments, no flip charts. Just your team, the animals, and a few hours of shared ridiculousness that does more for trust than any trust fall ever has.
-                </p>
-                <Button asChild size="large" variant="outline" className="mt-7">
-                  <a href="#contact">Learn More <ArrowRight aria-hidden="true" /></a>
-                </Button>
-              </div>
-            </article>
+                <ul className="mt-6 space-y-4">
+                  {learningOutcomes.map((outcome) => (
+                    <li key={outcome} className="flex gap-3 text-base leading-relaxed">
+                      <Check aria-hidden="true" className="mt-1 size-5 shrink-0 text-primary-accent" />
+                      <span>{outcome}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
 
-            <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-              {programs.map((program) => (
-                <ProgramCard key={program.title} program={program} />
-              ))}
+              <div className="space-y-10">
+                <article className="border-2 border-headline bg-background p-6 shadow-[10px_10px_0_var(--headline)] md:p-8">
+                  <span className="flex size-12 items-center justify-center rounded-full border-2 border-headline bg-farm-beige text-primary-accent shadow-[4px_4px_0_var(--headline)]">
+                    <Clock3 aria-hidden="true" />
+                  </span>
+                  <h3 className="mt-5 font-display text-2xl font-black uppercase leading-tight text-headline">Duration</h3>
+                  <p className="mt-3 text-base leading-relaxed">
+                    The program is flexible and can be offered as a half-day, full-day, or time-spaced session.
+                  </p>
+                </article>
+
+                <article className="border-2 border-headline bg-background p-6 shadow-[10px_10px_0_var(--headline)] md:p-8">
+                  <h3 className="font-display text-2xl font-black uppercase leading-tight text-headline">Enhancements</h3>
+                  <p className="mt-3 text-base leading-relaxed">
+                    For an enriched team-building experience, consider integrating our Alpaca EQ training which dives deeper into emotional intelligence.
+                  </p>
+                </article>
+              </div>
             </div>
-
-            {/* Tourism-specific card */}
-            <article className="relative mt-14 grid items-center gap-8 border-4 border-dashed border-primary-accent bg-background p-4 shadow-[14px_14px_0_var(--secondary-accent)] lg:grid-cols-[1fr_1.1fr] lg:gap-12 lg:p-6">
-              <img src={highlandCta} alt="Farm owners walking a tourism operator through the property" width={1280} height={860} loading="lazy" className="aspect-[16/10] w-full border-2 border-headline object-cover" />
-              <div>
-                <span className="inline-block rotate-1 border-2 border-headline bg-primary-accent px-3 py-1 font-display text-sm font-black uppercase text-primary-foreground">
-                  For tourism businesses only
-                </span>
-                <h3 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.4rem)] font-black uppercase leading-[0.85] text-headline">
-                  Experiential Tourism Development
-                </h3>
-                <p className="mt-4 text-base leading-relaxed md:text-lg">
-                  Placeholder description. Built specifically for tourism operators, this session helps you turn what you already have into experiences guests will book, photograph and talk about for years.
-                </p>
-                <Button asChild size="large" className="mt-7">
-                  <a href="#contact">Learn More <ArrowRight aria-hidden="true" /></a>
-                </Button>
-              </div>
-            </article>
           </div>
         </section>
 
         {/* Reviews */}
         <CuratedReviews
-          title="Teams that came for a novelty offsite and left with a plan"
+          title="Teams that learned to talk — and listen — on the farm"
           reviews={reviews}
-          ctaLabel="See Training Programs"
-          ctaHref="#training-programs"
         />
 
         {/* Trainer */}
@@ -341,7 +271,7 @@ function CorporateTrainingPage() {
                   Placeholder description. Cheryl has spent more than twenty years facilitating corporate training across boardrooms, conference centres and hotel ballrooms — and then decided the best learning happens with straw underfoot. She builds every session around your team's goals and culture, keeps the energy high, the reflection honest, and lets the animals handle the rest.
                 </p>
                 <Button asChild size="large" className="mt-8">
-                  <a href="#training-programs">See Training Programs <ArrowRight aria-hidden="true" /></a>
+                  <a href="#contact">Contact Us <ArrowRight aria-hidden="true" /></a>
                 </Button>
               </div>
             </div>
@@ -410,10 +340,10 @@ function CorporateTrainingPage() {
         <section id="contact" className="scroll-mt-20 overflow-hidden bg-farm-blue py-20 md:py-28">
           <div className="mx-auto max-w-[1000px] px-5 md:px-8">
             <h2 className="font-display text-[clamp(2.4rem,6.5vw,5.4rem)] font-black uppercase leading-[0.82] text-headline">
-              Let&apos;s talk about your team
+              Let&apos;s talk conversation
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed md:text-lg">
-              Tell us a little about your group and what you want them to walk away with. We will get back to you with ideas (and probably a goat photo).
+              Tell us a little about your team and what you want them to walk away with. We will get back to you with ideas (and probably a goat photo).
             </p>
             <ContactForm />
           </div>
