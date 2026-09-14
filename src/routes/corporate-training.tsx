@@ -342,32 +342,30 @@ function CorporateTrainingPage() {
           </div>
         </section>
 
-        {/* Sticky reveal hero */}
-        <section aria-label="The farm learning environment" className="relative h-[150vh]">
-          <div className="sticky top-0 h-screen overflow-hidden">
-            <div
-              className="absolute inset-0 bg-cover bg-fixed bg-center"
-              style={{ backgroundImage: `url(${highlandCta})` }}
-              aria-hidden="true"
-            />
-            <img
-              src={highlandCta}
-              alt="The farm at sunset, with the pasture glowing gold"
-              width={1920}
-              height={1080}
-              loading="lazy"
-              className="sr-only"
-            />
-            <div className="absolute inset-0 bg-headline/50" aria-hidden="true" />
-            <div className="relative mx-auto flex h-full max-w-4xl items-center px-5 text-center md:px-8">
-              <div>
-                <h2 className="font-display text-[clamp(2.6rem,7.5vw,6.5rem)] font-black uppercase leading-[0.82] text-background">
-                  A learning space with <span className="text-secondary-accent">hooves outside</span>
-                </h2>
-                <p className="mx-auto mt-6 max-w-2xl text-lg font-medium leading-relaxed text-background md:text-xl">
-                  Placeholder description. The farm itself is part of the curriculum: open sky, quiet lanes, and a barn full of goats waiting at the break bell.
-                </p>
-              </div>
+        {/* Fixed-background farm hero */}
+        <section aria-label="The farm learning environment" className="relative min-h-[80vh] overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-fixed bg-center"
+            style={{ backgroundImage: `url(${highlandCta})` }}
+            aria-hidden="true"
+          />
+          <img
+            src={highlandCta}
+            alt="The farm at sunset, with the pasture glowing gold"
+            width={1920}
+            height={1080}
+            loading="lazy"
+            className="sr-only"
+          />
+          <div className="absolute inset-0 bg-headline/50" aria-hidden="true" />
+          <div className="relative mx-auto flex min-h-[80vh] max-w-4xl items-center px-5 py-24 text-center md:px-8">
+            <div>
+              <h2 className="font-display text-[clamp(2.6rem,7.5vw,6.5rem)] font-black uppercase leading-[0.82] text-background">
+                A learning space with <span className="text-secondary-accent">hooves outside</span>
+              </h2>
+              <p className="mx-auto mt-6 max-w-2xl text-lg font-medium leading-relaxed text-background md:text-xl">
+                Placeholder description. The farm itself is part of the curriculum: open sky, quiet lanes, and a barn full of goats waiting at the break bell.
+              </p>
             </div>
           </div>
         </section>
