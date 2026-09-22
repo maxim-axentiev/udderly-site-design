@@ -112,7 +112,6 @@ function StoryImage({ image, alt, rotated }: { image: string; alt: string; rotat
 
 function StoryBlock({ section }: { section: StorySection }) {
   const bg = section.tone === "blue" ? "bg-farm-blue" : section.tone === "beige" ? "bg-farm-beige" : "bg-background";
-  const eyebrowTone = section.tone === "blue" ? "text-headline" : "text-primary-accent";
 
   return (
     <section id={section.id} className={`scroll-mt-20 overflow-hidden ${bg} py-20 md:py-28`}>
@@ -142,10 +141,6 @@ function StoryBlock({ section }: { section: StorySection }) {
             <StoryImage image={section.image} alt={section.alt} rotated={section.imageLeft} />
           </div>
         </div>
-
-        {section.tone === "beige" && (
-          <span aria-hidden="true" className={`mt-14 block font-accent text-lg italic ${eyebrowTone}`}></span>
-        )}
       </div>
     </section>
   );

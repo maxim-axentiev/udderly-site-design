@@ -14,6 +14,7 @@ import { Route as AdoptAnAnimalRouteImport } from './routes/adopt-an-animal'
 import { Route as CorporateTrainingRouteImport } from './routes/corporate-training'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as GiftCardRouteImport } from './routes/gift-card'
+import { Route as OurStoryRouteImport } from './routes/our-story'
 import { Route as AdoptAnAnimalIndexRouteImport } from './routes/adopt-an-animal.index'
 import { Route as AdoptAnAnimalBronnieRouteImport } from './routes/adopt-an-animal.bronnie'
 import { Route as AdoptAnAnimalChickenRouteImport } from './routes/adopt-an-animal.chicken'
@@ -64,6 +65,11 @@ const ExperiencesRoute = ExperiencesRouteImport.update({
 const GiftCardRoute = GiftCardRouteImport.update({
   id: '/gift-card',
   path: '/gift-card',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurStoryRoute = OurStoryRouteImport.update({
+  id: '/our-story',
+  path: '/our-story',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdoptAnAnimalIndexRoute = AdoptAnAnimalIndexRouteImport.update({
@@ -216,6 +222,7 @@ export interface FileRoutesByFullPath {
   '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
+  '/our-story': typeof OurStoryRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
   '/adopt-an-animal/chicken': typeof AdoptAnAnimalChickenRoute
   '/adopt-an-animal/clara': typeof AdoptAnAnimalClaraRoute
@@ -247,6 +254,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
+  '/our-story': typeof OurStoryRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
   '/adopt-an-animal/chicken': typeof AdoptAnAnimalChickenRoute
   '/adopt-an-animal/clara': typeof AdoptAnAnimalClaraRoute
@@ -281,6 +289,7 @@ export interface FileRoutesById {
   '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
+  '/our-story': typeof OurStoryRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
   '/adopt-an-animal/chicken': typeof AdoptAnAnimalChickenRoute
   '/adopt-an-animal/clara': typeof AdoptAnAnimalClaraRoute
@@ -316,6 +325,7 @@ export interface FileRouteTypes {
     | '/corporate-training'
     | '/experiences'
     | '/gift-card'
+    | '/our-story'
     | '/adopt-an-animal/bronnie'
     | '/adopt-an-animal/chicken'
     | '/adopt-an-animal/clara'
@@ -347,6 +357,7 @@ export interface FileRouteTypes {
     | '/'
     | '/experiences'
     | '/gift-card'
+    | '/our-story'
     | '/adopt-an-animal/bronnie'
     | '/adopt-an-animal/chicken'
     | '/adopt-an-animal/clara'
@@ -380,6 +391,7 @@ export interface FileRouteTypes {
     | '/corporate-training'
     | '/experiences'
     | '/gift-card'
+    | '/our-story'
     | '/adopt-an-animal/bronnie'
     | '/adopt-an-animal/chicken'
     | '/adopt-an-animal/clara'
@@ -414,6 +426,7 @@ export interface RootRouteChildren {
   CorporateTrainingRoute: typeof CorporateTrainingRouteWithChildren
   ExperiencesRoute: typeof ExperiencesRoute
   GiftCardRoute: typeof GiftCardRoute
+  OurStoryRoute: typeof OurStoryRoute
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute: typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   ExperiencesAlpacaLunchPicnicRoute: typeof ExperiencesAlpacaLunchPicnicRoute
   ExperiencesAlpacaSunsetPicnicRoute: typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -466,6 +479,13 @@ declare module '@tanstack/react-router' {
       path: '/gift-card'
       fullPath: '/gift-card'
       preLoaderRoute: typeof GiftCardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-story': {
+      id: '/our-story'
+      path: '/our-story'
+      fullPath: '/our-story'
+      preLoaderRoute: typeof OurStoryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/adopt-an-animal/': {
@@ -701,6 +721,7 @@ const rootRouteChildren: RootRouteChildren = {
   CorporateTrainingRoute: CorporateTrainingRouteWithChildren,
   ExperiencesRoute: ExperiencesRoute,
   GiftCardRoute: GiftCardRoute,
+  OurStoryRoute: OurStoryRoute,
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute:
     ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute,
   ExperiencesAlpacaLunchPicnicRoute: ExperiencesAlpacaLunchPicnicRoute,
