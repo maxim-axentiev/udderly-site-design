@@ -117,7 +117,7 @@ function StoryBlock({ section }: { section: StorySection }) {
     <section id={section.id} className={`scroll-mt-20 overflow-hidden ${bg} py-20 md:py-28`}>
       <div className="mx-auto max-w-[1300px] px-5 md:px-8">
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_1fr]">
-          <div className={section.imageLeft ? "order-2 lg:order-1" : ""}>
+          <div className={section.imageLeft ? "order-2" : ""}>
             <h2 className="font-display text-[clamp(2.4rem,5.5vw,4.6rem)] font-black uppercase leading-[0.85] text-headline">
               {section.title}
             </h2>
@@ -137,7 +137,7 @@ function StoryBlock({ section }: { section: StorySection }) {
             )}
           </div>
 
-          <div className={section.imageLeft ? "order-1 lg:order-2" : ""}>
+          <div className={section.imageLeft ? "order-1" : ""}>
             <StoryImage image={section.image} alt={section.alt} rotated={section.imageLeft} />
           </div>
         </div>
