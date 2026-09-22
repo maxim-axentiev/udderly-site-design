@@ -9,7 +9,7 @@ export const navItems = [
   { label: "Stay", href: "/experiences#farm-stays" },
   { label: "Adopt", href: "/adopt-an-animal" },
   { label: "Corporate", href: "/corporate-training" },
-  { label: "Our Farm", href: "/#store" },
+  { label: "Our Farm", href: "/our-story" },
 ];
 
 export function SiteHeader() {
