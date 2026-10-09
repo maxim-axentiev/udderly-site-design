@@ -13,3 +13,4 @@
 - [x] Create Farm Glamping page with amenities, add-ons, policies, Cheese Trail section.
 - [x] Create Taste of Farm Life pages with OSW Signature Experience and FeastON sections.
 - [x] Create Gift Card page with hero, intro, gallery/lightbox, reviews, things to know, accreditations, newsletter, map.
+- [x] Build Vision & Values, Team, Farm Market Store, and Goat Milk Ice Cream pages with shared hero, galleries, ice cream slideshow, Gift A Goat, news video placeholder, and booking CTAs.
