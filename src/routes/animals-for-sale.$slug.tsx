@@ -168,7 +168,7 @@ function SaleAnimalPage() {
             <div className="mx-auto max-w-[1300px] px-5 md:px-8">
               <h2 className="text-center font-display text-[clamp(2.4rem,6.5vw,5.4rem)] font-black uppercase leading-[0.82] text-headline">Meet the parents</h2>
               <div className="mt-14 grid gap-10 md:grid-cols-2">
-                {[["Dam", highlandHero], ["Sire", highlandCta]].map(([role, src], i) => (
+                {([["Dam", highlandHero], ["Sire", highlandCta]] as const).map(([role, src], i) => (
                   <figure key={role} className={`m-0 border-2 border-headline bg-background p-3 shadow-[10px_10px_0_var(--headline)] ${i ? "rotate-1" : "-rotate-1"}`}>
                     <img src={src} alt={`${animal.name}'s ${role.toLowerCase()}`} width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full object-cover" />
                     <figcaption className="p-4">

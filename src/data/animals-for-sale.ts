@@ -22,7 +22,7 @@ const img: Record<SaleSpecies, string[]> = {
 };
 
 const make = (name: string, slug: string, species: SaleSpecies, sold: boolean, i: number): SaleAnimal => ({
-  name, slug, species, sold, image: img[species][i % img[species].length],
+  name, slug, species, sold, image: img[species][i % img[species].length] as string,
 });
 
 /** Listed top-to-bottom as displayed. */
