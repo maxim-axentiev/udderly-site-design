@@ -1,9 +1,9 @@
 # Udderly Ridiculous Farm Life — Task Roadmap
 
 ## In progress
-- [ ] Verify Animals for Sale edits: remove awards, pink card buttons, lower sold stamps, waitlist guidance, plural greetings, sold prices and waitlist-only sold pages.
 
 ## Completed
+- [x] Verify Animals for Sale edits: remove awards, pink card buttons, lower sold stamps, waitlist guidance, plural greetings, sold prices and waitlist-only sold pages.
 - [x] Move gift card page from `/experiences/gift-card` to `/gift-card` and update Experiences page link.
 - [x] Create Adopt an Animal page at `/adopt-an-animal` with hero, intro, available animals grid, packages, impact section, and newsletter.
 - [x] Build frontend-only homepage with brand system, header, hero, experiences, herd teaser, CTA, footer.

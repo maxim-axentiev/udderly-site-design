@@ -23,8 +23,6 @@ export const Route = createFileRoute("/animals-for-sale/")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: heroPhotoAsset.url },
-      { name: "twitter:image", content: heroPhotoAsset.url },
     ],
   }),
   component: AnimalsForSalePage,
