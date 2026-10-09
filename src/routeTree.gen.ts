@@ -14,9 +14,13 @@ import { Route as AdoptAnAnimalRouteImport } from './routes/adopt-an-animal'
 import { Route as AnimalsForSaleRouteImport } from './routes/animals-for-sale'
 import { Route as CorporateTrainingRouteImport } from './routes/corporate-training'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
+import { Route as FarmMarketStoreRouteImport } from './routes/farm-market-store'
 import { Route as GiftCardRouteImport } from './routes/gift-card'
+import { Route as IceCreamRouteImport } from './routes/ice-cream'
 import { Route as OurStoryRouteImport } from './routes/our-story'
+import { Route as TeamRouteImport } from './routes/team'
 import { Route as TowerOfGoatsDiscoveryTrailRouteImport } from './routes/tower-of-goats-discovery-trail'
+import { Route as VisionValuesRouteImport } from './routes/vision-values'
 import { Route as AdoptAnAnimalIndexRouteImport } from './routes/adopt-an-animal.index'
 import { Route as AdoptAnAnimalBronnieRouteImport } from './routes/adopt-an-animal.bronnie'
 import { Route as AdoptAnAnimalChickenRouteImport } from './routes/adopt-an-animal.chicken'
@@ -77,14 +81,29 @@ const ExperiencesRoute = ExperiencesRouteImport.update({
   path: '/experiences',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FarmMarketStoreRoute = FarmMarketStoreRouteImport.update({
+  id: '/farm-market-store',
+  path: '/farm-market-store',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GiftCardRoute = GiftCardRouteImport.update({
   id: '/gift-card',
   path: '/gift-card',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IceCreamRoute = IceCreamRouteImport.update({
+  id: '/ice-cream',
+  path: '/ice-cream',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OurStoryRoute = OurStoryRouteImport.update({
   id: '/our-story',
   path: '/our-story',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TowerOfGoatsDiscoveryTrailRoute =
@@ -93,6 +112,11 @@ const TowerOfGoatsDiscoveryTrailRoute =
     path: '/tower-of-goats-discovery-trail',
     getParentRoute: () => rootRouteImport,
   } as any)
+const VisionValuesRoute = VisionValuesRouteImport.update({
+  id: '/vision-values',
+  path: '/vision-values',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdoptAnAnimalIndexRoute = AdoptAnAnimalIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -288,9 +312,13 @@ export interface FileRoutesByFullPath {
   '/animals-for-sale': typeof AnimalsForSaleRouteWithChildren
   '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
+  '/farm-market-store': typeof FarmMarketStoreRoute
   '/gift-card': typeof GiftCardRoute
+  '/ice-cream': typeof IceCreamRoute
   '/our-story': typeof OurStoryRoute
+  '/team': typeof TeamRoute
   '/tower-of-goats-discovery-trail': typeof TowerOfGoatsDiscoveryTrailRoute
+  '/vision-values': typeof VisionValuesRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
   '/adopt-an-animal/chicken': typeof AdoptAnAnimalChickenRoute
   '/adopt-an-animal/clara': typeof AdoptAnAnimalClaraRoute
@@ -329,9 +357,13 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/experiences': typeof ExperiencesRoute
+  '/farm-market-store': typeof FarmMarketStoreRoute
   '/gift-card': typeof GiftCardRoute
+  '/ice-cream': typeof IceCreamRoute
   '/our-story': typeof OurStoryRoute
+  '/team': typeof TeamRoute
   '/tower-of-goats-discovery-trail': typeof TowerOfGoatsDiscoveryTrailRoute
+  '/vision-values': typeof VisionValuesRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
   '/adopt-an-animal/chicken': typeof AdoptAnAnimalChickenRoute
   '/adopt-an-animal/clara': typeof AdoptAnAnimalClaraRoute
@@ -374,9 +406,13 @@ export interface FileRoutesById {
   '/animals-for-sale': typeof AnimalsForSaleRouteWithChildren
   '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
+  '/farm-market-store': typeof FarmMarketStoreRoute
   '/gift-card': typeof GiftCardRoute
+  '/ice-cream': typeof IceCreamRoute
   '/our-story': typeof OurStoryRoute
+  '/team': typeof TeamRoute
   '/tower-of-goats-discovery-trail': typeof TowerOfGoatsDiscoveryTrailRoute
+  '/vision-values': typeof VisionValuesRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
   '/adopt-an-animal/chicken': typeof AdoptAnAnimalChickenRoute
   '/adopt-an-animal/clara': typeof AdoptAnAnimalClaraRoute
@@ -420,9 +456,13 @@ export interface FileRouteTypes {
     | '/animals-for-sale'
     | '/corporate-training'
     | '/experiences'
+    | '/farm-market-store'
     | '/gift-card'
+    | '/ice-cream'
     | '/our-story'
+    | '/team'
     | '/tower-of-goats-discovery-trail'
+    | '/vision-values'
     | '/adopt-an-animal/bronnie'
     | '/adopt-an-animal/chicken'
     | '/adopt-an-animal/clara'
@@ -461,9 +501,13 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/experiences'
+    | '/farm-market-store'
     | '/gift-card'
+    | '/ice-cream'
     | '/our-story'
+    | '/team'
     | '/tower-of-goats-discovery-trail'
+    | '/vision-values'
     | '/adopt-an-animal/bronnie'
     | '/adopt-an-animal/chicken'
     | '/adopt-an-animal/clara'
@@ -505,9 +549,13 @@ export interface FileRouteTypes {
     | '/animals-for-sale'
     | '/corporate-training'
     | '/experiences'
+    | '/farm-market-store'
     | '/gift-card'
+    | '/ice-cream'
     | '/our-story'
+    | '/team'
     | '/tower-of-goats-discovery-trail'
+    | '/vision-values'
     | '/adopt-an-animal/bronnie'
     | '/adopt-an-animal/chicken'
     | '/adopt-an-animal/clara'
@@ -550,9 +598,13 @@ export interface RootRouteChildren {
   AnimalsForSaleRoute: typeof AnimalsForSaleRouteWithChildren
   CorporateTrainingRoute: typeof CorporateTrainingRouteWithChildren
   ExperiencesRoute: typeof ExperiencesRoute
+  FarmMarketStoreRoute: typeof FarmMarketStoreRoute
   GiftCardRoute: typeof GiftCardRoute
+  IceCreamRoute: typeof IceCreamRoute
   OurStoryRoute: typeof OurStoryRoute
+  TeamRoute: typeof TeamRoute
   TowerOfGoatsDiscoveryTrailRoute: typeof TowerOfGoatsDiscoveryTrailRoute
+  VisionValuesRoute: typeof VisionValuesRoute
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute: typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   ExperiencesAlpacaLunchPicnicRoute: typeof ExperiencesAlpacaLunchPicnicRoute
   ExperiencesAlpacaSunsetPicnicRoute: typeof ExperiencesAlpacaSunsetPicnicRoute
@@ -608,11 +660,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperiencesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/farm-market-store': {
+      id: '/farm-market-store'
+      path: '/farm-market-store'
+      fullPath: '/farm-market-store'
+      preLoaderRoute: typeof FarmMarketStoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gift-card': {
       id: '/gift-card'
       path: '/gift-card'
       fullPath: '/gift-card'
       preLoaderRoute: typeof GiftCardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ice-cream': {
+      id: '/ice-cream'
+      path: '/ice-cream'
+      fullPath: '/ice-cream'
+      preLoaderRoute: typeof IceCreamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/our-story': {
@@ -622,11 +688,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OurStoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tower-of-goats-discovery-trail': {
       id: '/tower-of-goats-discovery-trail'
       path: '/tower-of-goats-discovery-trail'
       fullPath: '/tower-of-goats-discovery-trail'
       preLoaderRoute: typeof TowerOfGoatsDiscoveryTrailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vision-values': {
+      id: '/vision-values'
+      path: '/vision-values'
+      fullPath: '/vision-values'
+      preLoaderRoute: typeof VisionValuesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/adopt-an-animal/': {
@@ -947,9 +1027,13 @@ const rootRouteChildren: RootRouteChildren = {
   AnimalsForSaleRoute: AnimalsForSaleRouteWithChildren,
   CorporateTrainingRoute: CorporateTrainingRouteWithChildren,
   ExperiencesRoute: ExperiencesRoute,
+  FarmMarketStoreRoute: FarmMarketStoreRoute,
   GiftCardRoute: GiftCardRoute,
+  IceCreamRoute: IceCreamRoute,
   OurStoryRoute: OurStoryRoute,
+  TeamRoute: TeamRoute,
   TowerOfGoatsDiscoveryTrailRoute: TowerOfGoatsDiscoveryTrailRoute,
+  VisionValuesRoute: VisionValuesRoute,
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute:
     ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute,
   ExperiencesAlpacaLunchPicnicRoute: ExperiencesAlpacaLunchPicnicRoute,
