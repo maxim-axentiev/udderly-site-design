@@ -87,7 +87,7 @@ function FlavourSlideshow() {
   const total = flavours.length;
   const go = (next: number) => setIndex((next + total) % total);
   const swipe = useSwipe(() => go(index - 1), () => go(index + 1));
-  const current = flavours[index];
+  const current = flavours[index]!;
 
   return (
     <div className="relative">
