@@ -1,7 +1,7 @@
 # Udderly Ridiculous Farm Life — Task Roadmap
 
 ## In progress
-- [ ]
+- [ ] Verify Animals for Sale edits: remove awards, pink card buttons, lower sold stamps, waitlist guidance, plural greetings, sold prices and waitlist-only sold pages.
 
 ## Completed
 - [x] Move gift card page from `/experiences/gift-card` to `/gift-card` and update Experiences page link.

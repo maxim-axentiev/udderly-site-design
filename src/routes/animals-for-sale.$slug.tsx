@@ -82,6 +82,7 @@ function PriceTag({ sold }: { sold: boolean }) {
     <div className="inline-flex -rotate-3 flex-col items-center border-4 border-headline bg-secondary-accent px-6 py-3 shadow-[6px_6px_0_var(--headline)]">
       <span className="font-display text-xs font-black uppercase tracking-widest text-headline">{sold ? "Status" : "Price"}</span>
       <span className="font-display text-4xl font-black uppercase leading-none text-headline">{sold ? "Sold" : "$X,XXX"}</span>
+      {sold && <span className="mt-2 text-center font-display text-base font-black uppercase text-headline">Sold for $X,XXX <span className="block text-xs">Placeholder amount</span></span>}
     </div>
   );
 }
@@ -104,7 +105,7 @@ function SaleAnimalPage() {
         <section className="farm-dots relative overflow-hidden border-b-2 border-headline bg-farm-beige py-24 md:py-32">
           <div className="mx-auto max-w-5xl px-5 text-center md:px-8">
             <p className="inline-block rotate-2 border-2 border-headline bg-background px-4 py-1 font-display text-sm font-black uppercase tracking-widest text-primary-accent shadow-[4px_4px_0_var(--headline)]">
-              Hi, my name is
+              {isCow ? "Hi, my name is" : "Hi, our names are"}
             </p>
             <h1 className="mt-6 font-display text-[clamp(3rem,10vw,8.5rem)] font-black uppercase leading-[0.8] text-headline">{animal.name}</h1>
             <p className="mt-7 inline-block -rotate-2 bg-primary-accent px-5 py-2 font-accent text-2xl italic text-primary-foreground md:text-3xl">
@@ -123,7 +124,7 @@ function SaleAnimalPage() {
               <p className="mt-6 text-base leading-relaxed md:text-lg">
                 Placeholder description. {animal.name} {isCow ? "is" : "are"} gentle, curious and well socialized from day one. Raised on our farm with plenty of attention, snacks and herd time, {isCow ? "this calf is" : "they're"} ready to bring a little ridiculousness to the right home.
               </p>
-              <Button asChild size="large" className="mt-8"><a href="#contact">Contact Us to Buy <ArrowRight aria-hidden="true" /></a></Button>
+              {!animal.sold && <Button asChild size="large" className="mt-8"><a href="#contact">Contact Us to Buy <ArrowRight aria-hidden="true" /></a></Button>}
             </div>
             <figure className="relative order-1 m-0 lg:order-2">
               <div className="absolute -inset-3 -rotate-2 bg-secondary-accent" aria-hidden="true" />
@@ -220,7 +221,7 @@ function SaleAnimalPage() {
           </div>
         </section>
 
-        <ContactBuyForm name={animal.name} />
+        {!animal.sold && <ContactBuyForm name={animal.name} />}
         <WaitlistSection title="Don't see what you're looking for? Join the waitlist!" copy="Tell us which animals you're interested in and we'll let you know as soon as new ones are ready for homes." />
         <LocationSection />
       </main>
