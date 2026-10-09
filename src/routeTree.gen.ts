@@ -16,6 +16,7 @@ import { Route as CorporateTrainingRouteImport } from './routes/corporate-traini
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as FarmMarketStoreRouteImport } from './routes/farm-market-store'
 import { Route as GiftCardRouteImport } from './routes/gift-card'
+import { Route as IceCreamRouteImport } from './routes/ice-cream'
 import { Route as OurStoryRouteImport } from './routes/our-story'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as TowerOfGoatsDiscoveryTrailRouteImport } from './routes/tower-of-goats-discovery-trail'
@@ -88,6 +89,11 @@ const FarmMarketStoreRoute = FarmMarketStoreRouteImport.update({
 const GiftCardRoute = GiftCardRouteImport.update({
   id: '/gift-card',
   path: '/gift-card',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IceCreamRoute = IceCreamRouteImport.update({
+  id: '/ice-cream',
+  path: '/ice-cream',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OurStoryRoute = OurStoryRouteImport.update({
@@ -308,6 +314,7 @@ export interface FileRoutesByFullPath {
   '/experiences': typeof ExperiencesRoute
   '/farm-market-store': typeof FarmMarketStoreRoute
   '/gift-card': typeof GiftCardRoute
+  '/ice-cream': typeof IceCreamRoute
   '/our-story': typeof OurStoryRoute
   '/team': typeof TeamRoute
   '/tower-of-goats-discovery-trail': typeof TowerOfGoatsDiscoveryTrailRoute
@@ -352,6 +359,7 @@ export interface FileRoutesByTo {
   '/experiences': typeof ExperiencesRoute
   '/farm-market-store': typeof FarmMarketStoreRoute
   '/gift-card': typeof GiftCardRoute
+  '/ice-cream': typeof IceCreamRoute
   '/our-story': typeof OurStoryRoute
   '/team': typeof TeamRoute
   '/tower-of-goats-discovery-trail': typeof TowerOfGoatsDiscoveryTrailRoute
@@ -400,6 +408,7 @@ export interface FileRoutesById {
   '/experiences': typeof ExperiencesRoute
   '/farm-market-store': typeof FarmMarketStoreRoute
   '/gift-card': typeof GiftCardRoute
+  '/ice-cream': typeof IceCreamRoute
   '/our-story': typeof OurStoryRoute
   '/team': typeof TeamRoute
   '/tower-of-goats-discovery-trail': typeof TowerOfGoatsDiscoveryTrailRoute
@@ -449,6 +458,7 @@ export interface FileRouteTypes {
     | '/experiences'
     | '/farm-market-store'
     | '/gift-card'
+    | '/ice-cream'
     | '/our-story'
     | '/team'
     | '/tower-of-goats-discovery-trail'
@@ -493,6 +503,7 @@ export interface FileRouteTypes {
     | '/experiences'
     | '/farm-market-store'
     | '/gift-card'
+    | '/ice-cream'
     | '/our-story'
     | '/team'
     | '/tower-of-goats-discovery-trail'
@@ -540,6 +551,7 @@ export interface FileRouteTypes {
     | '/experiences'
     | '/farm-market-store'
     | '/gift-card'
+    | '/ice-cream'
     | '/our-story'
     | '/team'
     | '/tower-of-goats-discovery-trail'
@@ -588,6 +600,7 @@ export interface RootRouteChildren {
   ExperiencesRoute: typeof ExperiencesRoute
   FarmMarketStoreRoute: typeof FarmMarketStoreRoute
   GiftCardRoute: typeof GiftCardRoute
+  IceCreamRoute: typeof IceCreamRoute
   OurStoryRoute: typeof OurStoryRoute
   TeamRoute: typeof TeamRoute
   TowerOfGoatsDiscoveryTrailRoute: typeof TowerOfGoatsDiscoveryTrailRoute
@@ -659,6 +672,13 @@ declare module '@tanstack/react-router' {
       path: '/gift-card'
       fullPath: '/gift-card'
       preLoaderRoute: typeof GiftCardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ice-cream': {
+      id: '/ice-cream'
+      path: '/ice-cream'
+      fullPath: '/ice-cream'
+      preLoaderRoute: typeof IceCreamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/our-story': {
@@ -1009,6 +1029,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExperiencesRoute: ExperiencesRoute,
   FarmMarketStoreRoute: FarmMarketStoreRoute,
   GiftCardRoute: GiftCardRoute,
+  IceCreamRoute: IceCreamRoute,
   OurStoryRoute: OurStoryRoute,
   TeamRoute: TeamRoute,
   TowerOfGoatsDiscoveryTrailRoute: TowerOfGoatsDiscoveryTrailRoute,
