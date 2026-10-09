@@ -26,6 +26,7 @@ export function WaitlistForm() {
         <label className="flex flex-col gap-2"><span className={labelClass}>Email *</span><input required type="email" name="email" maxLength={255} autoComplete="email" className={inputClass} /></label>
         <fieldset className="md:col-span-2">
           <legend className={labelClass}>Animals you want notifications for *</legend>
+          <p className="mt-2 text-sm">You may select more than one.</p>
           <div className="mt-3 flex flex-wrap gap-3">
             {options.map((o) => {
               const on = picked.includes(o);

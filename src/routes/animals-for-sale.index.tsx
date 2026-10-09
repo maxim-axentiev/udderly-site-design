@@ -6,7 +6,6 @@ import goatIcon2 from "@/assets/goat-icon-2.jpg";
 import highlandHero from "@/assets/highland-hero.jpg";
 import heroPhotoAsset from "@/assets/experiences-hero.png.asset.json";
 import saleAsset from "@/assets/homepage-animals-for-sale.png.asset.json";
-import { AwardsStrip } from "@/components/experience/AwardsStrip";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { WaitlistSection } from "@/components/sale/WaitlistForm";
@@ -35,7 +34,7 @@ function AnimalCard({ animal, index }: { animal: SaleAnimal; index: number }) {
       <div className="relative overflow-hidden border-2 border-headline">
         <img src={animal.image} alt={animal.name} width={1024} height={1024} loading="lazy" className={`aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105 ${animal.sold ? "grayscale-[60%]" : ""}`} />
         {animal.sold && (
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center" aria-hidden="true">
+          <div className="pointer-events-none absolute inset-x-0 bottom-[12%] flex items-center justify-center" aria-hidden="true">
             <span className="-rotate-12 border-4 border-headline bg-secondary-accent px-8 py-2 font-display text-4xl font-black uppercase tracking-wider text-headline shadow-[6px_6px_0_var(--headline)]">Sold</span>
           </div>
         )}
@@ -44,7 +43,7 @@ function AnimalCard({ animal, index }: { animal: SaleAnimal; index: number }) {
         <h3 className="font-display text-3xl font-black uppercase leading-none text-headline">
           {animal.name}{animal.sold && <span className="sr-only"> (sold)</span>}
         </h3>
-        <Button asChild variant="outline" className="shrink-0">
+        <Button asChild className="shrink-0 bg-primary-accent text-primary-foreground">
           <Link to="/animals-for-sale/$slug" params={{ slug: animal.slug }}>Learn More</Link>
         </Button>
       </div>
@@ -75,8 +74,6 @@ function AnimalsForSalePage() {
             </p>
           </div>
         </section>
-
-        <AwardsStrip tagline="Top 10% of attractions worldwide by Tripadvisor." />
 
         <section className="overflow-hidden bg-background py-20 md:py-28">
           <div className="mx-auto grid max-w-[1300px] items-center gap-12 px-5 md:px-8 lg:grid-cols-2">
