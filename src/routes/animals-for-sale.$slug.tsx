@@ -2,6 +2,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { ArrowRight, Check, Ruler } from "lucide-react";
 import { useState } from "react";
 
+import sizingChart from "@/assets/sizing-chart-cows.webp.asset.json";
 import highlandCta from "@/assets/highland-cta.jpg";
 import highlandHero from "@/assets/highland-hero.jpg";
 import { LocationSection } from "@/components/experience/LocationSection";
