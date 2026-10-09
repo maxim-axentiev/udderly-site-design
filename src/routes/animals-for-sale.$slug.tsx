@@ -200,9 +200,12 @@ function SaleAnimalPage() {
                 </article>
                 <article className="border-2 border-headline bg-background p-6 shadow-[10px_10px_0_var(--headline)] md:p-8">
                   <h3 className="flex items-center gap-2 font-display text-2xl font-black uppercase text-headline"><Ruler aria-hidden="true" className="text-primary-accent" /> Size chart</h3>
-                  <div className="mt-4 flex aspect-[4/3] items-center justify-center border-2 border-dashed border-headline bg-farm-beige p-6 text-center font-semibold">
-                    Size chart image goes here
-                  </div>
+                  <img
+                    src={sizingChart.url}
+                    alt="Size chart comparing standard cattle, mid-size miniature cattle, miniature cattle and micro miniature cattle heights"
+                    className="mt-4 w-full rounded-sm border-2 border-headline bg-background object-contain"
+                    loading="lazy"
+                  />
                 </article>
               </div>
             ) : (
