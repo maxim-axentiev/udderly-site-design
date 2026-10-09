@@ -70,11 +70,31 @@ const goats = [
   { name: "Marshmallow", image: goatIcon3, lines: ["Placeholder personality copy.", "Falls asleep on laps within 90 seconds."] },
 ];
 
+/** Placeholder slideshow for the optional instructor section. */
+const instructorGallery: GalleryImage[] = [
+  { src: goatIcon2, alt: "Yoga class in session on the farm with goats nearby" },
+  { src: goatCuddles, alt: "Guest in a yoga pose with a goat climbing on their back" },
+  { src: experiencesPhotoAsset.url, alt: "Goats gathering around a laughing yoga class" },
+  { src: goatIcon1, alt: "Curious goat inspecting a yoga mat" },
+];
+
 /**
  * Reusable individual-experience page layout.
  * Content is placeholder for now; only the title and CTA label vary per experience.
  */
-export function ExperiencePageTemplate({ title, intro, showFeastOn = false, showSignature = false }: { title: string; intro: string; showFeastOn?: boolean; showSignature?: boolean }) {
+export function ExperiencePageTemplate({
+  title,
+  intro,
+  showFeastOn = false,
+  showSignature = false,
+  instructor,
+}: {
+  title: string;
+  intro: string;
+  showFeastOn?: boolean;
+  showSignature?: boolean;
+  instructor?: { title: string; paragraphs: string[] };
+}) {
   const words = title.split(" ");
   const lead = words.slice(0, -1).join(" ");
   const accent = words[words.length - 1];
@@ -221,6 +241,26 @@ export function ExperiencePageTemplate({ title, intro, showFeastOn = false, show
             </div>
           </div>
         </section>
+
+        {/* 6b. Meet the instructor */}
+        {instructor && (
+          <section id="your-instructor" className="overflow-hidden bg-farm-beige py-20 md:py-28">
+            <div className="mx-auto grid max-w-[1300px] items-center gap-14 px-5 md:px-8 lg:grid-cols-2">
+              <ExperienceGallery images={instructorGallery} caption="Meet your instructor" />
+              <div>
+                <p className="font-accent text-xl italic text-primary-accent">Your teacher for the hour</p>
+                <h2 className="mt-3 font-display text-[clamp(2.6rem,6vw,5.4rem)] font-black uppercase leading-[0.82] text-headline">
+                  {instructor.title}
+                </h2>
+                {instructor.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 32)} className="mt-5 max-w-xl text-base leading-relaxed md:text-lg">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* 7. Happy, healthy animals */}
         <section id="welfare" className="relative overflow-hidden bg-farm-blue py-20 md:py-28">
