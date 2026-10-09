@@ -101,6 +101,7 @@ const experiences = [
     fact: "FOR SALE",
     copy: "Add lovingly and Udderly ridiculously raised farm animals to your pastures.",
     cta: "View all animals for sale",
+    href: "/animals-for-sale",
     image: animalsForSalePhoto,
     alt: "Two fluffy mini Highland calves standing in a sunny pasture",
     className: "lg:rotate-2 lg:translate-y-2",
@@ -270,7 +271,7 @@ function Index() {
                   <div className="flex flex-1 flex-col p-3 pb-4">
                     <h3 className="font-display text-3xl font-black uppercase leading-none text-headline">{experience.title}</h3>
                     <p className="mt-3 flex-1 text-sm leading-relaxed">{experience.copy}</p>
-                    <a href="#experiences" className="mt-5 inline-flex items-start gap-2 font-display text-base font-extrabold uppercase leading-tight text-primary-accent hover:underline">
+                    <a href={(experience as { href?: string }).href ?? "#experiences"} className="mt-5 inline-flex items-start gap-2 font-display text-base font-extrabold uppercase leading-tight text-primary-accent hover:underline">
                       {experience.cta} <ArrowRight size={17} aria-hidden="true" className="mt-1 shrink-0" />
                     </a>
                   </div>
