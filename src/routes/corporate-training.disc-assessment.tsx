@@ -27,6 +27,7 @@ import { AwardsStrip } from "@/components/experience/AwardsStrip";
 import { CuratedReviews, type CuratedReview } from "@/components/experience/CuratedReviews";
 import { ExperienceDetails, type ExperienceDetail } from "@/components/experience/ExperienceDetails";
 import { ExperienceGallery, type GalleryImage } from "@/components/experience/ExperienceGallery";
+import { LocationSection } from "@/components/experience/LocationSection";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { Button } from "@/components/ui/button";
@@ -403,6 +404,7 @@ function DiscAssessmentPage() {
             <ContactForm />
           </div>
         </section>
+        <LocationSection />
       </main>
 
       <SiteFooter />
