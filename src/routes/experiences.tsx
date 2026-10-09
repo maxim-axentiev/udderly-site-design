@@ -71,6 +71,7 @@ type Experience = {
 /** Experiences that already have their own detail page. */
 const detailPages: Record<string, string> = {
   "Goat Cuddles": "/experiences/goat-cuddles",
+  "Goat Yoga": "/experiences/goat-yoga",
   "Goat Recess": "/experiences/goat-recess",
   "Baby Goat Playtime & Snuggles": "/experiences/baby-goat-playtime-and-snuggles",
   "Mini Highland Cow Experience": "/experiences/mini-highland-cow-experience",
