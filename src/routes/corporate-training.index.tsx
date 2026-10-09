@@ -24,6 +24,7 @@ import experiencesPhotoAsset from "@/assets/homepage-experiences.png.asset.json"
 import { AwardsStrip } from "@/components/experience/AwardsStrip";
 import { CuratedReviews, type CuratedReview } from "@/components/experience/CuratedReviews";
 import { ExperienceGallery, type GalleryImage } from "@/components/experience/ExperienceGallery";
+import { LocationSection } from "@/components/experience/LocationSection";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { Button } from "@/components/ui/button";
@@ -80,18 +81,21 @@ const programs: Program[] = [
     copy: "Placeholder description. Alpacas read the room faster than any of us. Learn self-awareness and empathy from the professionals.",
     image: alpacaWalk,
     alt: "Alpaca standing calmly beside a workshop participant",
+    to: "/corporate-training/alpaca-emotional-intelligence",
   },
   {
     title: "Beyond Engagement",
     copy: "Placeholder description. Move past survey scores to the culture habits that actually keep good people around.",
     image: highlandHero,
     alt: "Team working through an exercise outdoors on the farm",
+    to: "/corporate-training/beyond-engagement",
   },
   {
     title: "Innovation on the Farm",
     copy: "Placeholder description. Creative problem solving with real constraints, real mud and absolutely no whiteboard clichés.",
     image: donkeyPicnic,
     alt: "Group solving a challenge beside the miniature donkeys",
+    to: "/corporate-training/innovation-on-the-farm",
   },
 ];
 
@@ -283,7 +287,7 @@ function CorporateTrainingPage() {
                   Placeholder description. No modules, no assessments, no flip charts. Just your team, the animals, and a few hours of shared ridiculousness that does more for trust than any trust fall ever has.
                 </p>
                 <Button asChild size="large" variant="outline" className="mt-7">
-                  <a href="#contact">Learn More <ArrowRight aria-hidden="true" /></a>
+                  <Link to="/corporate-training/team-building-experiences">Learn More <ArrowRight aria-hidden="true" /></Link>
                 </Button>
               </div>
             </article>
@@ -308,7 +312,7 @@ function CorporateTrainingPage() {
                   Placeholder description. Built specifically for tourism operators, this session helps you turn what you already have into experiences guests will book, photograph and talk about for years.
                 </p>
                 <Button asChild size="large" className="mt-7">
-                  <a href="#contact">Learn More <ArrowRight aria-hidden="true" /></a>
+                  <Link to="/corporate-training/experiential-tourism-development">Learn More <ArrowRight aria-hidden="true" /></Link>
                 </Button>
               </div>
             </article>
@@ -418,6 +422,7 @@ function CorporateTrainingPage() {
             <ContactForm />
           </div>
         </section>
+        <LocationSection />
       </main>
 
       <SiteFooter />
