@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdoptAnAnimalRouteImport } from './routes/adopt-an-animal'
+import { Route as AnimalsForSaleRouteImport } from './routes/animals-for-sale'
 import { Route as CorporateTrainingRouteImport } from './routes/corporate-training'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as GiftCardRouteImport } from './routes/gift-card'
@@ -24,6 +25,8 @@ import { Route as AdoptAnAnimalGregRouteImport } from './routes/adopt-an-animal.
 import { Route as AdoptAnAnimalMichaelRouteImport } from './routes/adopt-an-animal.michael'
 import { Route as AdoptAnAnimalSassafrasRouteImport } from './routes/adopt-an-animal.sassafras'
 import { Route as AdoptAnAnimalStanleyRouteImport } from './routes/adopt-an-animal.stanley'
+import { Route as AnimalsForSaleIndexRouteImport } from './routes/animals-for-sale.index'
+import { Route as AnimalsForSaleSlugRouteImport } from './routes/animals-for-sale.$slug'
 import { Route as CorporateTrainingIndexRouteImport } from './routes/corporate-training.index'
 import { Route as CorporateTrainingAlpacaEmotionalIntelligenceRouteImport } from './routes/corporate-training.alpaca-emotional-intelligence'
 import { Route as CorporateTrainingBeyondEngagementRouteImport } from './routes/corporate-training.beyond-engagement'
@@ -57,6 +60,11 @@ const IndexRoute = IndexRouteImport.update({
 const AdoptAnAnimalRoute = AdoptAnAnimalRouteImport.update({
   id: '/adopt-an-animal',
   path: '/adopt-an-animal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnimalsForSaleRoute = AnimalsForSaleRouteImport.update({
+  id: '/animals-for-sale',
+  path: '/animals-for-sale',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CorporateTrainingRoute = CorporateTrainingRouteImport.update({
@@ -124,6 +132,16 @@ const AdoptAnAnimalStanleyRoute = AdoptAnAnimalStanleyRouteImport.update({
   id: '/stanley',
   path: '/stanley',
   getParentRoute: () => AdoptAnAnimalRoute,
+} as any)
+const AnimalsForSaleIndexRoute = AnimalsForSaleIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AnimalsForSaleRoute,
+} as any)
+const AnimalsForSaleSlugRoute = AnimalsForSaleSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => AnimalsForSaleRoute,
 } as any)
 const CorporateTrainingIndexRoute = CorporateTrainingIndexRouteImport.update({
   id: '/',
@@ -267,6 +285,7 @@ const ExperiencesTasteOfFarmLifeFamilyFriendlyRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
+  '/animals-for-sale': typeof AnimalsForSaleRouteWithChildren
   '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
@@ -279,6 +298,7 @@ export interface FileRoutesByFullPath {
   '/adopt-an-animal/michael': typeof AdoptAnAnimalMichaelRoute
   '/adopt-an-animal/sassafras': typeof AdoptAnAnimalSassafrasRoute
   '/adopt-an-animal/stanley': typeof AdoptAnAnimalStanleyRoute
+  '/animals-for-sale/$slug': typeof AnimalsForSaleSlugRoute
   '/corporate-training/alpaca-emotional-intelligence': typeof CorporateTrainingAlpacaEmotionalIntelligenceRoute
   '/corporate-training/beyond-engagement': typeof CorporateTrainingBeyondEngagementRoute
   '/corporate-training/disc-assessment': typeof CorporateTrainingDiscAssessmentRoute
@@ -303,6 +323,7 @@ export interface FileRoutesByFullPath {
   '/experiences/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
   '/experiences/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
   '/adopt-an-animal/': typeof AdoptAnAnimalIndexRoute
+  '/animals-for-sale/': typeof AnimalsForSaleIndexRoute
   '/corporate-training/': typeof CorporateTrainingIndexRoute
 }
 export interface FileRoutesByTo {
@@ -318,6 +339,7 @@ export interface FileRoutesByTo {
   '/adopt-an-animal/michael': typeof AdoptAnAnimalMichaelRoute
   '/adopt-an-animal/sassafras': typeof AdoptAnAnimalSassafrasRoute
   '/adopt-an-animal/stanley': typeof AdoptAnAnimalStanleyRoute
+  '/animals-for-sale/$slug': typeof AnimalsForSaleSlugRoute
   '/corporate-training/alpaca-emotional-intelligence': typeof CorporateTrainingAlpacaEmotionalIntelligenceRoute
   '/corporate-training/beyond-engagement': typeof CorporateTrainingBeyondEngagementRoute
   '/corporate-training/disc-assessment': typeof CorporateTrainingDiscAssessmentRoute
@@ -342,12 +364,14 @@ export interface FileRoutesByTo {
   '/experiences/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
   '/experiences/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
   '/adopt-an-animal': typeof AdoptAnAnimalIndexRoute
+  '/animals-for-sale': typeof AnimalsForSaleIndexRoute
   '/corporate-training': typeof CorporateTrainingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
+  '/animals-for-sale': typeof AnimalsForSaleRouteWithChildren
   '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/gift-card': typeof GiftCardRoute
@@ -360,6 +384,7 @@ export interface FileRoutesById {
   '/adopt-an-animal/michael': typeof AdoptAnAnimalMichaelRoute
   '/adopt-an-animal/sassafras': typeof AdoptAnAnimalSassafrasRoute
   '/adopt-an-animal/stanley': typeof AdoptAnAnimalStanleyRoute
+  '/animals-for-sale/$slug': typeof AnimalsForSaleSlugRoute
   '/corporate-training/alpaca-emotional-intelligence': typeof CorporateTrainingAlpacaEmotionalIntelligenceRoute
   '/corporate-training/beyond-engagement': typeof CorporateTrainingBeyondEngagementRoute
   '/corporate-training/disc-assessment': typeof CorporateTrainingDiscAssessmentRoute
@@ -384,6 +409,7 @@ export interface FileRoutesById {
   '/experiences_/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
   '/experiences_/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
   '/adopt-an-animal/': typeof AdoptAnAnimalIndexRoute
+  '/animals-for-sale/': typeof AnimalsForSaleIndexRoute
   '/corporate-training/': typeof CorporateTrainingIndexRoute
 }
 export interface FileRouteTypes {
@@ -391,6 +417,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/adopt-an-animal'
+    | '/animals-for-sale'
     | '/corporate-training'
     | '/experiences'
     | '/gift-card'
@@ -403,6 +430,7 @@ export interface FileRouteTypes {
     | '/adopt-an-animal/michael'
     | '/adopt-an-animal/sassafras'
     | '/adopt-an-animal/stanley'
+    | '/animals-for-sale/$slug'
     | '/corporate-training/alpaca-emotional-intelligence'
     | '/corporate-training/beyond-engagement'
     | '/corporate-training/disc-assessment'
@@ -427,6 +455,7 @@ export interface FileRouteTypes {
     | '/experiences/taste-of-farm-life'
     | '/experiences/taste-of-farm-life-family-friendly'
     | '/adopt-an-animal/'
+    | '/animals-for-sale/'
     | '/corporate-training/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -442,6 +471,7 @@ export interface FileRouteTypes {
     | '/adopt-an-animal/michael'
     | '/adopt-an-animal/sassafras'
     | '/adopt-an-animal/stanley'
+    | '/animals-for-sale/$slug'
     | '/corporate-training/alpaca-emotional-intelligence'
     | '/corporate-training/beyond-engagement'
     | '/corporate-training/disc-assessment'
@@ -466,11 +496,13 @@ export interface FileRouteTypes {
     | '/experiences/taste-of-farm-life'
     | '/experiences/taste-of-farm-life-family-friendly'
     | '/adopt-an-animal'
+    | '/animals-for-sale'
     | '/corporate-training'
   id:
     | '__root__'
     | '/'
     | '/adopt-an-animal'
+    | '/animals-for-sale'
     | '/corporate-training'
     | '/experiences'
     | '/gift-card'
@@ -483,6 +515,7 @@ export interface FileRouteTypes {
     | '/adopt-an-animal/michael'
     | '/adopt-an-animal/sassafras'
     | '/adopt-an-animal/stanley'
+    | '/animals-for-sale/$slug'
     | '/corporate-training/alpaca-emotional-intelligence'
     | '/corporate-training/beyond-engagement'
     | '/corporate-training/disc-assessment'
@@ -507,12 +540,14 @@ export interface FileRouteTypes {
     | '/experiences_/taste-of-farm-life'
     | '/experiences_/taste-of-farm-life-family-friendly'
     | '/adopt-an-animal/'
+    | '/animals-for-sale/'
     | '/corporate-training/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdoptAnAnimalRoute: typeof AdoptAnAnimalRouteWithChildren
+  AnimalsForSaleRoute: typeof AnimalsForSaleRouteWithChildren
   CorporateTrainingRoute: typeof CorporateTrainingRouteWithChildren
   ExperiencesRoute: typeof ExperiencesRoute
   GiftCardRoute: typeof GiftCardRoute
@@ -550,6 +585,13 @@ declare module '@tanstack/react-router' {
       path: '/adopt-an-animal'
       fullPath: '/adopt-an-animal'
       preLoaderRoute: typeof AdoptAnAnimalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/animals-for-sale': {
+      id: '/animals-for-sale'
+      path: '/animals-for-sale'
+      fullPath: '/animals-for-sale'
+      preLoaderRoute: typeof AnimalsForSaleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/corporate-training': {
@@ -642,6 +684,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/adopt-an-animal/stanley'
       preLoaderRoute: typeof AdoptAnAnimalStanleyRouteImport
       parentRoute: typeof AdoptAnAnimalRoute
+    }
+    '/animals-for-sale/': {
+      id: '/animals-for-sale/'
+      path: '/'
+      fullPath: '/animals-for-sale/'
+      preLoaderRoute: typeof AnimalsForSaleIndexRouteImport
+      parentRoute: typeof AnimalsForSaleRoute
+    }
+    '/animals-for-sale/$slug': {
+      id: '/animals-for-sale/$slug'
+      path: '/$slug'
+      fullPath: '/animals-for-sale/$slug'
+      preLoaderRoute: typeof AnimalsForSaleSlugRouteImport
+      parentRoute: typeof AnimalsForSaleRoute
     }
     '/corporate-training/': {
       id: '/corporate-training/'
@@ -840,6 +896,20 @@ const AdoptAnAnimalRouteWithChildren = AdoptAnAnimalRoute._addFileChildren(
   AdoptAnAnimalRouteChildren,
 )
 
+interface AnimalsForSaleRouteChildren {
+  AnimalsForSaleSlugRoute: typeof AnimalsForSaleSlugRoute
+  AnimalsForSaleIndexRoute: typeof AnimalsForSaleIndexRoute
+}
+
+const AnimalsForSaleRouteChildren: AnimalsForSaleRouteChildren = {
+  AnimalsForSaleSlugRoute: AnimalsForSaleSlugRoute,
+  AnimalsForSaleIndexRoute: AnimalsForSaleIndexRoute,
+}
+
+const AnimalsForSaleRouteWithChildren = AnimalsForSaleRoute._addFileChildren(
+  AnimalsForSaleRouteChildren,
+)
+
 interface CorporateTrainingRouteChildren {
   CorporateTrainingAlpacaEmotionalIntelligenceRoute: typeof CorporateTrainingAlpacaEmotionalIntelligenceRoute
   CorporateTrainingBeyondEngagementRoute: typeof CorporateTrainingBeyondEngagementRoute
@@ -874,6 +944,7 @@ const CorporateTrainingRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdoptAnAnimalRoute: AdoptAnAnimalRouteWithChildren,
+  AnimalsForSaleRoute: AnimalsForSaleRouteWithChildren,
   CorporateTrainingRoute: CorporateTrainingRouteWithChildren,
   ExperiencesRoute: ExperiencesRoute,
   GiftCardRoute: GiftCardRoute,
