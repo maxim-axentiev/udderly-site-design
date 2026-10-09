@@ -35,6 +35,7 @@ import { Route as ExperiencesBabyGoatPlaytimeAndSnugglesRouteImport } from './ro
 import { Route as ExperiencesFarmGlampingRouteImport } from './routes/experiences_.farm-glamping'
 import { Route as ExperiencesGoatCuddlesRouteImport } from './routes/experiences_.goat-cuddles'
 import { Route as ExperiencesGoatRecessRouteImport } from './routes/experiences_.goat-recess'
+import { Route as ExperiencesGoatYogaRouteImport } from './routes/experiences_.goat-yoga'
 import { Route as ExperiencesMiniHighlandCalfMeetAndGreetRouteImport } from './routes/experiences_.mini-highland-calf-meet-and-greet'
 import { Route as ExperiencesMiniHighlandCowExperienceRouteImport } from './routes/experiences_.mini-highland-cow-experience'
 import { Route as ExperiencesMiniatureDonkeyVisitsRouteImport } from './routes/experiences_.miniature-donkey-visits'
@@ -180,6 +181,11 @@ const ExperiencesGoatRecessRoute = ExperiencesGoatRecessRouteImport.update({
   path: '/experiences/goat-recess',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperiencesGoatYogaRoute = ExperiencesGoatYogaRouteImport.update({
+  id: '/experiences_/goat-yoga',
+  path: '/experiences/goat-yoga',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ExperiencesMiniHighlandCalfMeetAndGreetRoute =
   ExperiencesMiniHighlandCalfMeetAndGreetRouteImport.update({
     id: '/experiences_/mini-highland-calf-meet-and-greet',
@@ -248,6 +254,7 @@ export interface FileRoutesByFullPath {
   '/experiences/farm-glamping': typeof ExperiencesFarmGlampingRoute
   '/experiences/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
   '/experiences/goat-recess': typeof ExperiencesGoatRecessRoute
+  '/experiences/goat-yoga': typeof ExperiencesGoatYogaRoute
   '/experiences/mini-highland-calf-meet-and-greet': typeof ExperiencesMiniHighlandCalfMeetAndGreetRoute
   '/experiences/mini-highland-cow-experience': typeof ExperiencesMiniHighlandCowExperienceRoute
   '/experiences/miniature-donkey-visits': typeof ExperiencesMiniatureDonkeyVisitsRoute
@@ -281,6 +288,7 @@ export interface FileRoutesByTo {
   '/experiences/farm-glamping': typeof ExperiencesFarmGlampingRoute
   '/experiences/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
   '/experiences/goat-recess': typeof ExperiencesGoatRecessRoute
+  '/experiences/goat-yoga': typeof ExperiencesGoatYogaRoute
   '/experiences/mini-highland-calf-meet-and-greet': typeof ExperiencesMiniHighlandCalfMeetAndGreetRoute
   '/experiences/mini-highland-cow-experience': typeof ExperiencesMiniHighlandCowExperienceRoute
   '/experiences/miniature-donkey-visits': typeof ExperiencesMiniatureDonkeyVisitsRoute
@@ -317,6 +325,7 @@ export interface FileRoutesById {
   '/experiences_/farm-glamping': typeof ExperiencesFarmGlampingRoute
   '/experiences_/goat-cuddles': typeof ExperiencesGoatCuddlesRoute
   '/experiences_/goat-recess': typeof ExperiencesGoatRecessRoute
+  '/experiences_/goat-yoga': typeof ExperiencesGoatYogaRoute
   '/experiences_/mini-highland-calf-meet-and-greet': typeof ExperiencesMiniHighlandCalfMeetAndGreetRoute
   '/experiences_/mini-highland-cow-experience': typeof ExperiencesMiniHighlandCowExperienceRoute
   '/experiences_/miniature-donkey-visits': typeof ExperiencesMiniatureDonkeyVisitsRoute
@@ -354,6 +363,7 @@ export interface FileRouteTypes {
     | '/experiences/farm-glamping'
     | '/experiences/goat-cuddles'
     | '/experiences/goat-recess'
+    | '/experiences/goat-yoga'
     | '/experiences/mini-highland-calf-meet-and-greet'
     | '/experiences/mini-highland-cow-experience'
     | '/experiences/miniature-donkey-visits'
@@ -387,6 +397,7 @@ export interface FileRouteTypes {
     | '/experiences/farm-glamping'
     | '/experiences/goat-cuddles'
     | '/experiences/goat-recess'
+    | '/experiences/goat-yoga'
     | '/experiences/mini-highland-calf-meet-and-greet'
     | '/experiences/mini-highland-cow-experience'
     | '/experiences/miniature-donkey-visits'
@@ -422,6 +433,7 @@ export interface FileRouteTypes {
     | '/experiences_/farm-glamping'
     | '/experiences_/goat-cuddles'
     | '/experiences_/goat-recess'
+    | '/experiences_/goat-yoga'
     | '/experiences_/mini-highland-calf-meet-and-greet'
     | '/experiences_/mini-highland-cow-experience'
     | '/experiences_/miniature-donkey-visits'
@@ -449,6 +461,7 @@ export interface RootRouteChildren {
   ExperiencesFarmGlampingRoute: typeof ExperiencesFarmGlampingRoute
   ExperiencesGoatCuddlesRoute: typeof ExperiencesGoatCuddlesRoute
   ExperiencesGoatRecessRoute: typeof ExperiencesGoatRecessRoute
+  ExperiencesGoatYogaRoute: typeof ExperiencesGoatYogaRoute
   ExperiencesMiniHighlandCalfMeetAndGreetRoute: typeof ExperiencesMiniHighlandCalfMeetAndGreetRoute
   ExperiencesMiniHighlandCowExperienceRoute: typeof ExperiencesMiniHighlandCowExperienceRoute
   ExperiencesMiniatureDonkeyVisitsRoute: typeof ExperiencesMiniatureDonkeyVisitsRoute
@@ -642,6 +655,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperiencesGoatRecessRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experiences_/goat-yoga': {
+      id: '/experiences_/goat-yoga'
+      path: '/experiences/goat-yoga'
+      fullPath: '/experiences/goat-yoga'
+      preLoaderRoute: typeof ExperiencesGoatYogaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/experiences_/mini-highland-calf-meet-and-greet': {
       id: '/experiences_/mini-highland-calf-meet-and-greet'
       path: '/experiences/mini-highland-calf-meet-and-greet'
@@ -754,6 +774,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExperiencesFarmGlampingRoute: ExperiencesFarmGlampingRoute,
   ExperiencesGoatCuddlesRoute: ExperiencesGoatCuddlesRoute,
   ExperiencesGoatRecessRoute: ExperiencesGoatRecessRoute,
+  ExperiencesGoatYogaRoute: ExperiencesGoatYogaRoute,
   ExperiencesMiniHighlandCalfMeetAndGreetRoute:
     ExperiencesMiniHighlandCalfMeetAndGreetRoute,
   ExperiencesMiniHighlandCowExperienceRoute:
