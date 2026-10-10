@@ -1,6 +1,9 @@
 # Udderly Ridiculous Farm Life — Task Roadmap
 
 ## In progress
+- [ ] Add the official logo to navigation and favicon; replace the global footer.
+- [ ] Publish supplied policy text on three pages and reuse the newsletter on its own page.
+- [ ] Verify footer links, legal copy and mobile presentation.
 
 ## Completed
 - [x] Verify Animals for Sale edits: remove awards, pink card buttons, lower sold stamps, waitlist guidance, plural greetings, sold prices and waitlist-only sold pages.
