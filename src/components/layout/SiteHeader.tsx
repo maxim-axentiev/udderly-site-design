@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import logoAsset from "@/assets/farm-logo.png.asset.json";
 
 type NavLink = { label: string; href: string };
 type NavGroup = { label: string; href?: string; children?: NavLink[] };
@@ -33,6 +34,7 @@ export const mainNav: NavGroup[] = [
       { label: "Farm Market Store", href: "/farm-market-store" },
       { label: "Goat Milk Ice Cream", href: "/ice-cream" },
       { label: "URBORT Blog", href: "/urbort-blog" },
+      { label: "Newsletter", href: "/newsletter" },
     ],
   },
   {
@@ -50,7 +52,7 @@ export const mainNav: NavGroup[] = [
 /** Flat list of every nav destination (used by the footer). */
 export const navItems: NavLink[] = Array.from(
   new Map(
-    mainNav.flatMap((g) => (g.children ?? [{ label: g.label, href: g.href! }]).map((l) => [l.href, l] as const)),
+    mainNav.flatMap((g) => (g.children ?? (g.href ? [{ label: g.label, href: g.href }] : [])).map((l) => [l.href, l] as const)),
   ).values(),
 );
 
@@ -101,7 +103,7 @@ function DesktopDropdown({ group }: { group: NavGroup }) {
       {/* pt creates a hover bridge so the menu doesn't close between trigger and panel */}
       <div id={id} className={`absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4 ${open ? "block" : "hidden"}`}>
         <ul className="w-72 border-2 border-headline bg-background p-2 shadow-[7px_7px_0_var(--secondary-accent)]">
-          {group.children!.map((c) => (
+          {group.children?.map((c) => (
             <li key={c.href + c.label}>
               <a
                 href={c.href}
@@ -134,7 +136,7 @@ function MobileGroup({ group, onNavigate }: { group: NavGroup; onNavigate: () =>
         <ChevronDown aria-hidden="true" className={`transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       <ul id={id} className={`${open ? "block" : "hidden"} pb-3 pl-4`}>
-        {group.children!.map((c) => (
+        {group.children?.map((c) => (
           <li key={c.href + c.label}>
             <a href={c.href} onClick={onNavigate} className="block py-2.5 font-display text-lg font-semibold uppercase text-headline hover:text-primary-accent">
               {c.label}
@@ -159,9 +161,8 @@ export function SiteHeader() {
   return (
     <header className="relative z-50 border-b-2 border-headline bg-background">
       <div className="mx-auto flex min-h-24 max-w-[1500px] items-center justify-between gap-6 px-5 md:px-8">
-        <Link to="/" className="group flex max-w-52 shrink-0 -rotate-1 flex-col font-display font-black uppercase leading-[0.78] text-headline md:max-w-60" aria-label="Udderly Ridiculous Farm Life home">
-          <span className="text-[1.7rem] md:text-[2rem]">Udderly Ridiculous</span>
-          <span className="mt-1 flex items-center gap-2 text-sm tracking-[0.16em] text-primary-accent"><span className="h-1.5 w-7 bg-secondary-accent" /> Farm Life</span>
+        <Link to="/" className="block w-44 shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary-accent md:w-48" aria-label="Udderly Ridiculous Farm Life home">
+          <img src={logoAsset.url} alt="Udderly Ridiculous Farm Life" width={1580} height={620} className="h-auto w-full" />
         </Link>
 
         <nav className="hidden items-center gap-4 xl:flex 2xl:gap-6" aria-label="Main navigation">
