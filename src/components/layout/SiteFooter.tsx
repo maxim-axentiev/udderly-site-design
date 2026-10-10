@@ -12,7 +12,7 @@ export function SiteFooter() {
             <p className="mt-5 max-w-xs font-accent text-lg italic text-headline">Made with questionable judgement and excellent animal care.</p>
           </div>
           <nav className="grid grid-cols-2 gap-x-8 gap-y-4 self-start" aria-label="Footer navigation">
-            {[...navItems, { label: "Contact", href: "/#newsletter" }].map((item) => (
+            {[...navItems, { label: "FAQ", href: "/faq" }, { label: "URBORT", href: "/urbort-blog" }, { label: "Contact", href: "/contact" }].map((item) => (
               <a key={item.label} href={item.href} className="font-display text-xl font-bold uppercase text-headline hover:text-primary-accent hover:underline">{item.label}</a>
             ))}
           </nav>

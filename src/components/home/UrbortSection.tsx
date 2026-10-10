@@ -39,7 +39,7 @@ export function UrbortSection() {
               <img src={article.image} alt={article.alt} width={1024} height={1024} loading="lazy" className="aspect-square w-full border-2 border-headline object-cover" />
               <h3 className="mt-4 px-2 font-display text-2xl font-black uppercase leading-none text-headline">{article.title}</h3>
               <div className="mt-4 px-2">
-                <Button asChild><a href="#urbort">Read the article</a></Button>
+                <Button asChild><a href="/urbort-blog">Read the article</a></Button>
               </div>
             </li>
           ))}
@@ -47,7 +47,7 @@ export function UrbortSection() {
 
         <div className="mt-16 flex justify-center">
           <Button asChild size="large">
-            <a href="#urbort">See all the ridiculous things we&apos;ve done <ArrowRight aria-hidden="true" /></a>
+            <a href="/urbort-blog">See all the ridiculous things we&apos;ve done <ArrowRight aria-hidden="true" /></a>
           </Button>
         </div>
       </div>
