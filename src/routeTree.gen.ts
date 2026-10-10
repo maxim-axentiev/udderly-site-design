@@ -12,14 +12,17 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdoptAnAnimalRouteImport } from './routes/adopt-an-animal'
 import { Route as AnimalsForSaleRouteImport } from './routes/animals-for-sale'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CorporateTrainingRouteImport } from './routes/corporate-training'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FarmMarketStoreRouteImport } from './routes/farm-market-store'
 import { Route as GiftCardRouteImport } from './routes/gift-card'
 import { Route as IceCreamRouteImport } from './routes/ice-cream'
 import { Route as OurStoryRouteImport } from './routes/our-story'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as TowerOfGoatsDiscoveryTrailRouteImport } from './routes/tower-of-goats-discovery-trail'
+import { Route as UrbortBlogRouteImport } from './routes/urbort-blog'
 import { Route as VisionValuesRouteImport } from './routes/vision-values'
 import { Route as AdoptAnAnimalIndexRouteImport } from './routes/adopt-an-animal.index'
 import { Route as AdoptAnAnimalBronnieRouteImport } from './routes/adopt-an-animal.bronnie'
@@ -55,6 +58,8 @@ import { Route as ExperiencesPrivateMiniatureDonkeyLunchPicnicRouteImport } from
 import { Route as ExperiencesPrivateMiniatureDonkeySunsetPicnicRouteImport } from './routes/experiences_.private-miniature-donkey-sunset-picnic'
 import { Route as ExperiencesTasteOfFarmLifeRouteImport } from './routes/experiences_.taste-of-farm-life'
 import { Route as ExperiencesTasteOfFarmLifeFamilyFriendlyRouteImport } from './routes/experiences_.taste-of-farm-life-family-friendly'
+import { Route as UrbortBlogIndexRouteImport } from './routes/urbort-blog.index'
+import { Route as UrbortBlogSlugRouteImport } from './routes/urbort-blog.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -71,6 +76,11 @@ const AnimalsForSaleRoute = AnimalsForSaleRouteImport.update({
   path: '/animals-for-sale',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CorporateTrainingRoute = CorporateTrainingRouteImport.update({
   id: '/corporate-training',
   path: '/corporate-training',
@@ -79,6 +89,11 @@ const CorporateTrainingRoute = CorporateTrainingRouteImport.update({
 const ExperiencesRoute = ExperiencesRouteImport.update({
   id: '/experiences',
   path: '/experiences',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FarmMarketStoreRoute = FarmMarketStoreRouteImport.update({
@@ -112,6 +127,11 @@ const TowerOfGoatsDiscoveryTrailRoute =
     path: '/tower-of-goats-discovery-trail',
     getParentRoute: () => rootRouteImport,
   } as any)
+const UrbortBlogRoute = UrbortBlogRouteImport.update({
+  id: '/urbort-blog',
+  path: '/urbort-blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VisionValuesRoute = VisionValuesRouteImport.update({
   id: '/vision-values',
   path: '/vision-values',
@@ -305,19 +325,32 @@ const ExperiencesTasteOfFarmLifeFamilyFriendlyRoute =
     path: '/experiences/taste-of-farm-life-family-friendly',
     getParentRoute: () => rootRouteImport,
   } as any)
+const UrbortBlogIndexRoute = UrbortBlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => UrbortBlogRoute,
+} as any)
+const UrbortBlogSlugRoute = UrbortBlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => UrbortBlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
   '/animals-for-sale': typeof AnimalsForSaleRouteWithChildren
+  '/contact': typeof ContactRoute
   '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
+  '/faq': typeof FaqRoute
   '/farm-market-store': typeof FarmMarketStoreRoute
   '/gift-card': typeof GiftCardRoute
   '/ice-cream': typeof IceCreamRoute
   '/our-story': typeof OurStoryRoute
   '/team': typeof TeamRoute
   '/tower-of-goats-discovery-trail': typeof TowerOfGoatsDiscoveryTrailRoute
+  '/urbort-blog': typeof UrbortBlogRouteWithChildren
   '/vision-values': typeof VisionValuesRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
   '/adopt-an-animal/chicken': typeof AdoptAnAnimalChickenRoute
@@ -350,13 +383,17 @@ export interface FileRoutesByFullPath {
   '/experiences/private-miniature-donkey-sunset-picnic': typeof ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute
   '/experiences/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
   '/experiences/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
+  '/urbort-blog/$slug': typeof UrbortBlogSlugRoute
   '/adopt-an-animal/': typeof AdoptAnAnimalIndexRoute
   '/animals-for-sale/': typeof AnimalsForSaleIndexRoute
   '/corporate-training/': typeof CorporateTrainingIndexRoute
+  '/urbort-blog/': typeof UrbortBlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/experiences': typeof ExperiencesRoute
+  '/faq': typeof FaqRoute
   '/farm-market-store': typeof FarmMarketStoreRoute
   '/gift-card': typeof GiftCardRoute
   '/ice-cream': typeof IceCreamRoute
@@ -395,23 +432,28 @@ export interface FileRoutesByTo {
   '/experiences/private-miniature-donkey-sunset-picnic': typeof ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute
   '/experiences/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
   '/experiences/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
+  '/urbort-blog/$slug': typeof UrbortBlogSlugRoute
   '/adopt-an-animal': typeof AdoptAnAnimalIndexRoute
   '/animals-for-sale': typeof AnimalsForSaleIndexRoute
   '/corporate-training': typeof CorporateTrainingIndexRoute
+  '/urbort-blog': typeof UrbortBlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
   '/animals-for-sale': typeof AnimalsForSaleRouteWithChildren
+  '/contact': typeof ContactRoute
   '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
+  '/faq': typeof FaqRoute
   '/farm-market-store': typeof FarmMarketStoreRoute
   '/gift-card': typeof GiftCardRoute
   '/ice-cream': typeof IceCreamRoute
   '/our-story': typeof OurStoryRoute
   '/team': typeof TeamRoute
   '/tower-of-goats-discovery-trail': typeof TowerOfGoatsDiscoveryTrailRoute
+  '/urbort-blog': typeof UrbortBlogRouteWithChildren
   '/vision-values': typeof VisionValuesRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
   '/adopt-an-animal/chicken': typeof AdoptAnAnimalChickenRoute
@@ -444,9 +486,11 @@ export interface FileRoutesById {
   '/experiences_/private-miniature-donkey-sunset-picnic': typeof ExperiencesPrivateMiniatureDonkeySunsetPicnicRoute
   '/experiences_/taste-of-farm-life': typeof ExperiencesTasteOfFarmLifeRoute
   '/experiences_/taste-of-farm-life-family-friendly': typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRoute
+  '/urbort-blog/$slug': typeof UrbortBlogSlugRoute
   '/adopt-an-animal/': typeof AdoptAnAnimalIndexRoute
   '/animals-for-sale/': typeof AnimalsForSaleIndexRoute
   '/corporate-training/': typeof CorporateTrainingIndexRoute
+  '/urbort-blog/': typeof UrbortBlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -454,14 +498,17 @@ export interface FileRouteTypes {
     | '/'
     | '/adopt-an-animal'
     | '/animals-for-sale'
+    | '/contact'
     | '/corporate-training'
     | '/experiences'
+    | '/faq'
     | '/farm-market-store'
     | '/gift-card'
     | '/ice-cream'
     | '/our-story'
     | '/team'
     | '/tower-of-goats-discovery-trail'
+    | '/urbort-blog'
     | '/vision-values'
     | '/adopt-an-animal/bronnie'
     | '/adopt-an-animal/chicken'
@@ -494,13 +541,17 @@ export interface FileRouteTypes {
     | '/experiences/private-miniature-donkey-sunset-picnic'
     | '/experiences/taste-of-farm-life'
     | '/experiences/taste-of-farm-life-family-friendly'
+    | '/urbort-blog/$slug'
     | '/adopt-an-animal/'
     | '/animals-for-sale/'
     | '/corporate-training/'
+    | '/urbort-blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/contact'
     | '/experiences'
+    | '/faq'
     | '/farm-market-store'
     | '/gift-card'
     | '/ice-cream'
@@ -539,22 +590,27 @@ export interface FileRouteTypes {
     | '/experiences/private-miniature-donkey-sunset-picnic'
     | '/experiences/taste-of-farm-life'
     | '/experiences/taste-of-farm-life-family-friendly'
+    | '/urbort-blog/$slug'
     | '/adopt-an-animal'
     | '/animals-for-sale'
     | '/corporate-training'
+    | '/urbort-blog'
   id:
     | '__root__'
     | '/'
     | '/adopt-an-animal'
     | '/animals-for-sale'
+    | '/contact'
     | '/corporate-training'
     | '/experiences'
+    | '/faq'
     | '/farm-market-store'
     | '/gift-card'
     | '/ice-cream'
     | '/our-story'
     | '/team'
     | '/tower-of-goats-discovery-trail'
+    | '/urbort-blog'
     | '/vision-values'
     | '/adopt-an-animal/bronnie'
     | '/adopt-an-animal/chicken'
@@ -587,23 +643,28 @@ export interface FileRouteTypes {
     | '/experiences_/private-miniature-donkey-sunset-picnic'
     | '/experiences_/taste-of-farm-life'
     | '/experiences_/taste-of-farm-life-family-friendly'
+    | '/urbort-blog/$slug'
     | '/adopt-an-animal/'
     | '/animals-for-sale/'
     | '/corporate-training/'
+    | '/urbort-blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdoptAnAnimalRoute: typeof AdoptAnAnimalRouteWithChildren
   AnimalsForSaleRoute: typeof AnimalsForSaleRouteWithChildren
+  ContactRoute: typeof ContactRoute
   CorporateTrainingRoute: typeof CorporateTrainingRouteWithChildren
   ExperiencesRoute: typeof ExperiencesRoute
+  FaqRoute: typeof FaqRoute
   FarmMarketStoreRoute: typeof FarmMarketStoreRoute
   GiftCardRoute: typeof GiftCardRoute
   IceCreamRoute: typeof IceCreamRoute
   OurStoryRoute: typeof OurStoryRoute
   TeamRoute: typeof TeamRoute
   TowerOfGoatsDiscoveryTrailRoute: typeof TowerOfGoatsDiscoveryTrailRoute
+  UrbortBlogRoute: typeof UrbortBlogRouteWithChildren
   VisionValuesRoute: typeof VisionValuesRoute
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute: typeof ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute
   ExperiencesAlpacaLunchPicnicRoute: typeof ExperiencesAlpacaLunchPicnicRoute
@@ -646,6 +707,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnimalsForSaleRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/corporate-training': {
       id: '/corporate-training'
       path: '/corporate-training'
@@ -658,6 +726,13 @@ declare module '@tanstack/react-router' {
       path: '/experiences'
       fullPath: '/experiences'
       preLoaderRoute: typeof ExperiencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/farm-market-store': {
@@ -700,6 +775,13 @@ declare module '@tanstack/react-router' {
       path: '/tower-of-goats-discovery-trail'
       fullPath: '/tower-of-goats-discovery-trail'
       preLoaderRoute: typeof TowerOfGoatsDiscoveryTrailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/urbort-blog': {
+      id: '/urbort-blog'
+      path: '/urbort-blog'
+      fullPath: '/urbort-blog'
+      preLoaderRoute: typeof UrbortBlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/vision-values': {
@@ -947,6 +1029,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperiencesTasteOfFarmLifeFamilyFriendlyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/urbort-blog/': {
+      id: '/urbort-blog/'
+      path: '/'
+      fullPath: '/urbort-blog/'
+      preLoaderRoute: typeof UrbortBlogIndexRouteImport
+      parentRoute: typeof UrbortBlogRoute
+    }
+    '/urbort-blog/$slug': {
+      id: '/urbort-blog/$slug'
+      path: '/$slug'
+      fullPath: '/urbort-blog/$slug'
+      preLoaderRoute: typeof UrbortBlogSlugRouteImport
+      parentRoute: typeof UrbortBlogRoute
+    }
   }
 }
 
@@ -1021,18 +1117,35 @@ const CorporateTrainingRouteChildren: CorporateTrainingRouteChildren = {
 const CorporateTrainingRouteWithChildren =
   CorporateTrainingRoute._addFileChildren(CorporateTrainingRouteChildren)
 
+interface UrbortBlogRouteChildren {
+  UrbortBlogSlugRoute: typeof UrbortBlogSlugRoute
+  UrbortBlogIndexRoute: typeof UrbortBlogIndexRoute
+}
+
+const UrbortBlogRouteChildren: UrbortBlogRouteChildren = {
+  UrbortBlogSlugRoute: UrbortBlogSlugRoute,
+  UrbortBlogIndexRoute: UrbortBlogIndexRoute,
+}
+
+const UrbortBlogRouteWithChildren = UrbortBlogRoute._addFileChildren(
+  UrbortBlogRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdoptAnAnimalRoute: AdoptAnAnimalRouteWithChildren,
   AnimalsForSaleRoute: AnimalsForSaleRouteWithChildren,
+  ContactRoute: ContactRoute,
   CorporateTrainingRoute: CorporateTrainingRouteWithChildren,
   ExperiencesRoute: ExperiencesRoute,
+  FaqRoute: FaqRoute,
   FarmMarketStoreRoute: FarmMarketStoreRoute,
   GiftCardRoute: GiftCardRoute,
   IceCreamRoute: IceCreamRoute,
   OurStoryRoute: OurStoryRoute,
   TeamRoute: TeamRoute,
   TowerOfGoatsDiscoveryTrailRoute: TowerOfGoatsDiscoveryTrailRoute,
+  UrbortBlogRoute: UrbortBlogRouteWithChildren,
   VisionValuesRoute: VisionValuesRoute,
   ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute:
     ExperiencesAlpacaExperienceAndFibreNestingBallWorkshopRoute,
