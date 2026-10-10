@@ -13,14 +13,18 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdoptAnAnimalRouteImport } from './routes/adopt-an-animal'
 import { Route as AnimalsForSaleRouteImport } from './routes/animals-for-sale'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CookiesPolicyRouteImport } from './routes/cookies-policy'
 import { Route as CorporateTrainingRouteImport } from './routes/corporate-training'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FarmMarketStoreRouteImport } from './routes/farm-market-store'
 import { Route as GiftCardRouteImport } from './routes/gift-card'
 import { Route as IceCreamRouteImport } from './routes/ice-cream'
+import { Route as NewsletterRouteImport } from './routes/newsletter'
 import { Route as OurStoryRouteImport } from './routes/our-story'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as TeamRouteImport } from './routes/team'
+import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
 import { Route as TowerOfGoatsDiscoveryTrailRouteImport } from './routes/tower-of-goats-discovery-trail'
 import { Route as UrbortBlogRouteImport } from './routes/urbort-blog'
 import { Route as VisionValuesRouteImport } from './routes/vision-values'
@@ -81,6 +85,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CookiesPolicyRoute = CookiesPolicyRouteImport.update({
+  id: '/cookies-policy',
+  path: '/cookies-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CorporateTrainingRoute = CorporateTrainingRouteImport.update({
   id: '/corporate-training',
   path: '/corporate-training',
@@ -111,14 +120,29 @@ const IceCreamRoute = IceCreamRouteImport.update({
   path: '/ice-cream',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsletterRoute = NewsletterRouteImport.update({
+  id: '/newsletter',
+  path: '/newsletter',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OurStoryRoute = OurStoryRouteImport.update({
   id: '/our-story',
   path: '/our-story',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
   path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
+  id: '/terms-of-service',
+  path: '/terms-of-service',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TowerOfGoatsDiscoveryTrailRoute =
@@ -341,14 +365,18 @@ export interface FileRoutesByFullPath {
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
   '/animals-for-sale': typeof AnimalsForSaleRouteWithChildren
   '/contact': typeof ContactRoute
+  '/cookies-policy': typeof CookiesPolicyRoute
   '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/faq': typeof FaqRoute
   '/farm-market-store': typeof FarmMarketStoreRoute
   '/gift-card': typeof GiftCardRoute
   '/ice-cream': typeof IceCreamRoute
+  '/newsletter': typeof NewsletterRoute
   '/our-story': typeof OurStoryRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/team': typeof TeamRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/tower-of-goats-discovery-trail': typeof TowerOfGoatsDiscoveryTrailRoute
   '/urbort-blog': typeof UrbortBlogRouteWithChildren
   '/vision-values': typeof VisionValuesRoute
@@ -392,13 +420,17 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/cookies-policy': typeof CookiesPolicyRoute
   '/experiences': typeof ExperiencesRoute
   '/faq': typeof FaqRoute
   '/farm-market-store': typeof FarmMarketStoreRoute
   '/gift-card': typeof GiftCardRoute
   '/ice-cream': typeof IceCreamRoute
+  '/newsletter': typeof NewsletterRoute
   '/our-story': typeof OurStoryRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/team': typeof TeamRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/tower-of-goats-discovery-trail': typeof TowerOfGoatsDiscoveryTrailRoute
   '/vision-values': typeof VisionValuesRoute
   '/adopt-an-animal/bronnie': typeof AdoptAnAnimalBronnieRoute
@@ -444,14 +476,18 @@ export interface FileRoutesById {
   '/adopt-an-animal': typeof AdoptAnAnimalRouteWithChildren
   '/animals-for-sale': typeof AnimalsForSaleRouteWithChildren
   '/contact': typeof ContactRoute
+  '/cookies-policy': typeof CookiesPolicyRoute
   '/corporate-training': typeof CorporateTrainingRouteWithChildren
   '/experiences': typeof ExperiencesRoute
   '/faq': typeof FaqRoute
   '/farm-market-store': typeof FarmMarketStoreRoute
   '/gift-card': typeof GiftCardRoute
   '/ice-cream': typeof IceCreamRoute
+  '/newsletter': typeof NewsletterRoute
   '/our-story': typeof OurStoryRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/team': typeof TeamRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/tower-of-goats-discovery-trail': typeof TowerOfGoatsDiscoveryTrailRoute
   '/urbort-blog': typeof UrbortBlogRouteWithChildren
   '/vision-values': typeof VisionValuesRoute
@@ -499,14 +535,18 @@ export interface FileRouteTypes {
     | '/adopt-an-animal'
     | '/animals-for-sale'
     | '/contact'
+    | '/cookies-policy'
     | '/corporate-training'
     | '/experiences'
     | '/faq'
     | '/farm-market-store'
     | '/gift-card'
     | '/ice-cream'
+    | '/newsletter'
     | '/our-story'
+    | '/privacy-policy'
     | '/team'
+    | '/terms-of-service'
     | '/tower-of-goats-discovery-trail'
     | '/urbort-blog'
     | '/vision-values'
@@ -550,13 +590,17 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/cookies-policy'
     | '/experiences'
     | '/faq'
     | '/farm-market-store'
     | '/gift-card'
     | '/ice-cream'
+    | '/newsletter'
     | '/our-story'
+    | '/privacy-policy'
     | '/team'
+    | '/terms-of-service'
     | '/tower-of-goats-discovery-trail'
     | '/vision-values'
     | '/adopt-an-animal/bronnie'
@@ -601,14 +645,18 @@ export interface FileRouteTypes {
     | '/adopt-an-animal'
     | '/animals-for-sale'
     | '/contact'
+    | '/cookies-policy'
     | '/corporate-training'
     | '/experiences'
     | '/faq'
     | '/farm-market-store'
     | '/gift-card'
     | '/ice-cream'
+    | '/newsletter'
     | '/our-story'
+    | '/privacy-policy'
     | '/team'
+    | '/terms-of-service'
     | '/tower-of-goats-discovery-trail'
     | '/urbort-blog'
     | '/vision-values'
@@ -655,14 +703,18 @@ export interface RootRouteChildren {
   AdoptAnAnimalRoute: typeof AdoptAnAnimalRouteWithChildren
   AnimalsForSaleRoute: typeof AnimalsForSaleRouteWithChildren
   ContactRoute: typeof ContactRoute
+  CookiesPolicyRoute: typeof CookiesPolicyRoute
   CorporateTrainingRoute: typeof CorporateTrainingRouteWithChildren
   ExperiencesRoute: typeof ExperiencesRoute
   FaqRoute: typeof FaqRoute
   FarmMarketStoreRoute: typeof FarmMarketStoreRoute
   GiftCardRoute: typeof GiftCardRoute
   IceCreamRoute: typeof IceCreamRoute
+  NewsletterRoute: typeof NewsletterRoute
   OurStoryRoute: typeof OurStoryRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   TeamRoute: typeof TeamRoute
+  TermsOfServiceRoute: typeof TermsOfServiceRoute
   TowerOfGoatsDiscoveryTrailRoute: typeof TowerOfGoatsDiscoveryTrailRoute
   UrbortBlogRoute: typeof UrbortBlogRouteWithChildren
   VisionValuesRoute: typeof VisionValuesRoute
@@ -714,6 +766,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cookies-policy': {
+      id: '/cookies-policy'
+      path: '/cookies-policy'
+      fullPath: '/cookies-policy'
+      preLoaderRoute: typeof CookiesPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/corporate-training': {
       id: '/corporate-training'
       path: '/corporate-training'
@@ -756,6 +815,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IceCreamRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/newsletter': {
+      id: '/newsletter'
+      path: '/newsletter'
+      fullPath: '/newsletter'
+      preLoaderRoute: typeof NewsletterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/our-story': {
       id: '/our-story'
       path: '/our-story'
@@ -763,11 +829,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OurStoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/team': {
       id: '/team'
       path: '/team'
       fullPath: '/team'
       preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-of-service': {
+      id: '/terms-of-service'
+      path: '/terms-of-service'
+      fullPath: '/terms-of-service'
+      preLoaderRoute: typeof TermsOfServiceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tower-of-goats-discovery-trail': {
@@ -1136,14 +1216,18 @@ const rootRouteChildren: RootRouteChildren = {
   AdoptAnAnimalRoute: AdoptAnAnimalRouteWithChildren,
   AnimalsForSaleRoute: AnimalsForSaleRouteWithChildren,
   ContactRoute: ContactRoute,
+  CookiesPolicyRoute: CookiesPolicyRoute,
   CorporateTrainingRoute: CorporateTrainingRouteWithChildren,
   ExperiencesRoute: ExperiencesRoute,
   FaqRoute: FaqRoute,
   FarmMarketStoreRoute: FarmMarketStoreRoute,
   GiftCardRoute: GiftCardRoute,
   IceCreamRoute: IceCreamRoute,
+  NewsletterRoute: NewsletterRoute,
   OurStoryRoute: OurStoryRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   TeamRoute: TeamRoute,
+  TermsOfServiceRoute: TermsOfServiceRoute,
   TowerOfGoatsDiscoveryTrailRoute: TowerOfGoatsDiscoveryTrailRoute,
   UrbortBlogRoute: UrbortBlogRouteWithChildren,
   VisionValuesRoute: VisionValuesRoute,
